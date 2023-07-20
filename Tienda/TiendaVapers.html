@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/nuevo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: #232428;">
+
+  <!-- Header -->
+  <header>
+    <a href="../Index.html" class="ima"><img src="../img/Logo.webp"  alt=""><img src="../img/NombreLogo.webp" class="isaa" alt=""></a>
+    <div class="container-icon">
+      <div class="container-cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="icon-cart">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        <div class="count-products">
+          <span id="contador-productos">0</span>
+        </div>
+      </div>
+
+      <div class="container-cart-products hidden-cart">
+        <div class="row-product">
+          <div class="cart-product">
+
+          </div>
+        </div>
+
+        <div class="cart-total">
+          <p class="t">Total:</p>
+          <h3 class="tot"></h3>
+          <span class="total-pagar"></span>
+          <div class="sa">
+            <button style="background-color: #80e5c1;" class="btn btn-danger w-100" id="vaciar">Vaciar carrito</button>
+            <div class="pt-3"></div>
+
+            <button style="background-color: #80e5c1;" class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">Pagar</button>
+
+            <div class="collapse" id="collapseExample">
+              <div class="pt-3">
+                <p class="text-dark">Metodos de Pago:</p>
+                <div class="meto">
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img class="yape"
+                        src="https://www.yape.com.pe/assets/images/logo.png" alt="yape"></a></div>
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdropss"><img class="me"
+                        src="https://www.baccredomatic.com/sites/default/files/styles/real_estate_1000_560_/public/2023-03/MicrosoftTeams-image%20%2887%29.png?itok=uZQXnmUx"
+                        alt="pagofectivo"></a></div>
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrops"><img class="plin"
+                        src="https://www.canadaperu.org/sites/default/files/styles/1024x576/public/store/noticias/img/2021-07/PLIN.png?itok=Q-aOJibG"
+                        alt="plin"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="cart-empty">El carrito está vacío</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Botones -->
+  <div class="cont">
+    <div>
+      <a href="TiendaPods.html" style="text-decoration: none;"><button class="bt">
+        <img src="../img/pods/classic-tobacco.webp" style="vertical-align: bottom;"class="im" alt=""> <span class="ha">Pods</span></button></a>
+    </div>
+    <div>
+      <a href="TiendaVapers.html" style="text-decoration: none;"><button class="bt">
+        <img src="../img/Neon-Purple.webp" style="height: 30px; width: 30px; vertical-align: bottom; " class="im" alt=""> <span class="ha">Vapers</span></button></a>
+    </div>
+  </div>
+
+<!-- Carrusel  -->
+  <div class="container_carrusel" >
+    <div class="mySlides">
+        <img src="../img/relxEssential/black-1.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Black</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+        <script type="text/javascript">
+          function mostrar(){
+            swal({
+              title: 'Añadido al carrito',
+              icon: 'success'
+            });
+          }
+        </script>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/blue-glow.webp" width="90px" height="450px"alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Blue Glow</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/blue.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Blue</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/green-1.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Green</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/neon-Purple.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Neon Purple</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/red.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Red</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/steel-blue.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial Steel Blue</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+        <img src="../img/relxEssential/white-1.webp" width="90px" height="450px" alt="...">
+      <div style=" margin-top:30px">
+        <h5 class="nombre">Essencial White</h5>
+        <p class="descripcion">Cigarro Essencial<br>
+            <span class="precios">Precio:</span><samp class="precio">S/99.00</samp>
+        </p>
+        <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+      </div>  
+    </div>
+    <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-black.webp" width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Black</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-deep-blue.webp" width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Deep Blue</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-gold.webp " width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Gold</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-red.webp" width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Red</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-silver.webp" width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Silver</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  <div class="mySlides">
+      <img src="../img/relxInfinity/relx-infinity-sky-blush.webp " width="90px" height="450px" alt="...">
+    <div style=" margin-top:30px">
+      <h5 class="nombre">Infinity Sky Blush</h5>
+      <p class="descripcion">Cigarro Infinity<br>
+          <span class="precios">Precio:</span><samp class="precio">S/135.00</samp>
+      </p>
+      <button onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;" ></i> Añadir al Carrito</button>
+    </div>  
+  </div>
+  
+    <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
+  
+   
+    <div class="butons">
+      <button class="quadrate" onclick="currentSlide(1)"><img src="../img/relxEssential/black-1.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(2)"><img src="../img/relxEssential/blue-glow.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(3)"><img src="../img/relxEssential/blue.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(4)"><img src="../img/relxEssential/green-1.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(5)"><img src="../img/relxEssential/Neon-Purple.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(6)"><img src="../img/relxEssential/red.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(7)"><img src="../img/relxEssential/steel-blue.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(8)"><img src="../img/relxEssential/white-1.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(9)"><img src="../img/relxInfinity/relx-infinity-black.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(10)"><img src="../img/relxInfinity/relx-infinity-deep-blue.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(11)"><img src="../img/relxInfinity/relx-infinity-gold.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(12)"><img src="../img/relxInfinity/relx-infinity-red.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(13)"><img src="../img/relxInfinity/relx-infinity-silver.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(14)"><img src="../img/relxInfinity/relx-infinity-sky-blush.webp" alt=""></button>
+      
+    </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" id="mos">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Alerta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que deseas eliminar todos tus pedidos?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" id="si" data-bs-dismiss="modal">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+          <!--yaoe-->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Yape</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="boby">
+                    <img src="../img/scanner.jpeg" class="yas" alt="Yape">
+                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
+                    <div class="to"></div> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- plin -->
+        <div class="modal fade" id="staticBackdrops" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Plin</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                
+                </div>
+                
+                <div class="modal-body" id="boby">
+                    <img src="../img/scanner.jpeg" class="yas" alt="Yape">
+                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
+                    <div class="toss"></div> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- depostio bancario -->
+        <div class="modal fade" id="staticBackdropss" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Bancario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="boby">
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta BCP Soles es 19103357371082.
+                  </h1>
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta interbancaria es 00219110335737108259.</h1>
+                <div class="tos"></div>                 
+                  
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  <div style="margin-top: 45px;"></div>
+</body>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex)
+
+  setInterval(function () {
+    plusSlides(1);
+  }, 10000);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n)
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n)
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    let quadrates = document.querySelectorAll(".quadrate");
+    if (n > slides.length) slideIndex = 1
+    if (n < 1) slideIndex = slides.length
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"
+    }
+    for (i = 0; i < quadrates.length; i++) {
+      quadrates[i].className = quadrates[i].className.replace("active", "")
+    }
+    slides[slideIndex - 1].style.display = "block";
+    quadrates[slideIndex - 1].className += " active";
+  }
+</script>
+<script src="../js/carrito.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</html>

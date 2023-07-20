@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/nuevo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: #232428;">
+
+  <!-- Header -->
+  <header>
+    <a href="../Index.html" class="ima"><img src="../img/Logo.webp"  alt=""><img src="../img/NombreLogo.webp" class="isaa" alt=""></a>
+    <div class="container-icon">
+      <div class="container-cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="icon-cart">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        <div class="count-products">
+          <span id="contador-productos">0</span>
+        </div>
+      </div>
+
+      <div class="container-cart-products hidden-cart">
+        <div class="row-product">
+          <div class="cart-product">
+
+          </div>
+        </div>
+
+        <div class="cart-total">
+          <p class="t">Total:</p>
+          <h3 class="tot"></h3>
+          <span class="total-pagar"></span>
+          <div class="sa">
+            <button style="background-color: #80e5c1;" class="btn btn-danger w-100" id="vaciar">Vaciar carrito</button>
+            <div class="pt-3"></div>
+
+            <button style="background-color: #80e5c1;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">Pagar</button>
+
+            <div class="collapse" id="collapseExample">
+              <div class="pt-3">
+                <p class="text-dark">Metodos de Pago:</p>
+                <div class="meto">
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img class="yape"
+                        src="https://www.yape.com.pe/assets/images/logo.png" alt="yape"></a></div>
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdropss"><img class="me"
+                        src="https://www.baccredomatic.com/sites/default/files/styles/real_estate_1000_560_/public/2023-03/MicrosoftTeams-image%20%2887%29.png?itok=uZQXnmUx"
+                        alt="pagofectivo"></a></div>
+                  <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrops"><img class="plin"
+                        src="https://www.canadaperu.org/sites/default/files/styles/1024x576/public/store/noticias/img/2021-07/PLIN.png?itok=Q-aOJibG"
+                        alt="plin"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="cart-empty">El carrito está vacío</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Botones -->
+  <div class="cont">
+    <div>
+      <a href="TiendaPods.html" style="text-decoration: none;"><button class="bt">
+        <img src="../img/pods/classic-tobacco.webp" style="vertical-align: bottom;"class="im" alt=""> <span class="ha">Pods</span></button></a>
+    </div>
+    <div>
+      <a href="TiendaVapers.html" style="text-decoration: none;"><button class="bt">
+        <img src="../img/relxEssential/neon-purple.webp" style="height: 30px; width: 30px; vertical-align: bottom; " class="im" alt=""> <span class="ha">Vapers</span></button></a>
+    </div>
+  </div>
+
+<!-- carrusel -->
+  <div class="container_carrusel">
+    <div class="mySlides">
+      <img src="../img/pods/black-twist.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Black Twist</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+          <script type="text/javascript">
+            function mostrar(){
+              swal({
+                title: 'Añadido al carrito',
+                icon: 'success'
+              });
+            }
+          </script>
+      </div>
+    </div>
+    
+    <div class="mySlides">
+      <img src="../img/pods/blue-gems.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Blue Gems</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/classic-tobacco.webp" style="margin-top: -6px;filter: drop-shadow(8px 6px 4px #00000080);" width="380px" height="345px">
+      <div >
+        <h5 class="nombre">Classic Tabacco</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/dark-sparkle.webp" style="margin-top: 30px; filter: drop-shadow(8px 6px 4px #00000080);" width="145px" height="275px">
+      <div style="margin-top: 35px;">
+        <h5 class="nombre">Dark Sparkle</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Exotic-Passion-1.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Exotic Passion 1</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Forest Gems_1（副本）.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Forest Gems</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/FreshRed_2.（副本）.webp" style="margin-top: 43px;filter: drop-shadow(8px 6px 4px #00000080);" width="114px" height="252px">
+      <div style="margin-top: 45px;">
+        <h5 class="nombre">Fresh Red</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Garden_s Heart1（副本）.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Gardens Heart</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Golden-Bunch.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Golden Bunch</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Golden-Crystal2-1375C.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Golden Crystal</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Golden Slice（副本）.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Golden Slice</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Green-zest-tobacco.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Green Zest Tabacco</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Hawaiian Sunshine_3（副本）.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Hawaiian Sunshine</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/jasmine-green-tea.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Jasmine Green Tea</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/ludou-ice.webp" style="margin-top: -118px;filter: drop-shadow(8px 6px 4px #00000080);" width="645px" height="579px">
+      <div style="margin-top: -120px;">
+        <h5 class="nombre">Ludou Ice</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/mentholplus-front.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Menthol Plus</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Palm-Rounds.webp" style="margin-top: 43px;filter: drop-shadow(8px 6px 4px #00000080);" width="114px" height="252px">
+      <div style="margin-top: 45px;">
+        <h5 class="nombre">Palm Rounds</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Purple-Snow-2072C.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Purple Snow</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/RaspyRuby.webp" style="margin-top: 43px;filter: drop-shadow(8px 6px 4px #00000080);" width="114px" height="252px">
+      <div style="margin-top: 45px;">
+        <h5 class="nombre">Raspy Ruby</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Rich-Tobacco-1.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Rich Tabacco</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/sunny-sparkle-3.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Sunny Sparkle</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/sunset-paradise.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Sunset Paradise</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/TangyPurple_2（副本）.webp" style="margin-top: 43px;filter: drop-shadow(8px 6px 4px #00000080);" width="114px" height="252px">
+      <div style="margin-top: 45px;">
+        <h5 class="nombre">Tangy Purple</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/Zesty-Menthol1-2400C.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Zesty Menthol</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/pods/正面-clove menthol.webp" style="filter: drop-shadow(8px 6px 4px #00000080);" width="400px" height="370px">
+      <div style="margin-top: -30px;">
+        <h5 class="nombre">Clove Menthol</h5>
+        <p class="descripcion">Contiene 5% de Nicotina<br>
+          <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
+        </p>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
+          
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
+
+
+    <div class="butons">
+      <button class="quadrate" onclick="currentSlide(1)"><img src="../img/pods/black-twist.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(2)"><img src="../img/pods/blue-gems.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(3)"><img src="../img/pods/classic-tobacco.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(4)"><img style="height: 53px; width: 33px;" src="../img/pods/dark-sparkle.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(5)"><img src="../img/pods/exotic-passion-1.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(6)"><img src="../img/pods/Forest Gems_1（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(7)"><img style="height: 45px; width: 30px;" src="../img/pods/FreshRed_2.（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(6)"><img src="../img/pods/Garden_s Heart1（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(9)"><img src="../img/pods/Golden-Bunch.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(10)"><img src="../img/pods/Golden-Crystal2-1375C.webp" alt="">
+      <button class="quadrate" onclick="currentSlide(11)"><img src="../img/pods/Golden Slice（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(12)"><img src="../img/pods/Green-zest-tobacco.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(13)"><img src="../img/pods/Hawaiian Sunshine_3（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(14)"><img src="../img/pods/jasmine-green-tea.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(15)"><img src="../img/pods/ludou-ice.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(16)"><img src="../img/pods/mentholplus-front.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(17)"><img style="height: 50px; width: 30px;" src="../img/pods/Palm-Rounds.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(18)"><img src="../img/pods/Purple-Snow-2072C.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(19)"><img style="height: 45px; width: 30px;" src="../img/pods/RaspyRuby.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(20)"><img src="../img/pods/Rich-Tobacco-1.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(21)"><img src="../img/pods/sunny-sparkle-3.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(22)"><img src="../img/pods/sunset-paradise.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(23)"><img style="height: 45px; width: 30px;" src="../img/pods/TangyPurple_2（副本）.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(24)"><img src="../img/pods/Zesty-Menthol1-2400C.webp" alt=""></button>
+      <button class="quadrate" onclick="currentSlide(25)"><img src="../img/pods/正面-clove menthol.webp" alt=""></button>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" id="mos">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Alerta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que deseas eliminar todos tus pedidos?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" id="si" data-bs-dismiss="modal">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+          <!--yaoe-->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Yape</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="boby">
+                    <img src="../img/scanner.jpeg" class="yas" alt="Yape">
+                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
+                    <div class="to"></div> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- plin -->
+        <div class="modal fade" id="staticBackdrops" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Plin</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                
+                </div>
+                
+                <div class="modal-body" id="boby">
+                    <img src="../img/scanner.jpeg" class="yas" alt="Yape">
+                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
+                    <div class="toss"></div> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- depostio bancario -->
+        <div class="modal fade" id="staticBackdropss" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Bancario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="boby">
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta BCP Soles es 19103357371082.
+                  </h1>
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta interbancaria es 00219110335737108259.</h1>
+                <div class="tos"></div>                 
+                  
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Listo</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  <div style="margin-top: 45px;"></div>
+</body>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex)
+
+  setInterval(function () {
+    plusSlides(1);
+  }, 10000);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n)
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n)
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    let quadrates = document.querySelectorAll(".quadrate");
+    if (n > slides.length) slideIndex = 1
+    if (n < 1) slideIndex = slides.length
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"
+    }
+    for (i = 0; i < quadrates.length; i++) {
+      quadrates[i].className = quadrates[i].className.replace("active", "")
+    }
+    slides[slideIndex - 1].style.display = "block";
+    quadrates[slideIndex - 1].className += " active";
+  }
+</script>
+<script src="../js/carrito.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</html>
