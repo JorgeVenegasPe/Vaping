@@ -29,13 +29,14 @@
         </div>
       </div>
 
-      <div class="container-cart-products hidden-cart">
-        <div class="row-product">
+      <div id="cart-modal" class="container-cart-products hidden-cart">
+        <div class="neutro">
+          <div class="row-product">
           <div class="cart-product">
 
           </div>
         </div>
-
+        
         <div class="cart-total">
           <p class="t">Total:</p>
           <h3 class="tot"></h3>
@@ -67,8 +68,20 @@
         <p class="cart-empty">El carrito está vacío</p>
       </div>
     </div>
+    </div>
   </header>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    const btnCart = $('.container-cart-icon');
+    const containerCartProducts = $('#cart-modal');
 
+    btnCart.on('click', function() {
+      // Mostrar el carrito con una transición lenta de 0.5 segundos
+      containerCartProducts.slideToggle(500);
+    });
+  });
+</script>
   <!-- Botones -->
   <div class="cont">
     <div>

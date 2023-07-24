@@ -85,12 +85,22 @@ header {
     top: 50px;
     right: 0;
     background-color: #fff;
-    width: 450px;
+    width: 1300px;
+    height: 100vh;
+    background-color: #2324286e;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.neutro{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
     z-index: 1;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px;
 }
-
 .cart-product {
     display: flex;
     align-items: center;
@@ -539,8 +549,7 @@ button img {
 
     .container-cart-products {
         right: 0;
-
-        width: 310px;
+        width: 800px;
         border-radius: 5px;
     }
     .count-products {
