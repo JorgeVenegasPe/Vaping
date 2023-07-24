@@ -220,17 +220,20 @@ header {
 }
 
 .btn-add {
-    margin-top: 2px;
+    margin: 0 45px;
     border: none;
+    flex: 1;
     padding: 11px;
     width: 20%;
-    border-radius: 8px;
-    background-color: white;
+    border: 3px solid rgb(57, 170, 132);
+    border-radius: 80px;
+    background-color: #252222;
     text-transform: unset;
     font-weight: bold;
-    color: Black;
+    color: rgb(245, 245, 245);
     cursor: pointer;
     transition: 0.7s all;
+
 }
 
 .btn-add:hover {
@@ -722,20 +725,6 @@ button img {
         margin-left: 10px;
     }
 
-
-    .btn-add {
-       padding: 0;
-        padding: 8px;
-        width: 50%;
-        border-radius: 8px;
-        background-color: white;
-        text-transform: unset;
-        font-weight: bold;
-        color: Black;
-        cursor: pointer;
-        transition: 0.7s all;
-    
-    }
     img {
         max-width: 100%;
     }
