@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.Letras{
+    color: rgb(255, 255, 255);
+}
+/* Estilos para los botones Si y No */
+.boton-si,
+.boton-no {
+    padding: 5px 50px;
+    background-color: #252222;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    flex: 1;
+    margin: 0 25px;
+    border: 3px solid rgb(57, 170, 132);
+}
+
+.boton-si:hover,
+.boton-no:hover {
+    background-color: #524c4c;
+}
+
+.btn-cerrar {
+    display: flex;
+    justify-content: space-between; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.container-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144, 148, 150, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.content-modal {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #252222;
+    border-radius: 12px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+    animation: showPopup 0.7s ease;
+}
+
+/*Contenedor del modal*/
+.contenedor{
+    width: 100%;
+    padding: 20px;
+    /*background-color: #252222a4;*/
+    /*background-color: #000000a4;*/
+    /*background-color: #000000c4;*/
+    /*background-color: #131111d2;*/
+    background-color: #000000eb;
+    border-radius: 12px;
+    width: 100%;
+    position: absolute;
+
+}
+
+
+.content-modal h2 {
+    margin-bottom: 15px;
+}
+
+.content-modal p {
+    padding: 15px 0px;
+    border-top: 0px solid #dbdbdb;
+    border-bottom: 0px solid #dbdbdb;
+    font-weight:    bold;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-modal .btn-cerrar {
+    width: 105%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-modal .btn-cerrar label {
+    padding: 7px 10px;
+    background-color: #5488a3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.content-modal .btn-cerrar label:hover {
+    background-color: #185E83;
+}
+
+.cerrar-modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+@keyframes showPopup {
+    from {
+        opacity: 0; /* Comienza con una opacidad de 0 */
+        transform: translateY(-200px); /* Baja 50px desde arriba */
+    }
+    to {
+        opacity: 1; /* Al final, tiene una opacidad completa */
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-modal {
+        width: 90%;
+    }
+}
