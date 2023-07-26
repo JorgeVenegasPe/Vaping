@@ -11,6 +11,7 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/nuevo.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body style="background-color: #232428;">
 
@@ -29,7 +30,8 @@
         </div>
       </div>
 
-      <div class="container-cart-products hidden-cart">
+      <div id="cart-modal" class="container-cart-products hidden-cart">
+        <div class="neutro">
         <div class="row-product">
           <div class="cart-product">
 
@@ -66,6 +68,7 @@
         </div>
         <p class="cart-empty">El carrito está vacío</p>
       </div>
+    </div>
     </div>
   </header>
 

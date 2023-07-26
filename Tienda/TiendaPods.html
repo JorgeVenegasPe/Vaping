@@ -11,10 +11,10 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/nuevo.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body style="background-color: #232428;">
 
-  <!-- Header -->
   <header>
     <a href="../Index.html" class="ima"><img src="../img/Logo.webp"  alt=""><img src="../img/NombreLogo.webp" class="isaa" alt=""></a>
     <div class="container-icon">
@@ -29,24 +29,30 @@
         </div>
       </div>
 
-      <div class="container-cart-products hidden-cart">
-        <div class="row-product">
+      <div id="cart-modal" class="container-cart-products hidden-cart" >
+        <div class="neutro" style="color: #2ACDA6; ">
+          <div class="row-product">
           <div class="cart-product">
 
           </div>
         </div>
-
-        <div class="cart-total">
-          <p class="t">Total:</p>
+        
+        <div class="cart-total" style="color: #2ACDA6; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+          <p class="t" style="font-weight: bold; ">TOTAL:</p>
           <h3 class="tot"></h3>
           <span class="total-pagar"></span>
-          <div class="sa">
-            <button style="background-color: #80e5c1;" class="btn btn-danger w-100" id="vaciar">Vaciar carrito</button>
-            <div class="pt-3"></div>
+          <div class="sa" style="text-align: center;">
+            <div class="btn_carr-compras" style="display: grid; grid-template-columns: repeat(2,1fr); gap: 5px;">
 
-            <button style="background-color: #80e5c1;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
-              aria-expanded="false" aria-controls="collapseExample">Pagar</button>
-
+            <div>
+            <button  style="background-color: #2ACDA6; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px; " class="btn btn-danger w-100" id="vaciar">VACIAR CARRITO</button>
+            <div class="pt-3"></div></div>
+            <div>
+            <button style="background-color: #2ACDA6;  font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">PAGAR</button></div>
+            </div>
             <div class="collapse" id="collapseExample">
               <div class="pt-3">
                 <p class="text-dark">Metodos de Pago:</p>
@@ -64,11 +70,13 @@
             </div>
           </div>
         </div>
-        <p class="cart-empty">El carrito está vacío</p>
+        <p class="cart-empty" style=" font-weight: bold; font-size: 17px; padding: 0px 0px 20px 0px;" >El carrito está vacío</p>
       </div>
+    </div>
     </div>
   </header>
 
+  
   <!-- Botones -->
   <div class="cont">
     <div>
@@ -368,10 +376,26 @@
           
       </div>
     </div>
-
+    <a class="red_socials" style="text-decoration: none;" onclick="toggleDiv()">&#10094;</a>
     <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
     <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
-
+    <div id="centeredDiv" class="hidden" style="transition: opacity 0.4s ease;">
+      <a href="#" id="facebook" class="social-icon"><i class="fab fa-facebook"></i></a><br><br>
+      <a href="#" id="twitter" class="social-icon"><i class="fab fa-twitter"></i></a><br><br>
+      <a href="#" id="instagram" class="social-icon"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
+    </div>
+    <script>
+      function toggleDiv() {
+        var centeredDiv = document.getElementById('centeredDiv');
+    
+        // Agrega un retardo de 0.4 segundos antes de mostrar el div
+        setTimeout(function() {
+          centeredDiv.classList.toggle('hidden');
+        }, 200); // 400 milisegundos (0.4 segundos)
+      }
+    </script>
+    
+    
 
     <div class="butons">
       <button class="quadrate" onclick="currentSlide(1)"><img src="../img/pods/black-twist.webp" alt=""></button>
