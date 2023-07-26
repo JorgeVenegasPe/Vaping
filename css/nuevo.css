@@ -204,10 +204,10 @@ header {
 }
 
 .meto {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
 #boby {
@@ -217,28 +217,39 @@ header {
 .to,
 .tos,
 .toss {
+    background-color: blue;
     text-align: center;
     margin-top: 15px;
 }
 
+  .yape {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 100%; /* Ajusta la altura según tus necesidades */
+    width: 55%; /* Ajusta el ancho según tus necesidades */
+    padding: 4px;
+    border: 2px solid #50d3a5;
+    border-radius: 8px; /* Hace que el botón sea circular */
+  }
+
 .me {
-    width: 85px;
+    background-color: #ffffff;
+    height: 100%; /* Ajusta la altura según tus necesidades */
+    width: 80%; /* Ajusta el ancho según tus necesidades */
     cursor: pointer;
-    margin-left: 75px;
-}
+    padding: 4px;
+    border: 2px solid #50d3a5;
+    border-radius: 8px; /* Hace que el botón sea circular */
+  }
 
-.yape {
-    width: 40px;
-    cursor: pointer;
-
-}
-
-.plin {
-    width: 90px;
-    margin-left: 40px;
-    cursor: pointer;
-
-}
+  .plin {
+    background-color: rgb(255, 255, 255);
+    height: 100%; /* Ajusta la altura según tus necesidades */
+    width: 55%; /* Ajusta el ancho según tus necesidades */
+    padding: 0px;
+    border: 2px solid #50d3a5;
+    border-radius: 8px; /* Hace que el botón sea circular */
+  }
 
 
 
@@ -452,11 +463,11 @@ header {
   /* Estilos para el div centrado */
   #centeredDiv {
     position: absolute;
-    top: 35%;
-    left: 6%;
+    top: 42%;
+    left: 0%;
     transform: translate(-50%, -50%);
     /*background-color: #ffffff;*/
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
   }
@@ -481,7 +492,7 @@ header {
     color: #07563a;
     border: 2px solid #07563a;
   }
-
+/*
   #facebook{
     margin-left:15px ;
   }
@@ -491,7 +502,7 @@ header {
   #instagram{
     margin-left:15px ;
   }
-
+*/
 
 
   /* Define el tamaño de los íconos en el div con id "centeredDiv" */
