@@ -57,6 +57,20 @@
     animation: showPopup 0.7s ease;
 }
 
+/*Contenedor del modal*/
+.contenedor{
+    width: 100%;
+    padding: 20px;
+    /*background-color: #252222a4;*/
+    /*background-color: #000000a4;*/
+    /*background-color: #000000c4;*/
+    /*background-color: #131111d2;*/
+    background-color: #000000eb;
+    border-radius: 12px;
+    width: 100%;
+    position: absolute;
+
+}
 .content-modal h2 {
     margin-bottom: 15px;
 }
