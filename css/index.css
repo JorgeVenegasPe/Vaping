@@ -26,6 +26,13 @@
     height: 100%;
     transition: 0.5s all;
 }
+.ime{
+    display: block;
+    margin-left: auto;
+    margin-right: 100px;
+    width: 200px;
+    height: 190px;
+}
 .texto{
     background-color:transparent;
     margin-right:100px;
@@ -35,6 +42,8 @@
 }
 .parra{
     width: 43em;
+    text-align: center;
+    margin-left: -25px;
 }
 .medio{
     font-size: 2.4rem;
@@ -49,23 +58,28 @@
     }
 .nds{
     display: flex;
-    flex-wrap: wrap;
+
 }
 .aq{
     width: 100%;
 
 }
 .bts{
-    width: 100%;
-    padding: 6px;
+    padding: 8px 30px;
+    background-color: #252222;
+    color: #fff;
     border: none;
-    font-weight: bold;
-    border-radius: 7px;
-    background-color: white;
-    color:black;
-    margin-bottom: 12px;
-    transition: 0.5s all;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin: 0 45px;
+    border: 3px solid rgb(57, 170, 132);
+    margin-right: -90px;
+    text-align: right;
+    margin-left: 120px;
+
 }
+
 .bts:hover{
     background-color: #9c9b9b;
     color: black;
