@@ -1,25 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnCart = document.querySelector('.container-cart-icon');
-    const containerCartProducts = document.getElementById('cart-modal');
-  
-    // Función para mostrar el modal con efecto de desvanecimiento
-    function showCartModal() {
-      containerCartProducts.classList.remove('hidden-cart');
-      containerCartProducts.style.animation = 'fadeIn 0.5s ease-in-out';
-    }
-  
-    // Función para ocultar el modal con efecto de desvanecimiento
-    function hideCartModal() {
-      containerCartProducts.style.animation = 'fadeOut 0.5s ease-in-out';
-      setTimeout(() => {
-        containerCartProducts.classList.add('hidden-cart');
-      }, 500); // This should match the duration of the fadeOut animation
-    }
-  
-    btnCart.addEventListener('click', function() {
-      // Mostrar u ocultar el carrito con el efecto de desvanecimiento
-      containerCartProducts.classList.contains('hidden-cart') ? showCartModal() : hideCartModal();
+    const btnCart = document.querySelector('.container-cart-icon')
+const containerCartProducts = document.querySelector('.container-cart-products')
 
+btnCart.addEventListener('click', () => {
+    containerCartProducts.classList.toggle('hidden-cart')
+    if (!allproduct.length) {
+		cartEmpty.classList.remove('hidden');
+		rowprodcuto.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+        //console.log('ddddddddddddddd')
+
+	}
     
  
 })

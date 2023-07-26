@@ -37,21 +37,25 @@
           </div>
         </div>
 
-        <div class="cart-total">
-          <p class="t">Total:</p>
+        <div class="cart-total" style="color: #2ACDA6;font-family: 'Bowlby One', cursive;  ">
+          <p class="t" style="font-weight: bold; ">TOTAL:</p>
           <h3 class="tot"></h3>
           <span class="total-pagar"></span>
-          <div class="sa">
-            <button style="background-color: #80e5c1;" class="btn btn-danger w-100" id="vaciar">Vaciar carrito</button>
-            <div class="pt-3"></div>
+          <div class="sa" style="text-align: center;">
+            <div class="btn_carr-compras" style="display: grid; grid-template-columns: repeat(2,1fr); gap: 5px;">
 
-            <button style="background-color: #80e5c1;" class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
-              aria-expanded="false" aria-controls="collapseExample">Pagar</button>
-
+            <div>
+            <button  style="background-color: #2ACDA6; font-family:'Bowlby One', cursive; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px; " class="btn btn-danger w-100" id="vaciar">VACIAR CARRITO</button>
+            <div class="pt-3"></div></div>
+            <div>
+            <button style="background-color: #2ACDA6;  font-family:'Bowlby One', cursive; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">PAGAR</button></div>
+            </div>
             <div class="collapse" id="collapseExample">
-              <div class="pt-3">
-                <p class="text-dark" style="font-weight: bold;"
-                >Metodos de Pago:</p>
+              <div class="pt-3" >
+                <p class="text-dark" style="font-weight: bold;" >Metodos de Pago:</p>
                 <div class="meto">
                   <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img class="yape"
                         src="https://www.yape.com.pe/assets/images/logo.png" alt="yape"></a></div>
@@ -66,7 +70,7 @@
             </div>
           </div>
         </div>
-        <p class="cart-empty">El carrito está vacío</p>
+        <p class="cart-empty" style="font-family:'Bowlby One', cursive; font-weight: bold; font-size: 17px; padding: 0px 0px 20px 0px;" >El carrito está vacío</p>
       </div>
     </div>
     </div>
@@ -80,7 +84,7 @@
     </div>
     <div>
       <a href="TiendaVapers.html" style="text-decoration: none;"><button class="bt">
-        <img src="../img/Neon-Purple.webp" style="height: 30px; width: 30px; vertical-align: bottom; " class="im" alt=""> <span class="ha">Vapers</span></button></a>
+        <img src="../img/relxEssential/neon-purple.webp" style="height: 50px; width: 20px; vertical-align: bottom; " class="im" alt=""> <span class="ha">Vapers</span></button></a>
     </div>
   </div>
 
@@ -254,24 +258,60 @@
         }, 200); // 400 milisegundos (0.4 segundos)
       }
     </script>
+  </div>
    
-    <div class="butons">
-      <button class="quadrate" onclick="currentSlide(1)"><img src="../img/relxEssential/black-1.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(2)"><img src="../img/relxEssential/blue-glow.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(3)"><img src="../img/relxEssential/blue.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(4)"><img src="../img/relxEssential/green-1.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(5)"><img src="../img/relxEssential/Neon-Purple.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(6)"><img src="../img/relxEssential/red.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(7)"><img src="../img/relxEssential/steel-blue.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(8)"><img src="../img/relxEssential/white-1.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(9)"><img src="../img/relxInfinity/relx-infinity-black.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(10)"><img src="../img/relxInfinity/relx-infinity-deep-blue.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(11)"><img src="../img/relxInfinity/relx-infinity-gold.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(12)"><img src="../img/relxInfinity/relx-infinity-red.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(13)"><img src="../img/relxInfinity/relx-infinity-silver.webp" alt=""></button>
-      <button class="quadrate" onclick="currentSlide(14)"><img src="../img/relxInfinity/relx-infinity-sky-blush.webp" alt=""></button>
+  <div class="container_carruselfff">
+    <div class="slider">
+    <div class="slide-track">
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(1)"><img src="../img/relxEssential/black-1.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(2)"><img src="../img/relxEssential/blue-glow.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(3)"><img src="../img/relxEssential/blue.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(4)"><img src="../img/relxEssential/green-1.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(5)"><img src="../img/relxEssential/Neon-Purple.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(6)"><img src="../img/relxEssential/red.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(7)"><img src="../img/relxEssential/steel-blue.webp" alt=""></button>
+      </div>
+      
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(8)"><img src="../img/relxEssential/white-1.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(9)"><img src="../img/relxInfinity/relx-infinity-black.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(10)"><img src="../img/relxInfinity/relx-infinity-deep-blue.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(11)"><img src="../img/relxInfinity/relx-infinity-gold.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(12)"><img src="../img/relxInfinity/relx-infinity-red.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(13)"><img src="../img/relxInfinity/relx-infinity-silver.webp" alt=""></button>
+      </div>
+      <div class="slide">
+        <button class="quadrate" onclick="currentSlide(14)"><img src="../img/relxInfinity/relx-infinity-sky-blush.webp" alt=""></button>
       
     </div>
+  </div>
+  
+</div>
+  </div>
+    
 
   <!-- Modal -->
   <div class="modal fade" id="modal-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -299,17 +339,19 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Yape</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel" style="text-align: center; color: #2ACDA6;font-family: 'Bowlby One', cursive;  "> Yape</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="boby">
                     <img src="../img/scanner.jpeg" class="yas" alt="Yape">
-                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
+                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em; color: #2ACDA6;font-family: 'Bowlby One', cursive;" id="staticBackdropLabel">955 828 875</h1>
                     <div class="to"></div> 
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Listo</button>
+                <button style="background-color: #212529;  font-family:'Bowlby One', cursive; font-weight: bold;
+                letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size:20px;"type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button style="background-color: #212529;  font-family:'Bowlby One', cursive; font-weight: bold;
+                letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size:20px;" type="button" class="btn btn-primary">Listo</button>
                 </div>
             </div>
             </div>
@@ -317,25 +359,27 @@
         <!-- plin -->
         <div class="modal fade" id="staticBackdrops" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Plin</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                
-                </div>
-                
-                <div class="modal-body" id="boby">
-                    <img src="../img/scanner.jpeg" class="yas" alt="Yape">
-                    <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">955 828 875</h1>
-                    <div class="toss"></div> 
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Listo</button>
-                </div>
-            </div>
-            </div>
-        </div>
+          <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel" style="text-align: center; color: #2ACDA6;font-family: 'Bowlby One', cursive;  "> Plin</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                
+              </div>
+              
+              <div class="modal-body" id="boby">
+                  <img src="../img/scanner.jpeg" class="yas" alt="Yape">
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em; color: #2ACDA6;font-family: 'Bowlby One', cursive;" id="staticBackdropLabel">955 828 875</h1>
+                  <div class="toss"></div> 
+              </div>
+              <div class="modal-footer">
+                <button style="background-color: #212529;  font-family:'Bowlby One', cursive; font-weight: bold;
+                letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size:20px;"type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button style="background-color: #212529;  font-family:'Bowlby One', cursive; font-weight: bold;
+                letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size:20px;" type="button" class="btn btn-primary">Listo</button>
+              </div>
+          </div>
+          </div>
+      </div>
         <!-- depostio bancario -->
         <div class="modal fade" id="staticBackdropss" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             
@@ -346,15 +390,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="boby">
-                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta BCP Soles es 19103357371082.
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em; color: #000000;font-family: 'Bowlby One', cursive;" id="staticBackdropLabel">Mi número de cuenta BCP Soles es 19103357371082.
                   </h1>
-                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em;" id="staticBackdropLabel">Mi número de cuenta interbancaria es 00219110335737108259.</h1>
+                  <h1 class="modal-title fs-5" style="text-align: center; margin-top: 1em; color: #000000;font-family: 'Bowlby One', cursive;" id="staticBackdropLabel">Mi número de cuenta interbancaria es 00219110335737108259.</h1>
                 <div class="tos"></div>                 
                   
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Listo</button>
+                  <button type="button" style="background-color: #212529; border-radius: 20px; border: #2ACDA6; font-family:'Bowlby One', cursive; height: 40px;" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" style="background-color: #212529; border-radius: 20px; border: #2ACDA6; font-family:'Bowlby One', cursive; height: 40px;" class="btn btn-primary">Listo</button>
                 </div>
             </div>
             </div>
