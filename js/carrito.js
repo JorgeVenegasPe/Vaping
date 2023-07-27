@@ -205,7 +205,7 @@ DOMbotonVaciar.addEventListener('click', vaciarcarrito);
 
 //guardarCarritoEnLocalStorage()
 
- })
+})
 
 
 
