@@ -462,13 +462,23 @@ header {
 
   /* Estilos para el div centrado */
   #centeredDiv {
+    text-align: center;
+    cursor: pointer;
     position: absolute;
-    top: 42%;
-    left: 0%;
-    transform: translate(-50%, -50%);
-    /*background-color: #ffffff;*/
-    padding: 5px;
-    border-radius: 5px;
+    top: 40%;
+    width: 60px;
+    margin-top: 10px;
+    padding: 16px;
+    color: #fff;
+    border-radius: 35px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6 ease;
+    user-select: none;
+    border: solid #fff 2px;
+    right: 0;
+    margin-right: -100px;
+    background-color: #2cb183;
     /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
   }
   
@@ -484,13 +494,14 @@ header {
     width: 55px;
     height: 50px;
     color: #1c7c5b;
-    border: 2px solid #1c7c5b;
-    background-color: #212529;
+    /*border: 2px solid #1c7c5b;*/
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
   }
 
   .social-icon:hover{
     color: #07563a;
-    border: 2px solid #07563a;
+    border: 2px solid #ffffff;
   }
 /*
   #facebook{
@@ -523,9 +534,11 @@ header {
     border-radius: 35px;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6 ease;
+    transition: 0.8 ease;
     user-select: none;
     border: solid #fff 2px;
+    right: 0;
+    margin-right: -100px;
 }
 .red_socials:hover{
     background-color: #1c7c5b;
