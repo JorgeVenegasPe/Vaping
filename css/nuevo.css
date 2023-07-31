@@ -410,7 +410,7 @@ header {
 }
 
 .mySlides {
-    display: none;
+    /*display: none;*/
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -555,11 +555,11 @@ header {
 }
 
 .prev {
-    margin-left: 190px;
+    margin-left: 100px;
 }
 
 .next {
-    margin-right: 190px;
+    margin-right: 100px;
 }
 
 /*.next {
@@ -891,4 +891,95 @@ button img {
         max-width: 100%;
     }
     
+
+}
+
+
+
+
+/*Daniel Carahuatay*/
+.mySlides{
+    /*background-color: rgb(240, 193, 159);*/
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+    margin-top: 0px;
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px;
+}
+.img_car{
+    filter: drop-shadow(8px 6px 4px #00000080);
+    width: 390px;
+    height: 320px;
+    /*background-color: brown;*/
+
+}
+
+.producto{
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    /*background-color: rgb(8, 19, 98);*/
+}
+.container_carrusel{
+
+   /*background-color: blanchedalmond;*/
+   background-color: #232428;
+
+}
+
+.datos{
+    /*padding-top: 200px;*/
+    margin-top: 0px;
+    /*background-color: fuchsia;*/
+}
+
+.nombre{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    text-align: start;
+    /*background-color: cornflowerblue;*/
+    color: #31B295;
+    margin-bottom:30px;
+}
+.descripcion{
+    color: white;
+    margin: 0px;
+    /*background-color: rgb(255, 229, 163);*/
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 50px;
+    text-align: start;
+}
+p{
+    margin-bottom: 2px;
+}
+.precios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /*background-color: rgb(211, 156, 235);*/
+}
+
+.precio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #31B295;
+    /*background-color: darksalmon;*/
+}
+.btn-add{
+    width: 50%;
+    /*background-color: cadetblue;*/
+}
+.botones{
+    height: 90px;
+    /*background-color: chocolate;*/
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
