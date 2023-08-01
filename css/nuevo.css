@@ -85,20 +85,55 @@ header {
     top: 50px;
     right: 0;
     background-color: #fff;
-    width: 450px;
+    width: 1300px;
+    height: 100vh;
+    background-color: #2324286e;
     z-index: 1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    border-radius: 10px;
+    border-radius: 10px;  display: none;
+
 }
 
+/* Show the cart modal with fadeIn animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Hide the cart modal with fadeOut animation */
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  /* Apply the 'hidden-cart' class to hide the cart modal */
+  .container-cart-products.hidden-cart {
+    display: none;
+  }
+  
+  /* Show the cart modal when 'hidden-cart' class is removed */
+  .container-cart-products:not(.hidden-cart) {
+    display: block;
+  }
+.neutro{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    border-radius: 30px;
+    width: 28%;
+    height: auto;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    color: #07563a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
 .cart-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
+    padding: 18px 20px 0px 20px;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.20);*/
 }
 
 /**/
@@ -109,18 +144,19 @@ header {
 }
 
 .titulo-producto-carrito {
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .precio-producto-carrito {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 15px;
     margin-left: 10px;
 }
 
 .cantidad-producto-carrito {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .icon-close {
@@ -129,7 +165,7 @@ header {
 }
 
 .icon-close:hover {
-    stroke: #7fe3c0;
+    stroke: #2ACDA6;
     cursor: pointer;
 }
 
@@ -137,7 +173,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
     gap: 20px;
     flex-wrap: wrap;
     width: 100%;
@@ -145,7 +181,7 @@ header {
 
 .sa {
     width: 100%;
-    padding: 30px;
+    padding: 34px 20px 0px 35px;
     margin-top: -40px;
 }
 
@@ -220,21 +256,17 @@ header {
 }
 
 .btn-add {
-    margin: 0 40px;
+    margin-top: 2px;
     border: none;
-    flex: 1;
     padding: 11px;
     width: 20%;
-    border: 3px solid rgb(57, 170, 132);
-    border-radius: 80px;
-    background-color: #252222;
+    border-radius: 8px;
+    background-color: white;
     text-transform: unset;
     font-weight: bold;
-    color: rgb(245, 245, 245);
+    color: Black;
     cursor: pointer;
     transition: 0.7s all;
-    display: inline-block;
-    position: relative;
 }
 
 .btn-add:hover {
@@ -242,9 +274,9 @@ header {
     color: black;
 }
 
-.btn-add:hover .container {
-    display: block;
-}
+
+
+
 
 /*carrosel */
 .carousel-inner {
@@ -406,6 +438,87 @@ header {
     border: solid #fff 2px;
 
 }
+/* Estilos para el botón de redes sociales */
+.red_socials {
+    display: inline-block;
+    /*background-color: #007bff;*/
+    background-color: #50d3a5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Estilos para el div centrado */
+  #centeredDiv {
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+    /*background-color: #ffffff;*/
+    padding: 10px;
+    border-radius: 5px;
+    /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
+  }
+  
+  /* Estilos para ocultar el div al inicio */
+  .hidden {
+    display: none;
+  }
+  
+  /* Estilos para los íconos de redes sociales */
+  .social-icon {
+    border-radius: 50%; /* Hace que los íconos sean circulares */
+    padding: 13px;
+    width: 55px;
+    height: 50px;
+    color: #1c7c5b;
+    border: 2px solid #1c7c5b;
+    background-color: #212529;
+  }
+
+  .social-icon:hover{
+    color: #07563a;
+    border: 2px solid #07563a;
+  }
+
+  #facebook{
+    margin-left:15px ;
+  }
+  #twitter{
+    margin-left:45px ;
+  }
+  #instagram{
+    margin-left:15px ;
+  }
+
+
+
+  /* Define el tamaño de los íconos en el div con id "centeredDiv" */
+  #centeredDiv .social-icon {
+    font-size: 30px; /* Puedes ajustar el tamaño según tus preferencias */
+  }
+  
+/*botones de redes sociales*/
+.red_socials{
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    width: 60px;
+    margin-top: 10px;
+    padding: 16px;
+    color: #fff;
+    border-radius: 35px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6 ease;
+    user-select: none;
+    border: solid #fff 2px;
+}
+.red_socials:hover{
+    background-color: #1c7c5b;
+}
 
 .next {
     right: 0;
@@ -532,7 +645,18 @@ button img {
         margin-left: 22px;
         font-size: 1.6rem;
     }
-
+  /* Estilos para el div centrado */
+  #centeredDiv {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    /*background-color: #ffffff;*/
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
     .container-icon {
         margin-right: 25px;
     }
@@ -543,8 +667,7 @@ button img {
 
     .container-cart-products {
         right: 0;
-
-        width: 310px;
+        width: 800px;
         border-radius: 5px;
     }
     .count-products {
@@ -726,6 +849,20 @@ button img {
         margin-left: 10px;
     }
 
+
+    .btn-add {
+       padding: 0;
+        padding: 8px;
+        width: 50%;
+        border-radius: 8px;
+        background-color: white;
+        text-transform: unset;
+        font-weight: bold;
+        color: Black;
+        cursor: pointer;
+        transition: 0.7s all;
+    
+    }
     img {
         max-width: 100%;
     }

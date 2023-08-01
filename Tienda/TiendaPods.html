@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,67 +10,52 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/nuevo.css" />
-  <link rel="stylesheet" href="../css/chatbot.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-  <script src="../js/chatbot.js" defer></script>
-  <style>
-    .containerb {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      display: none;
-    }
-    .buttonb {
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body style="background-color: #232428;">
 
-  <!-- Header -->
   <header>
     <a href="../Index.html" class="ima"><img src="../img/Logo.webp"  alt=""><img src="../img/NombreLogo.webp" class="isaa" alt=""></a>
     <div class="container-icon">
       <div class="container-cart-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 44 44"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="icon-cart">
           <path stroke-linecap="round" stroke-linejoin="round"
-          d="m29.8,19h-13.9c-0.3,0-0.5,0.3-0.5,0.6l1.1,6c0,0.2 0.3,0.4 0.5,0.4h11.6c0.2,0 0.4-0.2 0.5-0.4l1.1-6c0.2-0.3-0.1-0.6-0.4-0.6z" />
-          <path d="m22,0c-12.2,0-22,9.8-22,22s9.8,22 22,22 22-9.8 22-22-9.8-22-22-22zm13,16.2l-2.4,13c-0.1,0.5-0.5,0.8-1,0.8h-4.6c1.1,0 2,0.9 2,2s-0.9,2-2,2-2-0.9-2-2 0.9-2 2-2h-9c1.1,0 2,0.9 2,2s-0.9,2-2,2-2-0.9-2-2 0.9-2 2-2h-3.8c-0.5,0-0.9-0.3-1-0.8l-2.8-14.8c0-0.2-0.2-0.4-0.4-0.4-0.6,0-1-0.4-1-1v-2c0-0.6 0.4-1 1-1h2.8c0.5,0 0.9,0.3 1,0.8l.7,3.8c0,0.2 0.3,0.4 0.5,0.4h19c0.6,0 1,0.5 1,1 0,0.1 0,0.1 0,0.2z"/>
+            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
         </svg>
         <div class="count-products">
           <span id="contador-productos">0</span>
         </div>
       </div>
 
-      <div class="container-cart-products hidden-cart">
-        <div class="row-product">
+      <div id="cart-modal" class="container-cart-products hidden-cart" >
+        <div class="neutro" style="color: #2ACDA6; ">
+          <div class="row-product">
           <div class="cart-product">
 
           </div>
         </div>
-
-        <div class="cart-total">
-          <p class="t">Total:</p>
+        
+        <div class="cart-total" style="color: #2ACDA6; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+          <p class="t" style="font-weight: bold; ">TOTAL:</p>
           <h3 class="tot"></h3>
           <span class="total-pagar"></span>
-          <div class="sa">
-            <button style="background-color: #80e5c1;" class="btn btn-danger w-100" id="vaciar">Vaciar carrito</button>
-            <div class="pt-3"></div>
+          <div class="sa" style="text-align: center;">
+            <div class="btn_carr-compras" style="display: grid; grid-template-columns: repeat(2,1fr); gap: 5px;">
 
-            <button style="background-color: #80e5c1;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
-              aria-expanded="false" aria-controls="collapseExample">Pagar</button>
-
+            <div>
+            <button  style="background-color: #2ACDA6; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px; " class="btn btn-danger w-100" id="vaciar">VACIAR CARRITO</button>
+            <div class="pt-3"></div></div>
+            <div>
+            <button style="background-color: #2ACDA6;  font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;
+            letter-spacing: 0.1em; border: 0px; border-radius: 20px; height: 58px; font-size: 14px;"class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">PAGAR</button></div>
+            </div>
             <div class="collapse" id="collapseExample">
-              <div class="pt-3">
-                <p class="text-dark">Metodos de Pago:</p>
+              <div class="pt-3" >
+                <p class="text-dark" style="font-weight: bold;" >Metodos de Pago:</p>
                 <div class="meto">
                   <div><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img class="yape"
                         src="https://www.yape.com.pe/assets/images/logo.png" alt="yape"></a></div>
@@ -85,11 +70,13 @@
             </div>
           </div>
         </div>
-        <p class="cart-empty">El carrito está vacío</p>
+        <p class="cart-empty" style=" font-weight: bold; font-size: 17px; padding: 0px 0px 20px 0px;" >El carrito está vacío</p>
       </div>
+    </div>
     </div>
   </header>
 
+  
   <!-- Botones -->
   <div class="cont">
     <div>
@@ -111,16 +98,8 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-
-          <div class="btn-add">
-            <span>Cantidad: </span>
-            <button class="buttonb" onclick="disminuir()">-</button>
-            <span id="contador">0</span>
-            <button class="buttonb" onclick="aumentar()">+</button>
-          </div>
-        
-        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;">
-        </i> Añadir al Carrito</button>
+        <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
+          Carrito</button>
           <script type="text/javascript">
             function mostrar(){
               swal({
@@ -139,8 +118,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -152,8 +129,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -165,8 +140,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -178,8 +151,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -191,8 +162,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -204,8 +173,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -217,8 +184,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -230,8 +195,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -243,8 +206,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -256,8 +217,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -269,8 +228,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -282,8 +239,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -295,8 +250,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -308,8 +261,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -321,8 +272,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -334,8 +283,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -347,8 +294,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -360,8 +305,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -373,8 +316,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -386,8 +327,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -399,8 +338,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -412,8 +349,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -425,8 +360,6 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
       </div>
@@ -438,17 +371,33 @@
         <p class="descripcion">Contiene 5% de Nicotina<br>
           <span class="precios">Precio: </span><samp class="precio">S/35.00</samp>
         </p>
-        <button  onclick="mostrar()" class="btn-add">
-        </i> Cantidad: </button>
         <button  onclick="mostrar()" class="btn-add"><i class="fa-solid fa-cart-shopping fa-lg" style="padding: 8px;"></i> Añadir al
           Carrito</button>
           
       </div>
     </div>
-
+    <a href="#" id="redes-sociales" class="red_socials" style="text-decoration: none;" onclick="toggleDiv()">
+      <i class="fas fa-share-alt"></i>
+    </a>    
     <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
     <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
-
+    <div id="centeredDiv" class="hidden" style="transition: opacity 0.4s ease;">
+      <a href="#" id="facebook" class="social-icon"><i class="fab fa-facebook"></i></a><br><br>
+      <a href="#" id="twitter" class="social-icon"><i class="fab fa-twitter"></i></a><br><br>
+      <a href="#" id="instagram" class="social-icon"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
+    </div>
+    <script>
+      function toggleDiv() {
+        var centeredDiv = document.getElementById('centeredDiv');
+    
+        // Agrega un retardo de 0.4 segundos antes de mostrar el div
+        setTimeout(function() {
+          centeredDiv.classList.toggle('hidden');
+        }, 200); // 400 milisegundos (0.4 segundos)
+      }
+    </script>
+    
+    
 
     <div class="butons">
       <button class="quadrate" onclick="currentSlide(1)"><img src="../img/pods/black-twist.webp" alt=""></button>
@@ -566,28 +515,7 @@
             </div>
             </div>
         </div>
-
   <div style="margin-top: 45px;"></div>
-  <button class="chatbot-toggler">
-    <span class="material-symbols-rounded">mode_comment</span>
-    <span class="material-symbols-outlined">close</span>
-  </button>
-  <div class="chatbot">
-    <header>
-      <h2>Chatbot</h2>
-      <span class="close-btn material-symbols-outlined">close</span>
-    </header>
-    <ul class="chatbox">
-      <li class="chat incoming">
-        <span class="material-symbols-outlined">smart_toy</span>
-        <p>Bienvenido a VAPING 👋<br>Como puedo ayudarte?</p>
-      </li>
-    </ul>
-    <div class="chat-input">
-      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
-      <span id="send-btn" class="material-symbols-rounded">send</span>
-    </div>
-  </div>
 </body>
 
 <script>
@@ -627,20 +555,4 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-<script>
-  let numero = 0;
-  const contador = document.getElementById('contador');
-
-  function aumentar() {
-    numero++;
-    contador.textContent = numero;
-  }
-
-  function disminuir() {
-    if (numero > 0) {
-      numero--;
-      contador.textContent = numero;
-    }
-  }
-</script>
 </html>
