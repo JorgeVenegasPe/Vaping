@@ -842,205 +842,16 @@
    </div>
  </div>
 </div>
-
-    <style>
-      /* CSS */
-      #centeredDiv {
-        /* Asegúrate de que el contenido oculto esté completamente oculto cuando se agrega la clase "hidden" */
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        z-index: 1; /* Colocar el elemento oculto por encima del botón */
-        transition: opacity 0.4s ease, transform 0.4s ease; /* Animación de opacidad y despliegue */
-      }
-      /* Mostrar el contenido oculto cuando no tenga la clase "hidden" */
-      #centeredDiv:not(.hidden) {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      
-      /* Estilo para el color de los íconos en función del color de la aplicación */
-      .social-icon {
-        color: var(--color-app); /* Usamos la variable --color-app para definir el color */
-        transition: color 0.4s ease; /* Agregamos una animación de transición para suavizar el cambio de color */
-      }
-      
-      /* Estilo para el color de los íconos al pasar el ratón sobre ellos */
-      .social-icon:hover {
-        color: var(--color-icon-hover); /* Cambia el color al definido por cada red social */
-      }
-      
-      /* Estilo específico para el ícono de Facebook */
-      .facebook-icon {
-        --color-app: #ffffff; /* Define el color azul característico de Facebook */
-        --color-icon-hover:#1877f2 ; /* Define el color al pasar el ratón sobre el ícono de Facebook */
-        background-color: #1877f2;
-        transition: 0.4s;
-      }
-      .facebook-icon:hover {
-        color: #1877f2;
-        background-color: #ffffff;
-    border: 2px solid #1877f2;
-
-      }
-      
-      /* Estilo específico para el ícono de Twitter */
-      .twitter-icon {
-        --color-app: rgb(255, 255, 255); /* Define el color azul característico de Twitter */
-        --color-icon-hover: #f1f3f5; /* Define el color al pasar el ratón sobre el ícono de Twitter */
-        background-color:#1a91da;
-        transition: 0.4s;
-      }
-      .twitter-icon:hover {
-        color:#1a91da ;
-        background-color: #f1f3f5;
-        border: 2px solid #1a91da;
-      }
-      
-      /* Estilo específico para el ícono de Instagram */
-      .instagram-icon {
-        --color-app: rgb(255, 255, 255);
-        --color-icon-hover: #f1f3f5;
-        background: rgb(131,58,180);
-background: linear-gradient(149deg, rgba(131,58,180,1) 0%, rgba(253,29,247,1) 32%, rgba(253,65,37,1) 54%, rgba(252,233,69,1) 100%);
-        transition: 0.4s;
-      }
-
-      .instagram-icon:hover {
-        --color-app: rgb(255, 255, 255);
-        --color-icon-hover: #f1f3f5;
-        color:  #fd1df7;
-background: linear-gradient(149deg, rgba(131,58,180,1) 0%, rgba(253,29,247,1) 32%, rgba(253,65,37,1) 54%, rgba(252,233,69,1) 100%);
-        background: rgb(131,58,180);
-background: linear-gradient(149deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 32%, rgb(255, 255, 255) 54%, rgb(255, 255, 255) 100%);
-border: 2px solid #fd1df7;
-      }
-    </style>
-  
-
-  <a href="#" id="redes-sociales" class="red_socials" style="text-decoration: none;" 
-  onmousedown="startDrag(event)" onmouseup="stopDrag(event)">
- <i class="fas fa-share-alt"></i>
-</a>
-
 <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
 <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
 
 <div id="centeredDiv" class="hidden">
  <a href="#" id="facebook" class="social-icon facebook-icon"><i class="fab fa-facebook"></i></a><br><br>
  <a href="#" id="twitter" class="social-icon twitter-icon"><i class="fab fa-twitter"></i></a><br><br>
- <a href="#" id="instagram" class="social-icon instagram-icon"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
+ <a href="#" id="instagram" class="social-icon instagram-icon"><i class="fab fa-instagram" style="font-size: 20px;"></i></a>
 </div>
 
-<script>
- // Variables para almacenar la posición inicial del botón y la diferencia de posición mientras se arrastra
- var initialX, initialY, offsetX = 0, offsetY = 0;
- var isDragging = false;
 
- // Variable para almacenar la posición original del botón cuando está a la derecha
- var posicion2 = { X: -1300, Y: 50 };
-
- // Función para iniciar el arrastre del botón
- function startDrag(event) {
-   event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-   var centeredDiv = document.getElementById('centeredDiv');
-
-   // Verificar si el elemento oculto está cerrado (tiene la clase "hidden")
-   if (centeredDiv.classList.contains('hidden')) {
-     isDragging = true;
-     var button = document.getElementById('redes-sociales');
-
-     // Asegurar que el elemento oculto esté por encima del botón durante el arrastre
-     centeredDiv.style.zIndex = 2;
-
-     initialX = event.clientX - offsetX;
-     initialY = event.clientY - offsetY;
-     button.style.cursor = 'grabbing'; // Cambiar el cursor al símbolo de agarre mientras se arrastra
-
-     // Evento para arrastrar el botón
-     document.onmousemove = function(event) {
-       if (isDragging) {
-         var button = document.getElementById('redes-sociales');
-
-         offsetX = event.clientX - initialX;
-         offsetY = event.clientY - initialY;
-         button.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-       }
-     };
-   }
- }
-
- // Función para detener el arrastre del botón
- function stopDrag() {
-   isDragging = false;
-   var button = document.getElementById('redes-sociales');
-   var centeredDiv = document.getElementById('centeredDiv');
-   // autoPositionButton(); // Remove this line to prevent automatic positioning after dragging
-
-   button.style.cursor = 'pointer'; // Cambiar el cursor de vuelta al puntero normal
-   document.onmousemove = null; // Eliminar el evento de arrastre
-
-   // Restaurar la posición del elemento oculto cuando se detiene el arrastre
-   centeredDiv.style.zIndex = 1;
-   // centeredDiv.style.transform = `translate(${offsetX}px, ${offsetY}px)`; // Remove this line
-
-   // Llamada a la función para verificar la posición después del arrastre
-   var message = checkPositionAfterDrag();
-
-   // Reset position if it's on the left side
-   if (message === "Derecha") {
-     resetPosition();
-   } else if (message === "Izquierda") {
-     // Set the original position to "posicion2" if it's on the right side
-     button.style.transform = `translate(${posicion2.X}px, ${posicion2.Y}px)`;
-     offsetX = posicion2.X;
-     offsetY = posicion2.Y;
-     // Move the "hidden" element to the same position
-     centeredDiv.style.transform = `translate(${posicion2.X}px, ${posicion2.Y}px)`;
-   }
- }
-
- // Función para verificar la posición después del arrastre y mostrar una alerta
- function checkPositionAfterDrag() {
-   var button = document.getElementById('redes-sociales');
-   var buttonRect = button.getBoundingClientRect();
-   var windowWidth = window.innerWidth;
-   var position = (buttonRect.right >= windowWidth / 2) ? "Derecha" : "Izquierda";
-
-   //alert("La posición del botón después del arrastre es: " + position);
-   return position;
- }
-
- // Función para resetear la posición original del botón
- function resetPosition() {
-   var button = document.getElementById('redes-sociales');
-   button.style.transform = `translate(0px, 0px)`;
-   offsetX = 0;
-   offsetY = 0;
-   // Reset the position of the "hidden" element
-   var centeredDiv = document.getElementById('centeredDiv');
-   centeredDiv.style.transform = `translate(0px, 0px)`;
- }
-
- // Escuchar el evento de clic en "redes-sociales" y mostrar u ocultar el contenido oculto
- document.getElementById('redes-sociales').addEventListener('click', function(event) {
-   event.stopPropagation(); // Evitar la propagación del evento de clic para que no interfiera con el arrastre
-
-   // Comprobar si el tiempo entre mousedown y mouseup es menor a 200 ms (puedes ajustar este valor según tu preferencia)
-   if (event.timeStamp - startDragTime < 200) {
-     var centeredDiv = document.getElementById('centeredDiv');
-     centeredDiv.classList.toggle('hidden');
-   }
- });
-
- // Variable para almacenar el tiempo de inicio del arrastre
- var startDragTime;
- // Evento para guardar el tiempo de inicio del arrastre
- document.getElementById('redes-sociales').addEventListener('mousedown', function() {
-   startDragTime = event.timeStamp;
- });
-</script>
-    
     
     
 
@@ -1161,43 +972,17 @@ border: 2px solid #fd1df7;
             </div>
         </div>
   <div style="margin-top: 45px;"></div>
+  <!--Posicion de la seccion de redes sociles-->
+  <a href="#" id="redes-sociales" class="red_socials" style="text-decoration: none;" 
+  onmousedown="startDrag(event)" onmouseup="stopDrag(event)">
+ <i class="fas fa-share-alt"></i>
+</a>
+
 </body>
-
-<script>
-  let slideIndex = 1;
-  showSlides(slideIndex)
-
-  setInterval(function () {
-    plusSlides(1);
-  }, 10000);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n)
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n)
-  }
-
-  function showSlides(n) {
-    let i;
-    let slides = document.querySelectorAll(".mySlides");
-    let quadrates = document.querySelectorAll(".quadrate");
-    if (n > slides.length) slideIndex = 1
-    if (n < 1) slideIndex = slides.length
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"
-    }
-    for (i = 0; i < quadrates.length; i++) {
-      quadrates[i].className = quadrates[i].className.replace("active", "")
-    }
-    slides[slideIndex - 1].style.display = "flex";
-    quadrates[slideIndex - 1].className += " active";
-  }
-</script>
 <script src="../js/carrito.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="../js/TiendaPods.js"></script>
 
 </html>

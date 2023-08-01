@@ -385,105 +385,26 @@
         Carrito</button>
     </div>
   </div>
-  <style>
-    /* CSS */
-    #centeredDiv {
-      /* Asegúrate de que el contenido oculto esté completamente oculto cuando se agrega la clase "hidden" */
-      opacity: 0;
-      pointer-events: none;
-      position: absolute;
-      z-index: 1; /* Colocar el elemento oculto por encima del botón */
-      transition: opacity 0.4s ease, transform 0.4s ease; /* Animación de opacidad y despliegue */
-    }
-    /* Mostrar el contenido oculto cuando no tenga la clase "hidden" */
-    #centeredDiv:not(.hidden) {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  </style>
-  
-  <a href="#" id="redes-sociales" class="red_socials" style="text-decoration: none;" 
-     onmousedown="startDrag(event)" onmouseup="stopDrag(event)">
+  <a href="#" id="redes-sociales" class="red_socials" style="text-decoration: none;" onclick="toggleDiv()">
     <i class="fas fa-share-alt"></i>
-  </a>
-  
+  </a>  
   <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
   <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
-  
-  <div id="centeredDiv" class="hidden">
+  <div id="centeredDiv" class="hidden" style="transition: opacity 0.4s ease;">
     <a href="#" id="facebook" class="social-icon"><i class="fab fa-facebook"></i></a><br><br>
     <a href="#" id="twitter" class="social-icon"><i class="fab fa-twitter"></i></a><br><br>
     <a href="#" id="instagram" class="social-icon"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
   </div>
-  
   <script>
-    // Variables para almacenar la posición inicial del botón y la diferencia de posición mientras se arrastra
-    var initialX, initialY, offsetX = 0, offsetY = 0;
-    var isDragging = false;
-  
-    // Función para iniciar el arrastre del botón
-    function startDrag(event) {
-      event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    function toggleDiv() {
       var centeredDiv = document.getElementById('centeredDiv');
   
-      // Verificar si el elemento oculto está cerrado (tiene la clase "hidden")
-      if (centeredDiv.classList.contains('hidden')) {
-        isDragging = true;
-        var button = document.getElementById('redes-sociales');
-  
-        // Asegurar que el elemento oculto esté por encima del botón durante el arrastre
-        centeredDiv.style.zIndex = 2;
-  
-        initialX = event.clientX - offsetX;
-        initialY = event.clientY - offsetY;
-        button.style.cursor = 'grabbing'; // Cambiar el cursor al símbolo de agarre mientras se arrastra
-  
-        // Evento para arrastrar el botón
-        document.onmousemove = function(event) {
-          if (isDragging) {
-            var button = document.getElementById('redes-sociales');
-  
-            offsetX = event.clientX - initialX;
-            offsetY = event.clientY - initialY;
-            button.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-          }
-        };
-      }
-    }
-  
-    // Evento para detener el arrastre del botón
-    function stopDrag() {
-      isDragging = false;
-      var button = document.getElementById('redes-sociales');
-      var centeredDiv = document.getElementById('centeredDiv');
-  
-      button.style.cursor = 'pointer'; // Cambiar el cursor de vuelta al puntero normal
-      document.onmousemove = null; // Eliminar el evento de arrastre
-  
-      // Restaurar la posición del elemento oculto cuando se detiene el arrastre
-      centeredDiv.style.zIndex = 1;
-      centeredDiv.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-    }
-  
-    // Escuchar el evento de clic en "redes-sociales" y mostrar u ocultar el contenido oculto
-    document.getElementById('redes-sociales').addEventListener('click', function(event) {
-      event.stopPropagation(); // Evitar la propagación del evento de clic para que no interfiera con el arrastre
-  
-      // Comprobar si el tiempo entre mousedown y mouseup es menor a 200 ms (puedes ajustar este valor según tu preferencia)
-      if (event.timeStamp - startDragTime < 200) {
-        var centeredDiv = document.getElementById('centeredDiv');
+      // Agrega un retardo de 0.4 segundos antes de mostrar el div
+      setTimeout(function() {
         centeredDiv.classList.toggle('hidden');
-      }
-    });
-  
-    // Variable para almacenar el tiempo de inicio del arrastre
-    var startDragTime;
-    // Evento para guardar el tiempo de inicio del arrastre
-    document.getElementById('redes-sociales').addEventListener('mousedown', function() {
-      startDragTime = event.timeStamp;
-    });
+      }, 200); // 400 milisegundos (0.4 segundos)
+    }
   </script>
-  
 
 
   <div class="butons">

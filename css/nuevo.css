@@ -468,7 +468,9 @@ header {
     top: 40%;
     width: 60px;
     margin-top: 10px;
-    padding: 16px;
+    padding-top:20px ;
+    padding-bottom: 20px;
+    /*padding-right: 5px;*/
     color: #fff;
     border-radius: 35px;
     font-weight: bold;
@@ -477,7 +479,7 @@ header {
     user-select: none;
     border: solid #fff 2px;
     right: 0;
-    margin-right: -100px;
+    margin-right: -160px;
     background-color: #2cb183;
     /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
   }
@@ -490,7 +492,7 @@ header {
   /* Estilos para los íconos de redes sociales */
   .social-icon {
     border-radius: 50%; /* Hace que los íconos sean circulares */
-    padding: 13px;
+    padding: 12px;
     width: 55px;
     height: 50px;
     color: #1c7c5b;
@@ -518,7 +520,7 @@ header {
 
   /* Define el tamaño de los íconos en el div con id "centeredDiv" */
   #centeredDiv .social-icon {
-    font-size: 30px; /* Puedes ajustar el tamaño según tus preferencias */
+    font-size: 20px; /* Puedes ajustar el tamaño según tus preferencias */
   }
   
 /*botones de redes sociales*/
@@ -526,7 +528,7 @@ header {
     text-align: center;
     cursor: pointer;
     position: absolute;
-    top: 30%;
+    top: 40%;
     width: 60px;
     margin-top: 10px;
     padding: 16px;
@@ -538,7 +540,7 @@ header {
     user-select: none;
     border: solid #fff 2px;
     right: 0;
-    margin-right: -100px;
+    margin-right: 10px;
 }
 .red_socials:hover{
     background-color: #1c7c5b;
@@ -579,7 +581,7 @@ header {
     display: inline-block;
     transition: background-color 0.6s ease;
     background: transparent;
-
+    
     border-radius: 8px;
 
 }
@@ -651,7 +653,79 @@ button img {
     margin-left: 30px;
 }
 
+/**  BOTONES DE LAS REDES SOCIALES  **/
 
+ /* CSS */
+ #centeredDiv {
+    /* Asegúrate de que el contenido oculto esté completamente oculto cuando se agrega la clase "hidden" */
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1; /* Colocar el elemento oculto por encima del botón */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Animación de opacidad y despliegue */
+  }
+  /* Mostrar el contenido oculto cuando no tenga la clase "hidden" */
+  #centeredDiv:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Estilo para el color de los íconos en función del color de la aplicación */
+  .social-icon {
+    color: var(--color-app); /* Usamos la variable --color-app para definir el color */
+    transition: color 0.4s ease; /* Agregamos una animación de transición para suavizar el cambio de color */
+  }
+  
+  /* Estilo para el color de los íconos al pasar el ratón sobre ellos */
+  .social-icon:hover {
+    color: var(--color-icon-hover); /* Cambia el color al definido por cada red social */
+  }
+  
+  /* Estilo específico para el ícono de Facebook */
+  .facebook-icon {
+    --color-app: #ffffff; /* Define el color azul característico de Facebook */
+    --color-icon-hover:#1877f2 ; /* Define el color al pasar el ratón sobre el ícono de Facebook */
+    background-color: #1877f2;
+    transition: 0.4s;
+  }
+  .facebook-icon:hover {
+    color: #1877f2;
+    background-color: #ffffff;
+border: 2px solid #1877f2;
+
+  }
+  
+  /* Estilo específico para el ícono de Twitter */
+  .twitter-icon {
+    --color-app: rgb(255, 255, 255); /* Define el color azul característico de Twitter */
+    --color-icon-hover: #f1f3f5; /* Define el color al pasar el ratón sobre el ícono de Twitter */
+    background-color:#1a91da;
+    transition: 0.4s;
+  }
+  .twitter-icon:hover {
+    color:#1a91da ;
+    background-color: #f1f3f5;
+    border: 2px solid #1a91da;
+  }
+  
+  /* Estilo específico para el ícono de Instagram */
+  .instagram-icon {
+    --color-app: rgb(255, 255, 255);
+    --color-icon-hover: #f1f3f5;
+    background: rgb(131,58,180);
+background: linear-gradient(149deg, rgba(131,58,180,1) 0%, rgba(253,29,247,1) 32%, rgba(253,65,37,1) 54%, rgba(252,233,69,1) 100%);
+    transition: 0.4s;
+  }
+
+  .instagram-icon:hover {
+    --color-app: rgb(255, 255, 255);
+    --color-icon-hover: #f1f3f5;
+    color:  #fd1df7;
+background: linear-gradient(149deg, rgba(131,58,180,1) 0%, rgba(253,29,247,1) 32%, rgba(253,65,37,1) 54%, rgba(252,233,69,1) 100%);
+    background: rgb(131,58,180);
+background: linear-gradient(149deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 32%, rgb(255, 255, 255) 54%, rgb(255, 255, 255) 100%);
+border: 2px solid #fd1df7;
+  }
 
 /*responsi*/
 @media (max-width:700px) {
