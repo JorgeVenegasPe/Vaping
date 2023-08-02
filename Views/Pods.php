@@ -8,10 +8,12 @@
   <link rel="stylesheet" href="../Issets/css/main.css"/>
 </head>
 <body>
-  
+    <?php
+    require_once ('Header.php');
+    ?>
   <!-- Carrusel  -->
   <main>
-
+    
   </main>
   
   <!-- Carrito  -->

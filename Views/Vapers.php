@@ -9,6 +9,10 @@
 </head>
 <body>
   
+  <?php
+    require_once ('Header.php');
+  ?>
+  
   <!-- Carrusel  -->
   <main>
 
