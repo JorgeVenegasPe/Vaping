@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #232323;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #232323;
+    padding: 10px;
+}
+
+.header-container { /* Nueva clase "header-container" */
+    width: 100%; /* El header ocupará todo el ancho */
+    position: fixed; /* Fijamos el header en la parte superior */
+    top: 0;
+    background-color: #232323;
+}
+
+
+  /* Estilos para el icono de carrito y usuario */
+.icons {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+
+.material-symbols-sharp {    
+    width: 30px;
+    height: 30px;
+}
+
+.icons .material-symbols-sharp{
+    margin: 15px;
+    cursor: pointer;
+}
+
+.container-icons{
+    display: flex;
+    position: relative;
+    align-items: center;
+    max-width: 800px;
+}
+
+.logo{
+    margin-left: 60px;
+}
+
+img{
+    height: 60px;
+    width: auto;
+}
+
+.icons span{
+    margin-top: 15px;
+    font-size: 2.4rem;
+    color: white;
+    margin-left: calc(1rem - 4px);
+}
+
+/* estilos para la barra de busqueda */
+
+.search {
+	display: inline-flex;
+	align-items: center;
+	background-image: linear-gradient(45deg, #85d7da, #18e0b5);
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px;
+}
+.search :is(input, button) {
+	background: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+}
+.search__input {
+	width: 0;
+	transition: width 0.5s;
+}
+.search__button {
+	display: grid;
+	place-items: center;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	transition: color 0.25s;
+}
+.search__button:hover {
+	color: #e3e3e3;
+}
+.search:focus-within input {
+	width: 200px;
+}
+::placeholder {
+	font: inherit;
+	color: #e3e3e3;
+}
+
+
+/* Media Query for even smaller screens */
+@media (max-width: 480px) {
+    .search-container {
+        max-width: 300px;
+    }
+    input {
+        width: 200px;
+        padding-right: 40px;
+    }
+    .logo {
+        margin-left: 20px;
+    }
+
+    /* Additional styles for mobile devices */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+
+    .material-symbols-sharp {
+        font-size: 1.3rem;
+    }
+}
+
