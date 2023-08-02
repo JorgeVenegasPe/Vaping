@@ -459,13 +459,13 @@ border: 2px solid #fd1df7;
     grid-template-columns: repeat(2,1fr);
     gap: 50px;
     margin-top: 0px;
-    width: 80%;
-    margin-left: 10%;
+    width: 70%;
+    margin-left: 15%;
     padding: 20px;
 }
 .img_car{
     filter: drop-shadow(8px 6px 4px #00000080);
-    width: 390px;
+    width: 340px;
     height: 320px;
     /*background-color: brown;*/
 
@@ -561,7 +561,6 @@ p{
     padding: auto;
     
     }
-    
 
 @media screen and (max-width: 800px){
     
@@ -623,6 +622,7 @@ p{
     width: 80%;
     margin-left: 10%;
     padding: 20px;
+    
 }
 
 .container_carrusel{
