@@ -7,5 +7,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function mostrarSecciones() {
     document.getElementById("section1").style.display = "block";
-}
-
