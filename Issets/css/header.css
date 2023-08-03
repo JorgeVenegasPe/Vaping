@@ -135,6 +135,10 @@ img{
     .icons {
         margin-top: 10px;
     }
+    
+    .container-icons{
+        display: none;
+    }
 
     .material-symbols-sharp {
         font-size: 1.3rem;
