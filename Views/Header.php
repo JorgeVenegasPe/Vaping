@@ -23,10 +23,43 @@
 	    		</button>
 	    	</form>
             <div class="icons">
+                <a class="btn-login" >Iniciar Session</a>
                 <span class="material-symbols-sharp">shopping_cart</span>
                 <span class="material-symbols-sharp">person</span>
             </div>
         </div>
     </header>
+
+    <!-- Login  -->
+    
+    <div class="service-modal modalform flex-center">
+        <i class="fas fa-times modal-close-btn"></i>
+            <?php
+              require 'Login.php';
+            ?>
+    </div>
 </body>
+    <script>
+const serviceModals = document.querySelectorAll(".modalform");
+const learnmoreBtns = document.querySelectorAll(".btn-login");
+const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+var modal = function(modalClick){
+    serviceModals[modalClick].classList.add("active");
+}
+
+learnmoreBtns.forEach((learnmoreBtn, i) => {
+    learnmoreBtn.addEventListener("click", () => {
+        modal(i);
+    });
+});
+
+modalCloseBtns.forEach((modalCloseBtn) => {
+    modalCloseBtn.addEventListener("click", () =>{
+        serviceModals.forEach((modalView)=>{
+            modalView.classList.remove("active");
+        })
+    });
+});
+    </script>
 </html>

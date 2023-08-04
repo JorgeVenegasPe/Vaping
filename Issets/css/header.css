@@ -5,9 +5,6 @@
     font-family: sans-serif;
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color: #232323;
 }
@@ -32,9 +29,20 @@ header {
     display: flex;
     align-items: center;
     margin: 15px;
+    gap: 10px;
 }
 
+.icons a{
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #fff;
+    transition: .3s ease;
+}
 
+.icons a:hover{
+    color: #18e0b5;
+    transition: .3s ease;
+}
 .material-symbols-sharp {    
     width: 30px;
     height: 30px;
@@ -66,6 +74,10 @@ img{
     font-size: 2.4rem;
     color: white;
     margin-left: calc(1rem - 4px);
+}
+.icons span:hover{
+    color: #18e0b5;
+    transition: .3s ease;
 }
 
 /* estilos para la barra de busqueda */
@@ -109,7 +121,7 @@ img{
 
 
 /* Media Query for even smaller screens */
-@media (max-width: 480px) {
+@media (max-width: 680px) {
     .search-container {
         max-width: 300px;
     }

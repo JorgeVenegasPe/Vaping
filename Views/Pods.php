@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaping - Pods</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="stylesheet" href="../Issets/css/main.css"/>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -27,12 +28,16 @@
             <p>Nicotina 5%</p>
             <h2>S/.59.00 </h2>
             <div class="container-butt">
-              <button>Añadir</button>
-              <button>Cantidad</button>
+              <button type="button" class="button-añadir">
+                <span>Añadir</span>
+                <i class="bx bx-check"></i>
+              </button>
+              <button type="button" class="button-cantidad">Cantidad</button>
             </div>
           </div>
           </div>
         </div>
+        
         <div class="swiper-slide">
           <div class="imagenpods">
             <img src="../Issets/img/Pods/black-twist.webp" alt="" />
@@ -40,11 +45,17 @@
             <h1>Black Twist</h1>
             <p>Nicotina 5%</p>
             <h2>S/.59.00 </h2>
-            <button>Añadir</button>
-            <button>Cantidad</button>
+            <div class="container-butt">
+              <button type="button" class="button-añadir">
+                <span>Añadir</span>
+                <i class="bx bx-check"></i>
+              </button>
+              <button type="button" class="button-cantidad">Cantidad</button>
+            </div>
           </div>
           </div>
         </div>
+        
         <div class="swiper-slide">
           <div class="imagenpods">
             <img src="../Issets/img/Pods/black-twist.webp" alt="" />
@@ -52,15 +63,22 @@
             <h1>Black Twist</h1>
             <p>Nicotina 5%</p>
             <h2>S/.59.00 </h2>
-            <button>Añadir</button>
-            <button>Cantidad</button>
+            <div class="container-butt">
+              <button type="button" class="button-añadir">
+                <span>Añadir</span>
+                <i class="bx bx-check"></i>
+              </button>
+              <button type="button" class="button-cantidad">Cantidad</button>
+            </div>
           </div>
           </div>
         </div>
       </div>
+
+
+      
         <button type="button" class="swiper-button-next"></button>
         <button type="button" class="swiper-button-prev"></button>
-      <div class="swiper-pagination"></div>
     </div>
   </main>
   
@@ -68,9 +86,13 @@
   <div>
   </div>
 
-  <!-- Modals  -->
-  <div>
-  </div>
+  <!-- ================ Modals ================================  -->
+    <!-- Login  -->
+    <div id="loginModal" style="display: none;">
+      <?php
+        require 'Login.php';
+      ?>
+    </div>
 
   <!-- Redes Sociales -->
   <div class="icons-redes">
@@ -100,6 +122,16 @@
       el: ".swiper-pagination",
     },
   });
+
+
+  const loginButton = document.getElementById('loginButton');
+    const loginModal = document.getElementById('loginModal');
+
+  // Asigna un controlador de eventos al botón de inicio de sesión
+    loginButton.addEventListener('click', function() {
+  // Muestra el modal
+    loginModal.style.display = 'block';
+    });
 </script>
 </body>
 </html>
