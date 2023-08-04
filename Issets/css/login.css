@@ -10,6 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: #232323;
 }
 .wrapper{
     position: relative;
@@ -21,7 +22,16 @@ body{
     overflow: hidden;
     background: #081b29;
 }
-
+.regresar {
+    position: absolute;
+    top: 40px; /* Ajusta el valor según la posición vertical deseada */
+    left: 40px; /* Ajusta el valor según la posición horizontal deseada */
+}
+.regresar a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
 .wrapper .form-box{
     position: absolute;
     top: 0;
