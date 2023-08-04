@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaping - Pods</title>
   <link rel="stylesheet" href="../Issets/css/main.css"/>
+  
+
 </head>
 <body>
   
   <!-- Carrusel  -->
   <main>
-  <div class="btnl">
-    <button class="boton login">login</button>
-    </div>
+  <button id="loginButton">Iniciar sesión</button>
   </main>
   
   <!-- Carrito  -->
@@ -22,9 +22,25 @@
   </div>
 
   <!-- Modals  -->
-  <div>
+  <div id="loginModal" style="display: none;">
+  <?php
+    require 'Login.php';
+  ?>
+    
+
+</div>
 
   </div>
+  <script>
+    const loginButton = document.getElementById('loginButton');
+    const loginModal = document.getElementById('loginModal');
+
+  // Asigna un controlador de eventos al botón de inicio de sesión
+    loginButton.addEventListener('click', function() {
+  // Muestra el modal
+    loginModal.style.display = 'block';
+    });
+  </script>
 
   <!-- Redes Sociales -->
   <div>
