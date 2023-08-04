@@ -15,7 +15,9 @@ header {
     background-color: #232323;
     padding: 10px;
 }
-
+.nav-menu-btn{
+    display: none;
+}
 .header-container { /* Nueva clase "header-container" */
     width: 100%; /* El header ocupará todo el ancho */
     position: fixed; /* Fijamos el header en la parte superior */
@@ -134,10 +136,9 @@ img{
     }
 
     /* Additional styles for mobile devices */
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
+    .search{
+        
+        display: none;
     }
 
     .logo {
@@ -148,7 +149,34 @@ img{
         margin-top: 10px;
     }
     
-    .container-icons{
+    .nav-close-btn{
+        position: absolute;
+        background: url(../images/close-btn.png)no-repeat;
+        filter: var(--color-filter);
+        background-size: 12px;
+        background-position: center;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+    
+    .nav-menu-btn{
+        margin-top: -15px;
+        background: url(../img/menu-btn.png)no-repeat;
+        transform: scaleX(-1);
+        filter: var(--color-filter);
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: block;
+    }
+    
+    .container-icons .icons > *:not(.carrito) {
         display: none;
     }
 
