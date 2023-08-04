@@ -1,0 +1,292 @@
+/* Globales */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 90%;
+}
+body {
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #232428;
+}
+
+.btn{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    gap: 2px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #000;
+}
+
+.img-vapers {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 50px;
+    width: 100%;
+    max-width: 50px;
+    
+}
+
+.img-pods {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 200px;
+    
+}
+
+/* ========= CARRUSEL =======*/
+.carousel .swiper{
+    width: 750px;
+    position: relative; 
+    transition:  .3s ease;
+}
+.carousel .swiper-slide .imagenpods{
+    display: flex;
+    flex-direction: row;
+}
+.carousel .swiper-slide img {
+    display: block;
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+.container-descrip{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-butt{
+    display: flex;
+    gap: 20px;
+}
+
+.carousel .swiper button {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: opacity 0.25s;
+}
+
+.carousel .swiper button:hover {
+    opacity: 0.8;
+}
+
+.carousel .swiper button::before,
+.carousel .swiper button::after {
+    font-size: 24px;
+}
+
+.carousel .swiper-button-prev {
+    left: 25px;
+}
+
+.carousel .swiper-button-next {
+    right: 25px;
+}
+
+.carousel .swiper-pagination-bullet {
+    background-color: #fff;
+}
+
+
+/* =========== REDES SOCIALES ============= */
+.icons-redes {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    padding: 20px;
+    top: 15%;
+}
+.icon {
+	display: flex;
+	width: 40px;
+    margin-bottom: 20px;
+	height: 40px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 50%;
+	outline: 2px solid #fff;
+	transition-property: outline-offset, outline-color, background-color;
+	transition-duration: 0.25s;
+    transition: all 300ms ease;
+}
+.icon:hover {
+	outline-offset: 4px;
+    margin-left: 0.3em;
+}
+.icon i {
+	margin: auto;
+}
+.icon:hover i {
+	animation: shake 0.25s;
+}
+.icon--instagram:hover {
+	background-image: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+	outline-color: #a02d76;
+}
+.icon--twitter:hover {
+	background-color: #1da1f2;
+	outline-color: #1da1f2;
+}
+.icon--linkedin:hover {
+	background-color: #0077b5;
+	outline-color: #0077b5;
+}
+.icon--github:hover {
+	background-color: #2ea44f;
+	outline-color: #2ea44f;
+}	
+@keyframes shake {
+	10% {
+		transform: rotate(15deg);
+	}
+	20% {
+		transform: rotate(-15deg);
+	}
+	30% {
+		transform: rotate(15deg);
+	}
+	40% {
+		transform: rotate(-15deg);
+	}
+}
+@media screen and (max-width: 800px){
+    
+    .content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .2s ease;
+    }
+    .title{
+        color: #7fe3c0;
+        font-family: 'Bowlby One', cursive;
+        font-size: 1.5em;
+        text-align: center;
+        transition: 2s ease;
+    }
+    .img-vapers {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 50px;
+        width: 100%;
+        max-width: 30px;
+        
+    }
+    
+    .img-pods {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        width: 100%;
+        max-width: 100px;
+    }
+    .btn{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        height: 200px;
+        width: 250px;
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s all;
+        cursor: pointer;
+    }
+    
+    .icons-redes{
+        display: none;
+    }
+}
+
+/*FARDYYYYYYYY*/
+.mySwiper .swiper-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    
+    box-sizing: content-box;
+}
+.swiper{
+    width: 750px;
+    position: relative; 
+    transition:  .3s ease;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.quadrate{
+cursor: pointer;
+height: 60px;
+width: 60px;
+margin: 0 10px;
+display: inline-block;
+transition: background-color 0.6s ease;
+background: transparent;
+border-radius: 8px;
+}
