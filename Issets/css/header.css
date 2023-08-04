@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 120vh;
     background-color: #232323;
 }
 header {
@@ -34,7 +34,7 @@ header {
 }
 
 img{
-    margin-left: 60px;
+    margin-left: 70px;
     margin-top: 20px;
     height: 60px;
     width: auto;
@@ -72,7 +72,7 @@ img{
 	color: #e3e3e3;
 }
 .search:focus-within input {
-	width: 200px;
+	width: 300px;
 }
 ::placeholder {
 	font: inherit;
@@ -95,15 +95,31 @@ img{
     }
 
     img{
-        margin-left: 120px;
+        margin-left: 70px;
         margin-top: 20px;
         height: 60px;
         width: auto;
     }
-    
-    .material-symbols-sharp {
-        font-size: 1.3rem;
+    .material-symbols-sharp{
+        width: 30px;
+        height: 30px;
     }
+}
+@media screen and (min-width: 768px) {
+    #modificar2 {
+        display: none;
+    }
+}   
+
+/* Estilos para mostrar el icono en pantallas más pequeñas (celular) */
+@media screen and (max-width: 767px) {
+    #modificar2 {
+        margin-left: 60px;
+    }
+    .span{
+        display: none;
+    }
+    
 }
 
 /*HAMBURGUESA*/
@@ -141,10 +157,15 @@ ul
     width: 100%;
 }
 .menu #modificar{
+    display: block;
     font-size: 2.4rem;
     color: white;
 }
 
+#modificar2{
+    font-size: 3.4rem;
+    color: white;
+}
 .nav
 {
     width: 100%;
@@ -159,7 +180,7 @@ ul
 .menu a
 {
     display: block;
-    padding: 30px;
+    margin: 30px;
     color: var(--white);
     font-size: 1.7rem;
     color: white;
@@ -173,7 +194,7 @@ ul
 .hamb
 {
     cursor: pointer;
-    float: right;
+    float: left;
     padding: 40px 20px;
 }
 
@@ -237,7 +258,7 @@ ul
     top:0;
 }
 
-@media (min-width: 768px)
+@media (min-width: 875px)
 {
     .nav
     {
