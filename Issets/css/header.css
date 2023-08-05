@@ -18,6 +18,7 @@ header {
     background-color: #232323;
     padding: 10px;
 }
+
 .header-container { /* Nueva clase "header-container" */
     width: 100%; /* El header ocupará todo el ancho */
     position: fixed; /* Fijamos el header en la parte superior */
@@ -25,15 +26,6 @@ header {
     background-color: #232323;
 }
 
-/* Estilos para el icono de lupa */
-.search-icon {
-    position: absolute;
-    right: 10px; /* Ajusta la posición del icono */
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999; /* Color del icono */
-    pointer-events: none; /* Evita que el icono sea interactivo */
-}
 
   /* Estilos para el icono de carrito y usuario */
 .icons {
@@ -42,49 +34,33 @@ header {
     margin: 15px;
 }
 
-.material-symbols-sharp {       
-    margin: 15px;
+
+.material-symbols-sharp {    
     width: 30px;
     height: 30px;
 }
-input{
-    width: 100%; /*cambio nuevo*/
-    padding: 10px;
-    padding-right: 45px;
-    border-radius: 20px;
-    border: 3px solid white;
-    outline: none;
-    font-size: 1rem;
-    color:#fff;
-    background-color: #232323;
-}
-button{
-    background-color: rgb(23, 23, 23);
-    padding: 12px 15px;
-    position: relative;
-    border: 3px solid white;
-    margin-left: -42px; 
-    border-radius: 0 20px 20px 0;
-    color: #fff;
+
+.icons .material-symbols-sharp{
+    margin: 15px;
     cursor: pointer;
 }
-button:hover{
-    background-color: rgba(darkslategray);
-}
-/* Barra de buscar testeo 1*/
-.search-container{
+
+.container-icons{
     display: flex;
     position: relative;
     align-items: center;
     max-width: 800px;
 }
+
 .logo{
     margin-left: 60px;
 }
+
 img{
     height: 60px;
     width: auto;
 }
+
 .icons span{
     margin-top: 15px;
     font-size: 2.4rem;
@@ -92,18 +68,45 @@ img{
     margin-left: calc(1rem - 4px);
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .search-container {
-        max-width: 500px;
-    }
-    input {
-        width: 300px;
-    }
-    .logo {
-        margin-left: 30px;
-    }
+/* estilos para la barra de busqueda */
+
+.search {
+	display: inline-flex;
+	align-items: center;
+	background-image: linear-gradient(45deg, #85d7da, #18e0b5);
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px;
 }
+.search :is(input, button) {
+	background: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+}
+.search__input {
+	width: 0;
+	transition: width 0.5s;
+}
+.search__button {
+	display: grid;
+	place-items: center;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	transition: color 0.25s;
+}
+.search__button:hover {
+	color: #e3e3e3;
+}
+.search:focus-within input {
+	width: 200px;
+}
+::placeholder {
+	font: inherit;
+	color: #e3e3e3;
+}
+
 
 /* Media Query for even smaller screens */
 @media (max-width: 480px) {
@@ -132,8 +135,13 @@ img{
     .icons {
         margin-top: 10px;
     }
+    
+    .container-icons{
+        display: none;
+    }
 
     .material-symbols-sharp {
         font-size: 1.3rem;
     }
 }
+
