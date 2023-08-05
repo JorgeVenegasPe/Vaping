@@ -17,21 +17,33 @@
   ?>
 
   <!-- Carrusel  -->
-  <main>
+  <main class="main">
     <div class="swiper carousel">
-      <div class="swiper-wrapper">
+      <div   class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="imagenpods">
+            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
+            <div class="container-descrip">
+              <h1>Black Twist</h1>
+              <p>Nicotina 5%</p>
+              <h2>S/.59.00 </h2>
+              <div class="container-butt">
+                <button type="button" class="button-cantidad Añadir" >Añadir</button>
+                <button type="button" class="button-cantidad">Cantidad</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="swiper-slide">
           <div class="imagenpods">
             <img src="../Issets/img/Pods/black-twist.webp" alt="" />
           <div class="container-descrip">
-            <h1>Black Twist</h1>
-            <p>Nicotina 5%</p>
-            <h2>S/.59.00 </h2>
+            <h1>Black Twister</h1>
+            <p>Nicotina 50%</p>
+            <h2>S/.79.00 </h2>
             <div class="container-butt">
-              <button type="button" class="button-añadir">
-                <span>Añadir</span>
-                <i class="bx bx-check"></i>
-              </button>
+              <button type="button" class="button-cantidad Añadir" >Añadir</button>
               <button type="button" class="button-cantidad">Cantidad</button>
             </div>
           </div>
@@ -42,41 +54,17 @@
           <div class="imagenpods">
             <img src="../Issets/img/Pods/black-twist.webp" alt="" />
           <div class="container-descrip">
-            <h1>Black Twist</h1>
-            <p>Nicotina 5%</p>
-            <h2>S/.59.00 </h2>
+            <h1>Black Twister 2</h1>
+            <p>Nicotina 53%</p>
+            <h2>S/.49.00 </h2>
             <div class="container-butt">
-              <button type="button" class="button-añadir">
-                <span>Añadir</span>
-                <i class="bx bx-check"></i>
-              </button>
-              <button type="button" class="button-cantidad">Cantidad</button>
-            </div>
-          </div>
-          </div>
-        </div>
-        
-        <div class="swiper-slide">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-          <div class="container-descrip">
-            <h1>Black Twist</h1>
-            <p>Nicotina 5%</p>
-            <h2>S/.59.00 </h2>
-            <div class="container-butt">
-              <button type="button" class="button-añadir">
-                <span>Añadir</span>
-                <i class="bx bx-check"></i>
-              </button>
+              <button type="button" class="button-cantidad Añadir" >Añadir</button>
               <button type="button" class="button-cantidad">Cantidad</button>
             </div>
           </div>
           </div>
         </div>
       </div>
-
-
-      
         <button type="button" class="swiper-button-next"></button>
         <button type="button" class="swiper-button-prev"></button>
     </div>
@@ -99,17 +87,37 @@
     <a href="#" class="icon icon--instagram">
       <i class="ri-instagram-line"></i>
     </a>
-    <a href="#" class="icon icon--twitter">
-      <i class="ri-twitter-line"></i>
+    <a href="#" class="icon icon--facebook">
+      <i class="ri-facebook-line"></i>
     </a>
-    <a href="#" class="icon icon--linkedin">
-      <i class="ri-linkedin-line"></i>
-    </a>
-    <a href="#" class="icon icon--github">
-      <i class="ri-github-line"></i>
+    <a href="#" class="icon icon--whatsapp">
+      <i class="ri-whatsapp-line"></i>
     </a>
   </div>
   
+<script>
+        const menuBtn = document.querySelector(".nav-menu-btn");
+        const closeBtn = document.querySelector(".nav-close-btn");
+        const navigation = document.querySelector(".container-icons");
+        const navItems = document.querySelectorAll(".icons a");
+        const mainItems = document.querySelector(".main");
+
+        menuBtn.addEventListener("click", () => {
+            navigation.classList.add("active");
+            mainItems.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            navigation.classList.remove("active");
+            mainItems.classList.remove("active");
+        });
+
+        navItems.forEach((navItem) => {
+            navItem.addEventListener("click", () => {
+                navigation.classList.remove("active");
+            });
+        });
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
 <script>
