@@ -28,7 +28,7 @@
 	        	    	</button>
 	        	    </form>
                     <a href="Login.php" >Iniciar Session</a>
-                    <a ><span class="material-symbols-sharp ii">import_contacts</span></a>
+                    <a ><span class="material-symbols-sharp ii ajuste">import_contacts</span></a>
                     <a class="iconossss">Libro de Reclamaciones</a>
                     <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste">person</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>

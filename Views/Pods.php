@@ -12,58 +12,37 @@
 </head>
 <body>
   <!-- Header  -->
-  <?php
-  require_once ('Header.php');
-  ?>
+    <?php
+    require("../Controllers/ControllerProducto.php");
+    $obj = new usernameControlerProducto();
+    $rows = $obj->VerProductoPods();
+    require 'Header.php'
+    ?>
 
   <!-- Carrusel  -->
   <main class="main">
     <div class="swiper carousel">
-      <div   class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-            <div class="container-descrip">
-              <h1>Black Twist</h1>
-              <p>Nicotina 5%</p>
-              <h2>S/.59.00 </h2>
-              <div class="container-butt">
-                <button type="button" class="button-cantidad Añadir" >Añadir</button>
-                <button type="button" class="button-cantidad">Cantidad</button>
+      <div class="swiper-wrapper">
+        <?php if ($rows):?>
+            <?php foreach ($rows as $row): ?>
+
+              <div class="swiper-slide">
+                <div class="imagenpods">
+                  <img height="50px" src="data:image/webp;base64,<?= base64_encode($row[3]) ?>"/>
+                  <div class="container-descrip">
+                    <h1><?=$row[2]?></h1>
+                    <p><?=$row[4]?></p>
+                    <h2>S/.<?=$row[5]?></h2>
+                    <div class="container-butt">
+                      <button type="button" class="button-cantidad Añadir" >Añadir</button>
+                      <button type="button" class="button-cantidad">Cantidad</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="swiper-slide">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-          <div class="container-descrip">
-            <h1>Black Twister</h1>
-            <p>Nicotina 50%</p>
-            <h2>S/.79.00 </h2>
-            <div class="container-butt">
-              <button type="button" class="button-cantidad Añadir" >Añadir</button>
-              <button type="button" class="button-cantidad">Cantidad</button>
-            </div>
-          </div>
-          </div>
-        </div>
-        
-        <div class="swiper-slide">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-          <div class="container-descrip">
-            <h1>Black Twister 2</h1>
-            <p>Nicotina 53%</p>
-            <h2>S/.49.00 </h2>
-            <div class="container-butt">
-              <button type="button" class="button-cantidad Añadir" >Añadir</button>
-              <button type="button" class="button-cantidad">Cantidad</button>
-            </div>
-          </div>
-          </div>
-        </div>
+            <?php endforeach;?>
+        <?php endif;?>
+
       </div>
         <button type="button" class="swiper-button-next"></button>
         <button type="button" class="swiper-button-prev"></button>
@@ -94,30 +73,7 @@
       <i class="ri-whatsapp-line"></i>
     </a>
   </div>
-  
-<script>
-        const menuBtn = document.querySelector(".nav-menu-btn");
-        const closeBtn = document.querySelector(".nav-close-btn");
-        const navigation = document.querySelector(".container-icons");
-        const navItems = document.querySelectorAll(".icons a");
-        const mainItems = document.querySelector(".main");
 
-        menuBtn.addEventListener("click", () => {
-            navigation.classList.add("active");
-            mainItems.classList.add("active");
-        });
-
-        closeBtn.addEventListener("click", () => {
-            navigation.classList.remove("active");
-            mainItems.classList.remove("active");
-        });
-
-        navItems.forEach((navItem) => {
-            navItem.addEventListener("click", () => {
-                navigation.classList.remove("active");
-            });
-        });
-    </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
 <script>
