@@ -34,10 +34,10 @@
                 <?php foreach ($rows as $row): ?>
                     <tr>
                         <td><?=$row[0]?></td>
-                        <td><?=$row[1]?></td>
-                        <td><img src="data:image/jpg;base64,<?= base64_encode($row[2]) ?>"></td>
-                        <td><?=$row[3]?></td>
-                        <td>$<?=number_format($row[4], 2)?></td>
+                        <td><?=$row[2]?></td>
+                        <td><img height="50px" src="data:image/webp;base64,<?= base64_encode($row[3]) ?>"></td>
+                        <td><?=$row[4]?></td>
+                        <td>$<?=number_format($row[5], 2)?></td>
                         <td><a onclick="openModal('<?=$row[0]?>')">Modificar</a></td>
                         <td><a href="../Crud/EliminarProducto.php?id=<?=$row[0]?>">Eliminar</a></td>
                     </tr>
@@ -50,17 +50,23 @@
                             <form action="../Crud/ModificarProducto.php" method="post" enctype="multipart/form-data">
                                 <h3>Modificar Producto</h3>
                                 <h4 for="nombreActualiado">nombreActualiado:</h4>
-                                <input type="text" name="nombreActualiado" id="nombreActualiado" placeholder="nombreActualiado..." value="<?= $user[1]?>" required>
+                                <input type="text" name="nombreActualiado" id="nombreActualiado" placeholder="nombreActualiado..." value="<?= $user[2]?>" required>
                                 
+                                <h4>Categoria</h4>
+                                <select name="IdCategoria" id="IdCategoria">
+                                    <option value="1">Pods</option>
+                                    <option value="2">Vapers</option>
+                                </select>
+
                                 <h4 for="imagenactualizado">imagenactualizado:</h4>
-                                <img height="80px" width="140px" src="data:image/jpg;base64,<?= base64_encode($user[2])?>" class="img-thumbnail" alt="imagenactualizado del producto">
-                                <input type="file" name="imagenactualizado" id="imagenactualizado" class="form-control-file mt-2" required>
-                                
+                                <img height="25%" width="25%" src="data:image/webp;base64,<?= base64_encode($user[3])?>">
+                                <input type="file" name="imagenactualizado" id="imagenactualizado">
+
                                 <h4 for="descripcionactualizado">Descripción:</h4>
-                                <textarea name="descripcionactualizado" id="descripcionactualizado" placeholder="Descripción del producto..." required><?=$user[3]?></textarea>
+                                <textarea name="descripcionactualizado" id="descripcionactualizado" placeholder="Descripción del producto..." required><?=$user[4]?></textarea>
                             
                                 <h4 for="precioactualizado">Precioactualizado:</h4>
-                                <input type="text" name="precioactualizado" id="precioactualizado" placeholder="Precioactualizado..." value="<?= $user[4]?>" required>
+                                <input type="text" name="precioactualizado" id="precioactualizado" placeholder="Precioactualizado..." value="<?= $user[5]?>" required>
 
                                 <input type="submit" value="Aceptar" class="buton">
                             </form>
@@ -80,6 +86,12 @@
                 <h4 for="nombre">Nombre:</h4>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto..." required>
 
+                <h4>Categoria</h4>
+                <select name="IdCategoria" id="IdCategoria">
+                    <option value="1">Pods</option>
+                    <option value="2">Vapers</option>
+                </select>
+
                 <h4 for="imagen">Imagen:</h4>
                 <input type="file" name="imagen" id="imagen" required>
 
@@ -88,6 +100,7 @@
 
                 <h4 for="precio">Precio:</h4>
                 <input type="text" name="precio" id="precio" placeholder="Precio del producto..." required>
+
 
                 <input class="buton" type="submit" value="Guardar Producto">
             </form>

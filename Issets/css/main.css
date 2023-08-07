@@ -86,14 +86,19 @@ body {
     position: relative; 
     transition:  .3s ease;
 }
+.swiper-wrapper{
+    align-items: center;
+}
 .swiper-slide .imagenpods{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .swiper-slide img {
     display: block;
-    width: 60%;
-    height: 60%;
+    width: 30%;
+    height: 30%;
     object-fit: cover;
     transition: opacity 0.3s;
 }

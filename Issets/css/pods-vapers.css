@@ -34,12 +34,6 @@ th, td {
 }
 
 
-img {
-    height: 80px;
-    width: 140px;
-    object-fit: cover;
-}
-
 a {
     text-decoration: none;
     cursor: pointer;

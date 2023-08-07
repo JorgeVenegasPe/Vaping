@@ -16,8 +16,28 @@ pagar.addEventListener("click", () => {
     metpago.classList.remove("active");
 });
 
+/* ===== HEADER ===========*/
+const menuBtn = document.querySelector(".nav-menu-btn");
+const closeBtn = document.querySelector(".nav-close-btn");
+const navigation = document.querySelector(".container-icons");
+const navItems = document.querySelectorAll(".icons a");
+const mainItems = document.querySelector(".main");
 
+menuBtn.addEventListener("click", () => {
+    navigation.classList.add("active");
+    mainItems.classList.add("active");
+});
 
+closeBtn.addEventListener("click", () => {
+    navigation.classList.remove("active");
+    mainItems.classList.remove("active");
+});
+
+navItems.forEach((navItem) => {
+    navItem.addEventListener("click", () => {
+        navigation.classList.remove("active");
+    });
+});
 
 
 
@@ -111,9 +131,11 @@ const showHTML = () => {
         metpago.classList.add('active');
         rowProduct.classList.add('hidden');
         cartTotal.classList.add('hidden');
+        mainItems.classList.remove("active");
     } else {
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
+        mainItems.classList.add("active");
         cartTotal.classList.remove('hidden');
     }
 
