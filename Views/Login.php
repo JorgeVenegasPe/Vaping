@@ -17,16 +17,16 @@
 
     <div class="form-box login">
         <h2 class="animation" style="--i:0; --j:21;">Login</h2>
-        <form action="#">
+        <form action="../Controllers/ControllerLogin.php" method="post">
             <div class="input-box animation"
              style="--i:1; --j:22;">
-                <input type="text" required>
+                <input type="text" name="usu" id="usu" required>
                 <label>Username</label>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box animation" 
             style="--i:2; --j:23;">
-                <input type="password" required>
+                <input type="password" name="pass" id="pass" required>
                 <label>Password</label>
                 <i class='bx bxs-lock-alt'></i>
             </div>

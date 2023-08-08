@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +81,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
 <script>
+  
   var swiper = new Swiper(".carousel", {
     navigation: {
       nextEl: ".swiper-button-next",
@@ -97,5 +102,11 @@
     loginModal.style.display = 'block';
     });
 </script>
+
 </body>
 </html>
+<?php
+}else{
+  header("Location: Login.php");
+}
+?>
