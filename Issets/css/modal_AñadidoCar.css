@@ -1,0 +1,104 @@
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Fondo transparente */
+  z-index: 1;
+  animation: fadeInModal 0.5s ease-in-out; /* Efecto de entrada */
+  overflow: hidden;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.4); /* Sombra negra en círculo */
+  animation: fadeInContent 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efecto de entrada */
+}
+
+/* Estilos para la animación del visto bueno */
+.checkmark-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Tamaño ajustado */
+  height: 60px; /* Tamaño ajustado */
+  background-color: white;
+  border-radius: 50%;
+  animation: fadeIn 0.3s ease-in-out, fadeOut 1.3s ease-in-out 0.5s; /* Efecto de entrada y salida */
+}
+
+.checkmark {
+  width: 40px; /* Tamaño ajustado */
+  height: 40px; /* Tamaño ajustado */
+  fill: none;
+  stroke: green;
+  stroke-width: 2; /* Grosor ajustado */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: drawCheckmark 0.5s ease-in-out 0.3s, rotateCheckmark 2s linear 0.3s infinite, fadeOut 0.3s ease-in-out 1.5s; /* Efecto de dibujado, rotación y salida */
+}
+
+/* Efecto de rotación para el visto bueno */
+@keyframes rotateCheckmark {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efecto de entrada para el modal */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efecto de entrada para el contenido */
+@keyframes fadeInContent {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Efecto de salida para el contenido */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes drawCheckmark {
+  0%, 100% {
+    stroke-dasharray: 0, 80;
+  }
+  50% {
+    stroke-dasharray: 60, 80;
+  }
+}

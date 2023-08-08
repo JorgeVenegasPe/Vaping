@@ -1,7 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION['Nombre'])){
-?>
+<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +8,7 @@ if (isset($_SESSION['Nombre'])){
   <title>Vaping - Pods</title>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="stylesheet" href="../Issets/css/main.css"/>
+  <link rel="stylesheet" href="../Issets/css/modal_AñadidoCar.css"/>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
@@ -53,8 +51,18 @@ if (isset($_SESSION['Nombre'])){
     </div>
   </main>
   
-  <!-- Carrito  -->
-  <div>
+  <!-- Modal Añadido al Carrito -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      
+      <div class="checkmark-container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+      </div>
+      <p class="added-text"></p>
+    </div>
   </div>
 
   <!-- ================ Modals ================================  -->
@@ -78,8 +86,25 @@ if (isset($_SESSION['Nombre'])){
     </a>
   </div>
 
+
+    <!-- Chat Bot -->
+
+    <script type="text/javascript">(function () { 
+    var ldk = document.createElement('script'); 
+    ldk.type = 'text/javascript'; 
+    ldk.async = true; 
+    ldk.src = 'https://s.cliengo.com/weboptimizer/64d053e1e3a858003279d24e/64d053e3e3a858003279d251.js?platform=view_installation_code'; 
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(ldk, s); 
+  })();</script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
+<script src="../Issets/js/modal_AñadidoCar.js"></script>
+
+
 <script>
   
   var swiper = new Swiper(".carousel", {
@@ -105,8 +130,3 @@ if (isset($_SESSION['Nombre'])){
 
 </body>
 </html>
-<?php
-}else{
-  header("Location: Login.php");
-}
-?>

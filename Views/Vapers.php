@@ -32,6 +32,19 @@
   <div>
 
   </div>
+
+    <!-- Chat Bot -->
+
+    <script type="text/javascript">(function () { 
+    var ldk = document.createElement('script'); 
+    ldk.type = 'text/javascript'; 
+    ldk.async = true; 
+    ldk.src = 'https://s.cliengo.com/weboptimizer/64d053e1e3a858003279d24e/64d053e3e3a858003279d251.js?platform=view_installation_code'; 
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(ldk, s); 
+  })();</script>
+
+
   
 </body>
 </html>
