@@ -21,20 +21,21 @@
             <div class="container-icons">
                 <div class="icons">
                     <div class="nav-close-btn"></div>
-	        	    <form class="search">
+	        	    <form class="search a">
 	        	    	<input type="text" placeholder="Search" class="search__input"/>
 	        	    	<button type="button" class="search__button">
                             <span class="material-symbols-sharp buscador">search</span>
 	        	    	</button>
 	        	    </form>
-                    <a href="Login.php" >Iniciar Session</a>
-                    <a ><span class="material-symbols-sharp ii ajuste">import_contacts</span></a>
-                    <a class="iconossss">Libro de Reclamaciones</a>
-                    <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste">person</span></a>
+					<a href="" style="margin: 0 20px;">Productos</a>
+                    <a href="Login.php" class="a">Iniciar Session</a>
+                    <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste ">person</span></a>
+                    <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
+                    <a class="iconossss" href="#">Cerrar Session</a>
                 </div>
             </div>
-            <div class="container-iconos">
+            <div class="container-iconos a">
 		        <div class="container-cart-icon">
                     <span class="material-symbols-sharp ii carrito">shopping_cart</span>
                     <div class="count-products">
@@ -74,12 +75,6 @@
           				    <button class="button-metod-pago pagar">Pagar</button>
           				</div>
 						<div class="metodos-pago active">
-						<p style="text-align:center;">Metodos de Pago:</p>
-          				    <div class="metodos">
-          				      <a><img class="yape" src="../Issets/img/LogoTipo/LogoYape.png"></a>
-          				      <a><img class="visa" src="../Issets/img/LogoTipo/LogoVisa.png"></a>
-          				      <a><img class="plin" src="../Issets/img/LogoTipo/LogoPlin.png"></a>
-          				    </div>
           				</div>
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>

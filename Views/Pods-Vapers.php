@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,11 @@
     $rows = $obj->VerProducto();
     require 'Header.php'
     ?>
-
+    <style>
+        .a{
+            display: none;
+        }
+    </style>
     <div class="Container">
         <h2>Lista de Productos</h2>
         <a class="buton">Nuevo Producto</a><br><br>
@@ -106,7 +114,7 @@
             </form>
         </div>
     </div>
-    
+<script src="../Issets/js/main.js"></script>
 <script>
 const serviceModals = document.querySelectorAll(".modalform");
 const learnmoreBtns = document.querySelectorAll(".buton");
@@ -143,3 +151,8 @@ function closeModal(id) {
 </script>
 </body>
 </html>
+<?php
+}else{
+  header("Location: Login.php");
+}
+?>

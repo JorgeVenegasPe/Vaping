@@ -74,7 +74,7 @@ const countProducts = document.querySelector('#contador-productos');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
 const DOMbotonVaciar = document.querySelector('#vaciar');
-
+const miLocalStorage = window.localStorage;
 const productsList = document.querySelector('.swiper-wrapper');
 
 productsList.addEventListener('click', e => {
@@ -93,6 +93,7 @@ productsList.addEventListener('click', e => {
         );
 
         if (exists) {
+        guardarCarritoEnLocalStorage();
             const updatedProducts = allProducts.map(product => {
                 if (product.title === infoProduct.title) {
                     product.quantity++;
@@ -107,6 +108,8 @@ productsList.addEventListener('click', e => {
         }
 
         showHTML();
+        
+        guardarCarritoEnLocalStorage();
     }
 });
 rowProduct.addEventListener('click', e => {
@@ -121,6 +124,7 @@ rowProduct.addEventListener('click', e => {
 		console.log(allProducts);
 
 		showHTML();
+        guardarCarritoEnLocalStorage();
 	}
 });
 
@@ -159,20 +163,17 @@ const showHTML = () => {
                 <span class="precio-producto-carrito">S/.${totalPricePerProduct}</span>
             </div>
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="icon-close"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                />
-            </svg>
-        `;
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="icon-close">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"/>
+                </svg>`;
 
         rowProduct.append(containerProduct);
 
@@ -184,9 +185,23 @@ const showHTML = () => {
     countProducts.innerText = totalOfProducts;
 };
 
+cargarCarritoDeLocalStorage()
+function guardarCarritoEnLocalStorage () {
+    miLocalStorage.setItem('carrito', JSON.stringify(allProducts));
+    
+}
 
-
-
+function cargarCarritoDeLocalStorage () {
+    // ¿Existe un carrito previo guardado en LocalStorage?
+    if (miLocalStorage.getItem('carrito') !== null) {
+        // Carga la información
+        allProducts = JSON.parse(miLocalStorage.getItem('carrito'));
+        console.log(allProducts)
+    }
+    else{
+        //console.log("csdcsdc")
+    }
+}
 
 function vaciarca() {
     allProducts=[];
