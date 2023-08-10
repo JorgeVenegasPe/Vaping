@@ -29,7 +29,7 @@
 	        	    </form>
 					<a href="" style="margin: 0 20px;">Productos</a>
                     <a href="Login.php" class="a">Iniciar Session</a>
-                    <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste ">person</span></a>
+                    <a id="perfilBtn" class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
                     <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
                     <a class="iconossss" href="#">Cerrar Session</a>
@@ -68,11 +68,11 @@
 					<div class="cart-total">
 						<div style="display:flex; flex-direction:row">
 							<h3>Total :</h3>
-							<span class="total-pagar" id="total-pagar">$0</span>
+							<span class="total-pagar" id="total-pagar">S/0</span>
 						</div>
           				<div class="container-butt">
           				    <button class="button-metod-pago" id="vaciar">Vaciar carrito</button>
-          				    <button class="button-metod-pago pagar">Pagar</button>
+          				    <button class="button-metod-pago pagar" id="btn-continuar-pago">Pagar</a>
           				</div>
 						<div class="metodos-pago active">
           				</div>
@@ -83,5 +83,6 @@
             </div>
         </div>
     </header>
+	<?php require 'Ajustes.php'?>
 </body>
 </html>

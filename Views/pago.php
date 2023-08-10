@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Issets/css/main.css">
+    <link rel="stylesheet" href="../Issets/css/main.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Pagos</title>
 </head>
 <body>
@@ -11,43 +12,57 @@
         .a{
             display: none;
         }
+        .container-butt{
+            display: flex;
+            justify-content: space-between;   
+        }
     </style>
   <!-- Header  -->
-    <div class="container-cart-products hidden-cart">
-        <div class="row-product hidden">
-            <div class="cart-product">
-                <div class="info-cart-product">
-                    <span class="cantidad-producto-carrito"></span>
-                    <p class="titulo-producto-carrito"></p>
-                    <span class="precio-producto-carrito"></span>
-                </div>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="icon-close">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </div>
-        </div>
+  <?php
+    require 'Header.php'
+  ?>
+<main>
+    <div class="container-productos-pago" id="productos-en-pago">
 
-        <div class="cart-total">
-            <div style="display:flex; flex-direction:row">
-                <h3>Total :</h3>
-                <span class="total-pagar" id="total-pagar">$0</span>
-            </div>
-              <div class="container-butt">
-                  <button class="button-metod-pago" id="vaciar">Vaciar carrito</button>
-                  <a href="pago.php" class="button-metod-pago pagar">Pagar</a>
-              </div>
+        <?php
+        // Recibir y mostrar los productos enviados mediante POST
+        if (isset($_POST['productos'])) {
+            $productos = json_decode($_POST['productos'], true);
+            foreach ($productos as $producto) {
+                ?>
+                <div class="producto-en-pago">
+                    <div class="products">  
+                        <p><?=$producto['quantity'] ?></p>
+                        <h3><?=$producto['title'] ?></h3>
+                    </div>
+                    <?php
+                    $Total = intval($producto['quantity']) * intval(substr($producto['price'], 3));;
+                    ?>
+                <p>S/ <?= $Total ?>.00</p>
+                </div>
+                <?php
+                
+            }
+            // Obtener el valor de valorTotal
+            $valorTotal = isset($_POST['valorTotal']) ? $_POST['valorTotal'] : '0';
+            }
+        ?>
+        <div class="total">
+            <h2>Total: </h2><span><?= $valorTotal ?></span>
         </div>
-        <p class="cart-empty">El carrito está vacío</p>
     </div>
+    <div class="container-butt">
+        <button class="button-T">
+            <i class="ri-store-fill"></i>
+            <p class="text">Recojo en tienda</p>
+        </button>
+        <button class="button-T">
+            <i class="ri-truck-line"></i>
+            <p class="text">Delivery</p>
+        </button>
+    </div>
+</main>
+
     <script src="../Issets/js/main.js"></script>
 </body>
 </html>

@@ -316,7 +316,70 @@ body {
     }
 }
 
+.container-productos-pago{
+    background-color: #fff;
+    width: 450px;
+}
+
+.producto-en-pago{
+    padding: 20px;
+    color: #090909;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+.products{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    gap: 20px;
+}
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    padding: 20px;
+}
 
 
 
+.container-butt .button-T {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+ .container-butt .button-T .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+  
+ .container-butt  .button-T i {
+    transition: 400ms;
+    color: white;
+    font-size: 1.2em;
+  }
+  
+ .container-butt  .button-T:hover {
+    background-color: white;
+  }
+  
+ .container-butt  .button-T:hover .text{
+    color: #181717;
+  }
+  
+ .container-butt .button-T:hover i{
+    color: #181717;
 
+  }
