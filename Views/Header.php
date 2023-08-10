@@ -52,7 +52,7 @@
                 </div>
             
 				
-                <div  class="container-cart-products hidden-cart">
+                <div id="myModal" class="container-cart-products hidden-cart">
 					<div class="row-product hidden">
 						<div  class="cart-product">
 							<div  class="info-cart-product">

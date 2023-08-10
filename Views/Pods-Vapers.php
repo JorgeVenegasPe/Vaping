@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,3 +151,8 @@ function closeModal(id) {
 </script>
 </body>
 </html>
+<?php
+}else{
+  header("Location: Login.php");
+}
+?>

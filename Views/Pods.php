@@ -88,6 +88,34 @@
   </div>
 
 
+
+
+  <!-- Botón Flotante -->
+
+  <div class="container">
+        <input type="checkbox" id="btn-mas">
+        <div class="class">
+            <a href="#" class="icon-link">
+								<i class="ri-secure-payment-line"></i>
+                <span class="icon-text">Terminos y Condiciones </span>
+            </a>
+            <a href="#" class="icon-link">
+                <i class="ri-book-open-fill"></i>
+                <span class="icon-text">Libro de Reclamación</span>
+            </a>
+            <a href="#" class="icon-link">
+                <i class="ri-shield-fill"></i>
+                <span class="icon-text">Politicas de Privacidad</span>
+            </a>
+        </div>
+        <div class="btn-mas">
+            <label for="btn-mas" class="ri-add-line"></label>
+        </div>
+    </div>
+
+
+
+
     <!-- Chat Bot -->
 
     <script type="text/javascript">(function () { 
@@ -99,6 +127,8 @@
     s.parentNode.insertBefore(ldk, s); 
   })();</script>
 
+
+   
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

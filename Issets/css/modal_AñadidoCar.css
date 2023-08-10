@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.modal.closing {
+  animation: whirlOutModal 0.5s ease-in-out forwards; /* Efecto de torbellino solo en la salida */
+}
+
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -38,7 +42,6 @@
   height: 60px; /* Tamaño ajustado */
   background-color: white;
   border-radius: 50%;
-  animation: fadeIn 0.3s ease-in-out, fadeOut 1.3s ease-in-out 0.5s; /* Efecto de entrada y salida */
 }
 
 .checkmark {
@@ -49,7 +52,7 @@
   stroke-width: 2; /* Grosor ajustado */
   stroke-linecap: round;
   stroke-linejoin: round;
-  animation: drawCheckmark 0.5s ease-in-out 0.3s, rotateCheckmark 2s linear 0.3s infinite, fadeOut 0.3s ease-in-out 1.5s; /* Efecto de dibujado, rotación y salida */
+  animation: drawCheckmark 0.5s ease-in-out 0.3s, rotateCheckmark 2s linear 0.3s infinite;
 }
 
 /* Efecto de rotación para el visto bueno */
@@ -84,21 +87,14 @@
   }
 }
 
-/* Efecto de salida para el contenido */
-@keyframes fadeOut {
+/* Efecto de cierre de torbellino solo para la salida del modal */
+@keyframes whirlOutModal {
   from {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
   to {
     opacity: 0;
-  }
-}
-
-@keyframes drawCheckmark {
-  0%, 100% {
-    stroke-dasharray: 0, 80;
-  }
-  50% {
-    stroke-dasharray: 60, 80;
+    transform: translate(-50%, -50%) scale(0.8) rotate(360deg);
   }
 }
