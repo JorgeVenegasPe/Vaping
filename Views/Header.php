@@ -27,7 +27,15 @@
                             <span class="material-symbols-sharp buscador">search</span>
 	        	    	</button>
 	        	    </form>
-					<a href="" style="margin: 0 20px;">Productos</a>
+					
+                    <div class="menu">
+                    <a href="#" class="menu-trigger">Productos</a>
+                    <ul class="submenu">
+                        <li><a href="Pods.php">Pods</a></li>
+                        <li><a href="Vapers.php">Vapers</a></li>
+                    </ul>
+                </div>
+                    
                     <a href="Login.php" class="a">Iniciar Session</a>
                     <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste ">person</span></a>
                     <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
@@ -42,10 +50,12 @@
 		        	    <span id="contador-productos">0</span>
 		            </div>
                 </div>
-                <div class="container-cart-products hidden-cart">
+            
+				
+                <div  class="container-cart-products hidden-cart">
 					<div class="row-product hidden">
-						<div class="cart-product">
-							<div class="info-cart-product">
+						<div  class="cart-product">
+							<div  class="info-cart-product">
 								<span class="cantidad-producto-carrito"></span>
 								<p class="titulo-producto-carrito"></p>
 								<span class="precio-producto-carrito"></span>
@@ -78,10 +88,15 @@
           				</div>
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
-			    </div>
-				
+			  </div>
+
+
+
             </div>
         </div>
     </header>
+
+
+  
 </body>
 </html>

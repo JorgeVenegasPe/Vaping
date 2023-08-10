@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const openModalButton = document.getElementById('openModal');
     const closeModalButton = document.getElementById('closeModal');
-    const modal = document.getElementById('myModal');
     const checkmarkContainer = document.querySelector('.checkmark-container');
     const addedText = document.querySelector('.added-text');
   

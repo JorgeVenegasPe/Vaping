@@ -79,13 +79,22 @@ body {
 }
 
 
+
 /* ========= CARRUSEL =======*/
 
 .swiper {
     width: 750px;
     position: relative; 
     transition:  .3s ease;
+  
 }
+.main-active{
+
+    z-index: 10;
+}
+
+
+
 .swiper-wrapper{
     align-items: center;
 }
@@ -300,13 +309,16 @@ body {
         transition: 0.5s all;
         cursor: pointer;
     }
+
     .swiper {
         width: 350px;
         transition:  .3s ease;
     }
+
     .icons-redes{
         display: none;
     }
+    
     .swiper-slide .imagenpods{
         display: flex;
         flex-direction: column;

@@ -36,7 +36,7 @@
                     <p><?=$row[4]?></p>
                     <h2>S/.<?=$row[5]?></h2>
                     <div class="container-butt">
-                      <button type="button" class="button-cantidad Añadir" >Añadir</button>
+                      <button type="button" class="button-cantidad Añadir">Añadir</button>
                       <button type="button" class="button-cantidad">Cantidad</button>
                     </div>
                   </div>
@@ -66,6 +66,7 @@
   </div>
 
   <!-- ================ Modals ================================  -->
+
     <!-- Login  -->
     <div id="loginModal" style="display: none;">
       <?php

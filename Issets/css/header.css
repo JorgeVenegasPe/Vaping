@@ -14,7 +14,14 @@ header {
     justify-content: space-between;
     background-color: #232323;
     padding: 10px;
+  
 }
+
+.header-active{
+    z-index: -10;
+}
+
+
 .nav-menu-btn{
     display: none;
 }
@@ -23,6 +30,7 @@ header {
     position: fixed; /* Fijamos el header en la parte superior */
     top: 0;
     background-color: #232323;
+    z-index: 0;
 }
 
 
@@ -32,6 +40,7 @@ header {
     align-items: center;
     margin: 15px;
     gap: 10px;
+    position: relative;
 }
 
 .icons a{
@@ -253,11 +262,13 @@ header {
     right: 0;
     background-color: #fff;
     width: 400px;
-    z-index: 9999999;
+    /* z-index: 1000; */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px;
     
 }
+
+
 
 .cart-product{
     display: flex;
@@ -392,4 +403,38 @@ header {
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
+}
+
+
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-trigger {
+    display: inline-block;
+    margin: 0 20px;
+        gap: 8px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 15%;
+    width: 140px;
+    background-color: #2e2d2d;
+    border: 1px solid #202020;
+    padding: 10px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul , li{
+    list-style: none;
+}
+
+.menu:hover .submenu {
+    display: block;
 }
