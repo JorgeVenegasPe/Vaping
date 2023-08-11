@@ -36,7 +36,7 @@
                 	</div>
                     <a href="Login.php" class="a">Iniciar Session</a>
                     <a id="perfilBtn" class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
-                    <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
+
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
                     <a class="iconossss" href="#">Cerrar Session</a>
                 </div>

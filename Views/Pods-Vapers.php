@@ -16,7 +16,7 @@ if (isset($_SESSION['Nombre'])){
     require("../Controllers/ControllerProducto.php");
     $obj = new usernameControlerProducto();
     $rows = $obj->VerProducto();
-    require 'Header.php'
+    require 'Header-log.php'
     ?>
     <style>
         .a{
