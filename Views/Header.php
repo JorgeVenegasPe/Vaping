@@ -27,7 +27,13 @@
                             <span class="material-symbols-sharp buscador">search</span>
 	        	    	</button>
 	        	    </form>
-					<a href="" style="margin: 0 20px;">Productos</a>
+					<div class="menu">
+                    	<a class="menu-trigger">Productos</a>
+                    	<ul class="submenu">
+                    	    <li><a href="Pods.php">Pods</a></li>
+                    	    <li><a href="Vapers.php">Vapers</a></li>
+                    	</ul>
+                	</div>
                     <a href="Login.php" class="a">Iniciar Session</a>
                     <a id="perfilBtn" class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
                     <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
@@ -46,6 +52,7 @@
 					<div class="row-product hidden">
 						<div class="cart-product">
 							<div class="info-cart-product">
+								<img class="imagen-producto-carrito">
 								<span class="cantidad-producto-carrito"></span>
 								<p class="titulo-producto-carrito"></p>
 								<span class="precio-producto-carrito"></span>

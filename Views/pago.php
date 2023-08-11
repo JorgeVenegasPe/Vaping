@@ -32,13 +32,14 @@
                 ?>
                 <div class="producto-en-pago">
                     <div class="products">  
+                        <img  src="<?=$producto['image'] ?>" alt="<?=$producto['title'] ?>">
                         <p><?=$producto['quantity'] ?></p>
                         <h3><?=$producto['title'] ?></h3>
                     </div>
                     <?php
                     $Total = intval($producto['quantity']) * intval(substr($producto['price'], 3));;
                     ?>
-                <p>S/ <?= $Total ?>.00</p>
+                <p>S/<?= $Total ?>.00</p>
                 </div>
                 <?php
                 

@@ -60,7 +60,6 @@ body {
 }
 
 
-
 /* ==== Button ==== */
 .container-butt{
     padding: 1em;
@@ -80,7 +79,6 @@ body {
 
 
 /* ========= CARRUSEL =======*/
-
 .swiper {
     width: 750px;
     position: relative; 
@@ -97,8 +95,8 @@ body {
 }
 .swiper-slide img {
     display: block;
-    width: 30%;
-    height: 30%;
+    width: 10%;
+    height: 10%;
     object-fit: cover;
     transition: opacity 0.3s;
 }
@@ -177,6 +175,113 @@ body {
 }
 
 
+/* ============== animacion de anadido al carrito =========================*/
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fondo transparente */
+    z-index: 1;
+    animation: fadeInModal 0.5s ease-in-out; /* Efecto de entrada */
+    overflow: hidden;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.4); /* Sombra negra en círculo */
+    animation: fadeInContent 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efecto de entrada */
+  }
+  
+  /* Estilos para la animación del visto bueno */
+  .checkmark-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Tamaño ajustado */
+    height: 60px; /* Tamaño ajustado */
+    background-color: white;
+    border-radius: 50%;
+    animation: fadeIn 0.3s ease-in-out, fadeOut 1.3s ease-in-out 0.5s; /* Efecto de entrada y salida */
+  }
+  
+  .checkmark {
+    width: 40px; /* Tamaño ajustado */
+    height: 40px; /* Tamaño ajustado */
+    fill: none;
+    stroke: green;
+    stroke-width: 2; /* Grosor ajustado */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: drawCheckmark 0.5s ease-in-out 0.3s, fadeOut 0.3s ease-in-out 1.5s; /* Efecto de dibujado, rotación y salida */
+  }
+  
+  /* Efecto de rotación para el visto bueno */
+  @keyframes rotateCheckmark {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Efecto de entrada para el modal */
+  @keyframes fadeInModal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Efecto de entrada para el contenido */
+  @keyframes fadeInContent {
+    from {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Efecto de salida para el contenido */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes drawCheckmark {
+    0%, 100% {
+      stroke-dasharray: 0, 80;
+    }
+    50% {
+      stroke-dasharray: 60, 80;
+    }
+  }
+  
+
 
 /* =========== REDES SOCIALES ============= */
 .icons-redes {
@@ -187,13 +292,13 @@ body {
     padding: 20px;
     top: 15%;
 }
-.icon {
+.icons-redes .icon {
 	display: flex;
-	width: 40px;
+	width: 50px;
     margin-bottom: 20px;
-	height: 40px;
+	height: 50px;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 20px;
 	color: #fff;
 	border-radius: 50%;
 	outline: 2px solid #fff;
@@ -201,7 +306,7 @@ body {
 	transition-duration: 0.25s;
     transition: all 300ms ease;
 }
-.icon:hover {
+.icons-redes .icon:hover {
 	outline-offset: 4px;
     margin-left: 0.3em;
 }
@@ -231,6 +336,79 @@ body {
 	background-color: #00a884;
 	outline-color: #00a884;
 }	
+
+#btn-mas{
+    display: none;
+    z-index: 1;
+}
+
+.container{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 200px;
+
+}
+
+.class a, .btn-mas label{
+    display: block;
+    text-decoration: none;
+    background: #18e0b5;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+    overflow: hidden; 
+}
+
+.class a:hover{
+	background: #fff;
+	color: #18e0b5;
+    width: 100%;
+    height: 38px;
+    border-radius: 50px;   
+    padding: 6px 18px;
+    font-size: 16px;    
+    display: flex;    
+    justify-content: center;
+    align-items: center;    
+    box-shadow: 0 3px 12px #00000042;
+	gap:15px;
+}
+
+.class a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-mas:checked ~ .class a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-mas {
+    align-items: flex-start;
+}
+
+.btn-mas label{
+    cursor: pointer;
+    background: #18e0b5;
+    font-size: 23px;
+}
+
+#btn-mas:checked ~ .btn-mas label{
+    transform: rotate(135deg);
+    font-size: 25px;
+}
+
 @keyframes shake {
 	10% {
 		transform: rotate(15deg);
@@ -245,6 +423,80 @@ body {
 		transform: rotate(-15deg);
 	}
 }
+
+
+/* =============== Pago ============*/
+.container-productos-pago{
+    background-color: #fff;
+    width: 450px;
+}
+
+.producto-en-pago{
+    padding: 20px;
+    color: #090909;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+.products{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    gap: 20px;
+}
+.products img{
+    width: 10%;
+    height: 10%;
+} 
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    padding: 20px;
+}
+
+
+.container-butt .button-T {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+ .container-butt .button-T .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+  
+ .container-butt  .button-T i {
+    transition: 400ms;
+    color: white;
+    font-size: 1.2em;
+  }
+  
+ .container-butt  .button-T:hover {
+    background-color: white;
+  }
+  
+ .container-butt  .button-T:hover .text{
+    color: #181717;
+  }
+  
+ .container-butt .button-T:hover i{
+    color: #181717;
+
+  }
+
 
 
 
@@ -305,7 +557,14 @@ body {
         transition:  .3s ease;
     }
     .icons-redes{
-        display: none;
+        top: 8%;
+        margin-left: 0;
+        transition:  .3s ease;
+    }
+    .icon {
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
     }
     .swiper-slide .imagenpods{
         display: flex;
@@ -316,70 +575,4 @@ body {
     }
 }
 
-.container-productos-pago{
-    background-color: #fff;
-    width: 450px;
-}
 
-.producto-en-pago{
-    padding: 20px;
-    color: #090909;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
-}
-.products{
-    display: flex;
-    flex-direction: row;
-    align-items: center;    
-    gap: 20px;
-}
-.total{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;    
-    padding: 20px;
-}
-
-
-
-.container-butt .button-T {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 15px;
-    background-color: #181717;
-    outline: 3px #181717 solid;
-    outline-offset: -3px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: 400ms;
-  }
-  
- .container-butt .button-T .text {
-    color: white;
-    font-weight: 700;
-    font-size: 1em;
-    transition: 400ms;
-  }
-  
- .container-butt  .button-T i {
-    transition: 400ms;
-    color: white;
-    font-size: 1.2em;
-  }
-  
- .container-butt  .button-T:hover {
-    background-color: white;
-  }
-  
- .container-butt  .button-T:hover .text{
-    color: #181717;
-  }
-  
- .container-butt .button-T:hover i{
-    color: #181717;
-
-  }
