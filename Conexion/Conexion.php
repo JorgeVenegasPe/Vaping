@@ -1,5 +1,5 @@
 <?php
-class conexion{
+class Conexion{
     private $host="localhost";
     private $dbname="Vaping";
     private $user="root";
