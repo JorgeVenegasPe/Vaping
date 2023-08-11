@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #081b29;
+    background-color: #232323;
 }
 .wrapper{
     position: relative;
@@ -20,8 +20,18 @@ body{
     border: 2px solid #0ef;
     box-shadow: 0 0 25px #0ef;
     overflow: hidden;
+    background: #081b29;
 }
-
+.regresar {
+    position: absolute;
+    top: 40px; /* Ajusta el valor según la posición vertical deseada */
+    left: 40px; /* Ajusta el valor según la posición horizontal deseada */
+}
+.regresar a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
 .wrapper .form-box{
     position: absolute;
     top: 0;
@@ -266,3 +276,44 @@ body{
     transform: rotate(-11deg) skewY(-41deg);
     transition-delay: 1.2s;
 }
+
+/*arreglos para que el login sea responsiv*/
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+      width: 100%;
+      height: center;
+      max-width: 400px;
+    }
+    
+    .wrapper .form-box.login,
+    .wrapper .form-box.register {
+      width: 100%;
+      padding: 0 20px;
+    }
+    
+    .wrapper .info-text.login,
+    .wrapper .info-text.register {
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+    }
+    
+    .regresar {
+      top: 20px;
+      left: 20px;
+    }
+    
+    .info-text h2 {
+      font-size: 24px;
+    }
+    
+    .info-text p {
+      font-size: 14px;
+    }
+    
+    .input-box {
+      margin: 15px 0;
+    }
+  }
+

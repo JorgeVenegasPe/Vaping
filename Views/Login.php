@@ -8,6 +8,9 @@
     <title>Login</title>
 </head>
 <body>
+    <div class="regresar">
+        <a href="Pods.php">< Regresar</a>
+    </div>
 <div class="wrapper">
     <span class="bg-animate"></span>
     <span class="bg-animate2"></span>
@@ -84,5 +87,6 @@
     </div>
 </div>
 <script src="../Issets/js/login.js"></script>
+<script></script>
 </body>
 </html>
