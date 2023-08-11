@@ -89,6 +89,7 @@ productsList.addEventListener('click', e => {
             quantity: 1,
             title: productContainer.querySelector('h1').textContent,
             price: productContainer.querySelector('h2').textContent,
+            image: productContainer.querySelector('img').src,
         };
 
         const exists = allProducts.some(
@@ -158,6 +159,7 @@ const showHTML = () => {
 
         containerProduct.innerHTML = `
             <div class="info-cart-product">
+                <img src="${product.image}" alt="${product.title}" class="imagen-producto-carrito">
                 <span class="cantidad-producto-carrito">${product.quantity}</span>
                 <p class="titulo-producto-carrito">${product.title}</p>
                 <span class="precio-producto-carrito">S/${totalPricePerProduct}.00</span>
@@ -239,3 +241,51 @@ function irAPago() {
 // Asociar la función a algún evento, por ejemplo, cuando se hace clic en un botón "Continuar al pago"
 const btnContinuarPago = document.getElementById('btn-continuar-pago');
 btnContinuarPago.addEventListener('click', irAPago);
+
+
+
+
+// Animacion de añadido al carrito 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const modal = document.getElementById('myModal');
+    const checkmarkContainer = document.querySelector('.checkmark-container');
+    const addedText = document.querySelector('.added-text');
+  
+    const animateButtons = document.querySelectorAll('.Añadir');
+  
+    // Función para mostrar el modal con animación
+    const showModal = () => {
+      modal.style.display = 'block';
+      checkmarkContainer.style.display = 'flex';
+      addedText.innerText = 'Añadido al Carro';
+  
+      // Cerrar modal después de 5 segundos
+      setTimeout(() => {
+        closeModal();
+      }, 1000);
+    };
+  
+    // Función para ocultar el modal
+    const closeModal = () => {
+      modal.style.display = 'none';
+      checkmarkContainer.style.display = 'none';
+      addedText.innerText = '';
+    };
+  
+    // Abrir modal al hacer clic en el botón "Añadir"
+    animateButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        showModal();
+      });
+    });
+  
+    // Cerrar modal al hacer clic en el botón de cierre
+    closeModalButton.addEventListener('click', () => {
+      closeModal();
+    });
+    
+  });
+  

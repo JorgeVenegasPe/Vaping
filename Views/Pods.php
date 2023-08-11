@@ -28,9 +28,8 @@
             <?php foreach ($rows as $row): ?>
 
               <div class="swiper-slide">
-                <div class="imagenpods">
-                  <img height="50px" src="data:image/webp;base64,<?= base64_encode($row[3]) ?>"/>
                   <div class="container-descrip">
+                    <img height="50px" src="data:image/webp;base64,<?= base64_encode($row[3]) ?>"/>
                     <h1><?=$row[2]?></h1>
                     <p><?=$row[4]?></p>
                     <h2>S/.<?=$row[5]?></h2>
@@ -39,7 +38,6 @@
                       <button type="button" class="button-cantidad">Cantidad</button>
                     </div>
                   </div>
-                </div>
               </div>
             <?php endforeach;?>
         <?php endif;?>
@@ -50,8 +48,19 @@
     </div>
   </main>
   
-  <!-- Carrito  -->
-  <div>
+  
+  <!-- Modal Añadido al Carrito -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      
+      <div class="checkmark-container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+      </div>
+      <p class="added-text"></p>
+    </div>
   </div>
 
   <!-- ================ Modals ================================  -->
@@ -74,7 +83,39 @@
       <i class="ri-whatsapp-line"></i>
     </a>
   </div>
+  
+  <!-- Redes Sociales -->
 
+  <div class="container">
+        <input type="checkbox" id="btn-mas">
+        <div class="class">
+            <a href="#" class="icon-link">
+								<i class="ri-secure-payment-line"></i>
+                <span class="icon-text">Terminos y Condiciones </span>
+            </a>
+            <a href="#" class="icon-link">
+                <i class="ri-book-open-fill"></i>
+                <span class="icon-text">Libro de Reclamación</span>
+            </a>
+            <a href="#" class="icon-link">
+                <i class="ri-shield-fill"></i>
+                <span class="icon-text">Politicas de Privacidad</span>
+            </a>
+        </div>
+        <div class="btn-mas">
+            <label for="btn-mas" class="ri-add-line"></label>
+        </div>
+    </div>
+
+  <script type="text/javascript">(function () { 
+    var ldk = document.createElement('script'); 
+    ldk.type = 'text/javascript'; 
+    ldk.async = true; 
+    ldk.src = 'https://s.cliengo.com/weboptimizer/64d053e1e3a858003279d24e/64d053e3e3a858003279d251.js?platform=view_installation_code'; 
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(ldk, s); 
+  })();</script>
+  
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
 <script>

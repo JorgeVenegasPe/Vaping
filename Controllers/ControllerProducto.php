@@ -16,6 +16,9 @@ class usernameControlerProducto{
     public function VerProductoPods() {
         return ($this->model->VerProductoPods()) ?: false;
     }
+    public function VerProductoVapers() {
+        return ($this->model->VerProductoVapers()) ?: false;
+    }
     public function ShowProducto($id) {
         return ($this->model->ShowProducto($id)) ?: false;
     }
