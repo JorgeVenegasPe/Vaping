@@ -82,9 +82,8 @@ const productsList = document.querySelector('.swiper-wrapper');
 
 productsList.addEventListener('click', e => {
     if (e.target.classList.contains('Añadir')) {
-        const buttonContainer = e.target.closest('.container-butt'); // Buscar el contenedor más cercano
+        const buttonContainer = e.target.closest('.container-descrip'); // Buscar el contenedor más cercano
         const productContainer = buttonContainer.parentElement;
-
         const infoProduct = {
             quantity: 1,
             title: productContainer.querySelector('h1').textContent,
@@ -289,3 +288,43 @@ document.addEventListener('DOMContentLoaded', () => {
     
   });
   
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Abrir Modal de Libro de reclamaciones
+
+    const serviceModalslb = document.querySelectorAll(".modalformlb");
+    const serviceModalscg = document.querySelectorAll(".modalformcg");
+    const libroreclamacionBtns = document.querySelectorAll(".libro-reclamacion");
+    const perfilBtns = document.querySelectorAll(".perfil");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modallb = function(modalClick){
+        serviceModalslb[modalClick].classList.add("active");
+    }
+    var modalcg = function(modalClick){
+        serviceModalscg[modalClick].classList.add("active");
+    }
+
+    libroreclamacionBtns.forEach((libroreclamacionBtn, i) => {
+        libroreclamacionBtn.addEventListener("click", () => {
+            modallb(i);
+      });
+    });
+
+    perfilBtns.forEach((perfilBtn, i) => {
+        perfilBtn.addEventListener("click", () => {
+            modalcg(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalslb.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModalscg.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
