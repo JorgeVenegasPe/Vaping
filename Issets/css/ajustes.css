@@ -38,7 +38,7 @@ body {
   text-align: center;
   font-size: 25px;
   margin-right: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; 
 }
 
 .contend_datos {
@@ -133,3 +133,7 @@ outline: none;
   transform: scale(1.2); 
   font-family: 'poppins,sans-serif';
 }
+
+
+
+

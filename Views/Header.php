@@ -9,8 +9,8 @@
 </head>
 <body>
     <header class="header-container">
-        
         <div class="nav-menu-btn"></div>  
+
         <!-- Logo a la izquierda -->
         <div class="logo">
             <img class="logots" src="../Issets/img/LogoTipo/NombreLogo.png" alt="Logo">
@@ -35,7 +35,7 @@
                     	</ul>
                 	</div>
                     <a href="Login.php" class="a">Iniciar Session</a>
-                    <a id="perfilBtn" class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
+                    <a class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
                     <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
                     <a class="iconossss" href="#">Cerrar Session</a>
@@ -86,10 +86,13 @@
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
 			    </div>
-				
             </div>
         </div>
     </header>
-	<?php require 'Ajustes.php'?>
+	<div class="service-modal modalformcg flex-center">
+    	<?php
+    	require 'Ajustes.php';
+   	 	?>
+  	</div>
 </body>
 </html>
