@@ -24,6 +24,13 @@
     font-weight: 800;
     letter-spacing: 2.5px;
     margin-left: 2%;
+    padding: 5px 0px 0px 10px;
+}
+.h3s{
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 3%;
 }
 /* Estilos del contenedor general */
 .conta {
@@ -66,7 +73,7 @@
     font-size: 18px;
     line-height: 1.6;
 }
-.fa-times{
+.blackbtn{
     color: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -81,19 +88,24 @@
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .containerTer {
-        width: 95%;
-        height: auto;
-        top: 10%;
-        left: 2.5%;
-        position: relative;
+    width: 85%;
+    height: 75%;
+    padding: 20px 30px; 
+    }
+
+    .Terminos{
+        display: contents;
     }
 
     .conta {
         padding: 20px;
+    width: 100%;
     }
 
     .itemTer {
         border-width: 1px;
+        width: 120%;
+        margin-left: -7%;
     }
 
     .head {
@@ -111,7 +123,14 @@
     }
 
     .h1s {
-        font-size: 28px;
+        font-size: 15px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .h3s {
+        padding: 8% 5% 5% 5%;
+        font-size: 13px;
         margin-left: 0;
         text-align: center;
     }

@@ -1,10 +1,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  <link rel="stylesheet" href="../Issets/css/TerminosCondiciones.css"/>
+  <link rel="stylesheet" href="../Issets/css/AjustesGeneral.css"/>
 
 <body>
     <div class="containerTer">
-    <i class="fas fa-times modal-close-btn"></i>
+    <i class="fas fa-times modal-close-btn blackbtn"></i>
       <div class="Terminos">
         <h1 class="h1s">TERMINOS Y CONDICIONES</h1>
         <div class="conta">
@@ -14,7 +14,9 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content1">
-              Bienvenido/a a la Exclusiva Tienda Vapers Cloud. Antes de realizar cualquier compra en nuestro sitio web, te pedimos que leas con atención los siguientes Términos y Condiciones. Al acceder y utilizar este sitio, estás aceptando cumplir con estos términos en su totalidad.
+              Bienvenido/a a la Exclusiva Tienda Vapers Cloud. Antes de realizar cualquier compra en nuestro sitio web, te pedimos 
+              que leas con atención los siguientes Términos y Condiciones. Al acceder y utilizar este sitio, estás aceptando cumplir 
+              con estos términos en su totalidad.
               </div>
           </div>
           <div class="itemTer">
@@ -23,7 +25,8 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content1">
-              Para realizar un pedido, debes tener al menos 18 años, no estar bajo tutela y no actuar en calidad de empresa. También debes tener una dirección de correo electrónico y una dirección de entrega en Perú.
+              Para realizar un pedido, debes tener al menos 18 años, no estar bajo tutela y no actuar en calidad de empresa. También 
+              debes tener una dirección de correo electrónico y una dirección de entrega en Perú.
               </div>
           </div>
           <div class="itemTer">
@@ -32,7 +35,9 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content2">
-              Todas las compras y transacciones que se efectúen a través de este sitio web están sujetas a un proceso de confirmación y verificación. Esto puede incluir la comprobación de existencias y disponibilidad de productos, validación de la forma de pago y cumplimiento de las condiciones requeridas por el medio de pago seleccionado. 
+              Todas las compras y transacciones que se efectúen a través de este sitio web están sujetas a un proceso de confirmación 
+              y verificación. Esto puede incluir la comprobación de existencias y disponibilidad de productos, validación de la forma de 
+              pago y cumplimiento de las condiciones requeridas por el medio de pago seleccionado. 
               </div>
           </div> 
           <div class="itemTer">
@@ -75,7 +80,10 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content1">
-              En el caso de productos que sean mercancías no-tangibles e irrevocables, no realizamos reembolsos después de haber enviado el producto. Es responsabilidad del comprador entender la descripción antes de la compra. Hacemos excepciones solo cuando la descripción no coincide con el producto. Algunos productos podrían tener garantía y opción de reembolso, lo cual se especificará al adquirirlos. La garantía cubre únicamente fallas de fábrica bajo uso adecuado.
+              En el caso de productos que sean mercancías no-tangibles e irrevocables, no realizamos reembolsos después de haber enviado 
+              el producto. Es responsabilidad del comprador entender la descripción antes de la compra. Hacemos excepciones solo cuando 
+              la descripción no coincide con el producto. Algunos productos podrían tener garantía y opción de reembolso, lo cual se 
+              especificará al adquirirlos. La garantía cubre únicamente fallas de fábrica bajo uso adecuado.
               </div>
           </div>
           <div class="itemTer">
@@ -84,7 +92,9 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content1">
-              La información personal que usted proporciona se maneja con la máxima seguridad y se rige por nuestra Política de Privacidad. Los datos ingresados por el usuario o en caso de validación de pedidos no serán compartidos con terceros, excepto en cumplimiento de una orden judicial o requisitos legales.
+              La información personal que usted proporciona se maneja con la máxima seguridad y se rige por nuestra Política de Privacidad. 
+              Los datos ingresados por el usuario o en caso de validación de pedidos no serán compartidos con terceros, excepto en cumplimiento 
+              de una orden judicial o requisitos legales.
               </div>
           </div>  
 
@@ -103,7 +113,8 @@
                   <i class="icone fas fa-plus"></i>
               </div>
               <div class="conteTer" id="content1">
-              Para cualquier pregunta o comentario relacionado con estos Términos y Condiciones, por favor contáctenos a través de [correo electrónico de contacto].
+              Para cualquier pregunta o comentario relacionado con estos Términos y Condiciones, por favor contáctenos a 
+              través de [correo electrónico de contacto].
               </div>
           </div>         
       </div>
@@ -114,11 +125,3 @@
       
     </div>
 </body>
-
-
-
-<!-- <div class="service-modal-body">
-    <i class="fas fa-times modal-close-btn"></i>
-      <h1>HOLA</h1>
-	</form>
-</div> -->

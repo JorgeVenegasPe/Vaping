@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
- // Abrir Modal y Contenedores de Terminos y Condiciones
+ // Abrir Modal de Terminos y Condiciones
 document.addEventListener("DOMContentLoaded", function() { 
     const serviceModalTer = document.querySelectorAll(".modalformTer");
     const serviceModaltc = document.querySelectorAll(".modalformtc");
@@ -368,6 +368,48 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Abrir modal de Politicas de Privacidad
+document.addEventListener("DOMContentLoaded", function() { 
+    const serviceModalTer = document.querySelectorAll(".modalformPol");
+    const serviceModaltc = document.querySelectorAll(".modalformtc");
+    const politicasprivacidadBtns = document.querySelectorAll(".politicas-privacidad");
+    const perfilTerBtns = document.querySelectorAll(".perfilTer");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modalTer = function(modalClicks){
+        serviceModalTer[modalClicks].classList.add("active");
+    }
+    var modaltc = function(modalClicks){
+        serviceModaltc[modalClicks].classList.add("active");
+    }
+
+    politicasprivacidadBtns.forEach((politicasprivacidadBtns, i) => {
+        politicasprivacidadBtns.addEventListener("click", () => {
+            modalTer(i);
+      });
+    });
+
+    perfilTerBtns.forEach((perfilTerBtns, i) => {
+        perfilTerBtns.addEventListener("click", () => {
+            modaltc(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalTer.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModaltc.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
+
+
+// Contenedores de Politicas de Privacidad & Terminos y Condiciones
 
 const items = document.querySelectorAll('.itemTer');
 

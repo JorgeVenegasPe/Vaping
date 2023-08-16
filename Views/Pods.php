@@ -96,7 +96,7 @@
           <span class="icon-text">Libro de Reclamación</span>
         </a>
 
-        <a class="icon-link">
+        <a href="#" class="icon-link politicas-privacidad">
           <i class="ri-shield-fill"></i>
           <span class="icon-text">Politicas de Privacidad</span>
         </a>
@@ -117,6 +117,12 @@
   <div class="service-modal modalformTer flex-center">
     <?php
     require 'Terminos_Condiciones.php';
+    ?>
+  </div>
+
+  <div class="service-modal modalformPol flex-center">
+    <?php
+    require 'Politicas_Privacidad.php';
     ?>
   </div>
 

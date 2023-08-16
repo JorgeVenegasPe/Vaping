@@ -1,6 +1,6 @@
 
 <div class="service-modal-body">
-    <i class="fas fa-times modal-close-btn"></i>
+    <i class="fas fa-times modal-close-btn" style="color: black;"></i>
     <form id="formulario" >
 		<h1>Libro de reclamaciones</h1>
         <br>

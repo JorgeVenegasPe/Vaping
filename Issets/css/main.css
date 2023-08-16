@@ -359,6 +359,7 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
+
 }
 
 
@@ -372,7 +373,7 @@ body{
     align-items: flex-start;
     justify-content: flex-end;
     height: 200px;
-
+    z-index: 10;
 }
 
 .class a, .btn-mas label{
@@ -738,6 +739,8 @@ input,textarea::placeholder {
 .service-modal.active{
     visibility: visible;
     opacity: 1;
+    height: 100%;
+    width: 100%;
 }
 
 .service-modal-body{
