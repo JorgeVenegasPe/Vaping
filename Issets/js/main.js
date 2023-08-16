@@ -9,6 +9,11 @@ function mostrarSecciones() {
     document.getElementById("section1").style.display = "block";
 };
 
+/* ===== Cargar el carrito  ===========*/
+document.addEventListener("DOMContentLoaded", function() {
+    showHTML();
+});
+
 
 const pagar = document.querySelector('.pagar');
 const metpago = document.querySelector('.metodos-pago');
@@ -44,17 +49,15 @@ navItems.forEach((navItem) => {
 
 /*===================== CARRITO ====================*/
 const btnCart = document.querySelector('.container-cart-icon');
-const containerCartProducts = document.querySelector(
-	'.container-cart-products'
-);
+const containerCartProducts = document.querySelector('.container-cart-products');
 
 btnCart.addEventListener('click', () => {
 	containerCartProducts.classList.toggle('hidden-cart')
+    mainItems.classList.toggle("active");
     if (!allProducts.length) {
 		cartEmpty.classList.remove('hidden');
 		rowProduct.classList.add('hidden');
 		cartTotal.classList.add('hidden');
-
 	}
 });
 
@@ -79,13 +82,13 @@ const productsList = document.querySelector('.swiper-wrapper');
 
 productsList.addEventListener('click', e => {
     if (e.target.classList.contains('Añadir')) {
-        const buttonContainer = e.target.closest('.container-butt'); // Buscar el contenedor más cercano
+        const buttonContainer = e.target.closest('.container-descrip'); // Buscar el contenedor más cercano
         const productContainer = buttonContainer.parentElement;
-
         const infoProduct = {
             quantity: 1,
             title: productContainer.querySelector('h1').textContent,
             price: productContainer.querySelector('h2').textContent,
+            image: productContainer.querySelector('img').src,
         };
 
         const exists = allProducts.some(
@@ -93,7 +96,6 @@ productsList.addEventListener('click', e => {
         );
 
         if (exists) {
-        guardarCarritoEnLocalStorage();
             const updatedProducts = allProducts.map(product => {
                 if (product.title === infoProduct.title) {
                     product.quantity++;
@@ -108,7 +110,6 @@ productsList.addEventListener('click', e => {
         }
 
         showHTML();
-        
         guardarCarritoEnLocalStorage();
     }
 });
@@ -135,11 +136,9 @@ const showHTML = () => {
         metpago.classList.add('active');
         rowProduct.classList.add('hidden');
         cartTotal.classList.add('hidden');
-        mainItems.classList.remove("active");
     } else {
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
-        mainItems.classList.add("active");
         cartTotal.classList.remove('hidden');
     }
 
@@ -155,12 +154,14 @@ const showHTML = () => {
 
         // Calculamos el precio total por producto
         const totalPricePerProduct = parseInt(product.quantity) * parseInt(product.price.slice(3));
+        
 
         containerProduct.innerHTML = `
             <div class="info-cart-product">
+                <img src="${product.image}" alt="${product.title}" class="imagen-producto-carrito">
                 <span class="cantidad-producto-carrito">${product.quantity}</span>
                 <p class="titulo-producto-carrito">${product.title}</p>
-                <span class="precio-producto-carrito">S/.${totalPricePerProduct}</span>
+                <span class="precio-producto-carrito">S/${totalPricePerProduct}.00</span>
             </div>
             <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +182,7 @@ const showHTML = () => {
         totalOfProducts += parseInt(product.quantity);
     });
 
-    valorTotal.innerText = `S/.${total}`;
+    valorTotal.innerText = `S/ ${total}.00`;
     countProducts.innerText = totalOfProducts;
 };
 
@@ -212,3 +213,178 @@ function vaciarca() {
 }
 
 DOMbotonVaciar.addEventListener('click', vaciarca);
+
+// Agregar esta función para redirigir a la página de pago con los productos seleccionados
+function irAPago() {
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'pago.php';
+
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'productos';
+    input.value = JSON.stringify(allProducts);
+
+    const inputValorTotal = document.createElement('input');
+    inputValorTotal.type = 'hidden';
+    inputValorTotal.name = 'valorTotal';
+    inputValorTotal.value = valorTotal.innerText; // Asigna el valor de valorTotal
+
+    form.appendChild(input);
+    form.appendChild(inputValorTotal);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+// Asociar la función a algún evento, por ejemplo, cuando se hace clic en un botón "Continuar al pago"
+const btnContinuarPago = document.getElementById('btn-continuar-pago');
+btnContinuarPago.addEventListener('click', irAPago);
+
+
+
+
+// Animacion de añadido al carrito 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const modal = document.getElementById('myModal');
+    const checkmarkContainer = document.querySelector('.checkmark-container');
+    const addedText = document.querySelector('.added-text');
+  
+    const animateButtons = document.querySelectorAll('.Añadir');
+  
+    // Función para mostrar el modal con animación
+    const showModal = () => {
+      modal.style.display = 'block';
+      checkmarkContainer.style.display = 'flex';
+      addedText.innerText = 'Añadido al Carro';
+  
+      // Cerrar modal después de 5 segundos
+      setTimeout(() => {
+        closeModal();
+      }, 1000);
+    };
+  
+    // Función para ocultar el modal
+    const closeModal = () => {
+      modal.style.display = 'none';
+      checkmarkContainer.style.display = 'none';
+      addedText.innerText = '';
+    };
+  
+    // Abrir modal al hacer clic en el botón "Añadir"
+    animateButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        showModal();
+      });
+    });
+  
+    // Cerrar modal al hacer clic en el botón de cierre
+    closeModalButton.addEventListener('click', () => {
+      closeModal();
+    });
+    
+  });
+  
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Abrir Modal de Libro de reclamaciones
+
+    const serviceModalslb = document.querySelectorAll(".modalformlb");
+    const serviceModalscg = document.querySelectorAll(".modalformcg");
+    const libroreclamacionBtns = document.querySelectorAll(".libro-reclamacion");
+    const perfilBtns = document.querySelectorAll(".perfil");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modallb = function(modalClick){
+        serviceModalslb[modalClick].classList.add("active");
+    }
+    var modalcg = function(modalClick){
+        serviceModalscg[modalClick].classList.add("active");
+    }
+
+    libroreclamacionBtns.forEach((libroreclamacionBtn, i) => {
+        libroreclamacionBtn.addEventListener("click", () => {
+            modallb(i);
+      });
+    });
+
+    perfilBtns.forEach((perfilBtn, i) => {
+        perfilBtn.addEventListener("click", () => {
+            modalcg(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalslb.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModalscg.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
+
+
+ // Abrir Modal y Contenedores de Terminos y Condiciones
+document.addEventListener("DOMContentLoaded", function() { 
+    const serviceModalTer = document.querySelectorAll(".modalformTer");
+    const serviceModaltc = document.querySelectorAll(".modalformtc");
+    const terminosCondicionesBtns = document.querySelectorAll(".Terminos-Condiciones");
+    const perfilTerBtns = document.querySelectorAll(".perfilTer");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modalTer = function(modalClicks){
+        serviceModalTer[modalClicks].classList.add("active");
+    }
+    var modaltc = function(modalClicks){
+        serviceModaltc[modalClicks].classList.add("active");
+    }
+
+    terminosCondicionesBtns.forEach((terminosCondicionesBtns, i) => {
+        terminosCondicionesBtns.addEventListener("click", () => {
+            modalTer(i);
+      });
+    });
+
+    perfilTerBtns.forEach((perfilTerBtns, i) => {
+        perfilTerBtns.addEventListener("click", () => {
+            modaltc(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalTer.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModaltc.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
+
+const items = document.querySelectorAll('.itemTer');
+
+items.forEach((item, index) => {
+    const header = item.querySelector('.head');
+    const content = item.querySelector('.conteTer');
+    const icon = item.querySelector('.icone');
+
+    header.addEventListener('click', () => {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            icon.classList.add('active');
+            header.classList.add('green-text'); // Agrega la clase para cambiar el color
+        } else {
+            content.style.display = 'none';
+            icon.classList.remove('active');
+            header.classList.remove('green-text'); // Remueve la clase para volver al color original
+        }
+    });
+});

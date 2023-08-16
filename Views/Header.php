@@ -9,8 +9,8 @@
 </head>
 <body>
     <header class="header-container">
-        
         <div class="nav-menu-btn"></div>  
+
         <!-- Logo a la izquierda -->
         <div class="logo">
             <img class="logots" src="../Issets/img/LogoTipo/NombreLogo.png" alt="Logo">
@@ -27,17 +27,15 @@
                             <span class="material-symbols-sharp buscador">search</span>
 	        	    	</button>
 	        	    </form>
-					
-                    <div class="menu">
-                    <a href="#" class="menu-trigger">Productos</a>
-                    <ul class="submenu">
-                        <li><a href="Pods.php">Pods</a></li>
-                        <li><a href="Vapers.php">Vapers</a></li>
-                    </ul>
-                </div>
-                    
+					<div class="menu">
+                    	<a class="menu-trigger">Productos</a>
+                    	<ul class="submenu">
+                    	    <li><a href="Pods.php">Pods</a></li>
+                    	    <li><a href="Vapers.php">Vapers</a></li>
+                    	</ul>
+                	</div>
                     <a href="Login.php" class="a">Iniciar Session</a>
-                    <a href="Ajustes.php"><span class="material-symbols-sharp ii ajuste ">person</span></a>
+                    <a class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
                     <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
                     <a class="iconossss" href="#">Cerrar Session</a>
@@ -50,12 +48,11 @@
 		        	    <span id="contador-productos">0</span>
 		            </div>
                 </div>
-            
-				
-                <div id="myModal" class="container-cart-products hidden-cart">
+                <div class="container-cart-products hidden-cart">
 					<div class="row-product hidden">
-						<div  class="cart-product">
-							<div  class="info-cart-product">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<img class="imagen-producto-carrito">
 								<span class="cantidad-producto-carrito"></span>
 								<p class="titulo-producto-carrito"></p>
 								<span class="precio-producto-carrito"></span>
@@ -78,25 +75,24 @@
 					<div class="cart-total">
 						<div style="display:flex; flex-direction:row">
 							<h3>Total :</h3>
-							<span class="total-pagar" id="total-pagar">$0</span>
+							<span class="total-pagar" id="total-pagar">S/0</span>
 						</div>
           				<div class="container-butt">
           				    <button class="button-metod-pago" id="vaciar">Vaciar carrito</button>
-          				    <button class="button-metod-pago pagar">Pagar</button>
+          				    <button class="button-metod-pago pagar" id="btn-continuar-pago">Pagar</a>
           				</div>
 						<div class="metodos-pago active">
           				</div>
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
-			  </div>
-
-
-
+			    </div>
             </div>
         </div>
     </header>
-
-
-  
+	<div class="service-modal modalformcg flex-center">
+    	<?php
+    	require 'Ajustes.php';
+   	 	?>
+  	</div>
 </body>
 </html>

@@ -1,0 +1,118 @@
+.containerTer::-webkit-scrollbar{
+    width: 10px;
+}
+.containerTer::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 5px;
+}
+.containerTer{
+    background-color: #232323;
+    width: 59%;
+    height: 65%;
+    padding: 20px 30px;
+    position: fixed;
+    overflow: auto;
+    border-radius: 10px;
+}
+.Terminos{
+    background-color: #232323;
+    padding: 20px 30px;
+}
+.h1s{
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-left: 2%;
+}
+/* Estilos del contenedor general */
+.conta {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px 10px 5px 50px;
+}
+/* Estilos de cada contenedor de elemento */
+.itemTer {
+    margin-bottom: 20px;
+    border: 2.5px solid #18e0b5;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+	font-family:verdana;
+    width: 90%;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #323234;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.icone {
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.icone.active {
+    transform: rotate(45deg);
+}
+.conteTer {
+    display: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.fa-times{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+}
+.green-text {
+    color: #18e0b5; /* Color verde jade */
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .containerTer {
+        width: 95%;
+        height: auto;
+        top: 10%;
+        left: 2.5%;
+        position: relative;
+    }
+
+    .conta {
+        padding: 20px;
+    }
+
+    .itemTer {
+        border-width: 1px;
+    }
+
+    .head {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .icone {
+        font-size: 16px;
+    }
+
+    .conteTer {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .h1s {
+        font-size: 28px;
+        margin-left: 0;
+        text-align: center;
+    }
+}
