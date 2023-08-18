@@ -1,13 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<link rel="stylesheet" href="../Issets/css/AjustesGeneral.css"/>
-
 <body>
-  <div class="containerTer">
+  <div class="service-modal-body">
     <i class="fas fa-times modal-close-btn blackbtn"></i>
-    <div class="Terminos">
+    <div class="">
         <h1 class="h1s">POLITICAS DE PRIVACIDAD</h1>
-        <h3 class="h3s">Última actualización: [Fecha de actualización]</h3>
+        <h3 id="h3s">Última actualización: [Fecha de actualización]</h3>
         <div class="conta">
             <div class="itemTer">
                 <div class="head" id="head1">

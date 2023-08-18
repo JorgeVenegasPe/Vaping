@@ -35,31 +35,25 @@ body{
     transition: 0.5s all;
     cursor: pointer;
 }
-
 .btn:hover {
     background-color: white;
     color: #000;
 }
-
 .img-vapers {
     display: flex;
     align-items: center;
     vertical-align: middle;
     margin-left: 50px;
     width: 100%;
-    max-width: 50px;
-    
+    max-width: 50px; 
 }
-
 .img-pods {
     display: flex;
     align-items: center;
     vertical-align: middle;
     width: 100%;
-    max-width: 200px;
-    
+    max-width: 200px;   
 }
-
 .descripcion {
     display: flex;
     flex-direction: column;
@@ -85,7 +79,6 @@ body{
     border-radius: 0.4rem;
     cursor: pointer;
 }
-
 
 /* ========= CARRUSEL =======*/
 .swiper {
@@ -123,7 +116,6 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
 .descripcion h1{
     text-align: center;
     font-family: 'Bowlby One', cursive;
@@ -184,9 +176,7 @@ body{
     background-color: #fff;
 }
 
-
 /* ============== animacion de anadido al carrito =========================*/
-/* Estilos para el modal */
 .modal {
     display: none;
     position: fixed;
@@ -199,8 +189,7 @@ body{
     z-index: 1;
     animation: fadeInModal 0.5s ease-in-out; /* Efecto de entrada */
     overflow: hidden;
-  }
-  
+  }  
   .modal-content {
     display: flex;
     flex-direction: column;
@@ -290,9 +279,6 @@ body{
       stroke-dasharray: 60, 80;
     }
   }
-  
-
-
 /* =========== REDES SOCIALES ============= */
 .icons-redes {
     display: flex;
@@ -341,28 +327,21 @@ body{
 	background-color: #1877f2;
 	outline-color: #1877f2;
 }
-
 .icon--whatsapp:hover {
 	background-color: #00a884;
 	outline-color: #00a884;
-}	
-
+}
 #btn-mas{
     display: none;
     z-index: 1;
 }
-
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-
 }
-
-
 .main.active{
     z-index: -1;
 }
@@ -375,7 +354,6 @@ body{
     height: 200px;
     z-index: 10;
 }
-
 .class a, .btn-mas label{
     display: block;
     text-decoration: none;
@@ -390,7 +368,6 @@ body{
     transition: all 500ms ease;
     overflow: hidden; 
 }
-
 .class a:hover{
 	background: #fff;
 	color: #18e0b5;
@@ -405,29 +382,24 @@ body{
     box-shadow: 0 3px 12px #00000042;
 	gap:15px;
 }
-
 .class a{
     margin-bottom: -15px;
     opacity: 0;
     visibility: hidden;
 }
-
 #btn-mas:checked ~ .class a{
     margin-bottom: 10px;
     opacity: 1;
     visibility: visible;
 }
-
 .btn-mas {
     align-items: flex-start;
 }
-
 .btn-mas label{
     cursor: pointer;
     background: #18e0b5;
     font-size: 23px;
 }
-
 #btn-mas:checked ~ .btn-mas label{
     transform: rotate(135deg);
     font-size: 25px;
@@ -448,13 +420,11 @@ body{
 	}
 }
 
-
 /* =============== Pago ============*/
 .container-productos-pago{
     background-color: #fff;
     width: 450px;
 }
-
 .producto-en-pago{
     padding: 20px;
     color: #090909;
@@ -478,8 +448,6 @@ body{
     justify-content: space-between;    
     padding: 20px;
 }
-
-
 .container-butt .button-T {
     display: flex;
     justify-content: center;
@@ -548,112 +516,6 @@ body{
     width: 20%;
     transition: opacity 0.3s;
 }
-
-
-/* ======== RESPONSIVE =========*/
-@media screen and (max-width: 880px){
-    
-    .content{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transition: .2s ease;
-    }
-    .title{
-        color: #7fe3c0;
-        font-family: 'Bowlby One', cursive;
-        font-size: 1.5em;
-        text-align: center;
-        transition: 2s ease;
-    }
-    .img-vapers {
-        display: flex;
-        align-items: center;
-        vertical-align: middle;
-        margin-left: 50px;
-        width: 100%;
-        max-width: 30px;
-        
-    }
-    .main.active{
-        z-index: -1;
-    }
-    .img-pods {
-        display: flex;
-        align-items: center;
-        vertical-align: middle;
-        width: 100%;
-        max-width: 100px;
-    }
-    .btn{
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2px;
-        height: 200px;
-        width: 250px;
-        font-weight: bold;
-        background-color: transparent;
-        border: none;
-        border-radius: 10px;
-        transition: 0.5s all;
-        cursor: pointer;
-    }
-    
-    .swiper {
-        width: 600px;
-        transition:  .3s ease;
-    }
-    .icons-redes{
-        top: 15%;
-        margin-left: 0;
-        transition:  .3s ease;
-    }
-    .icons-redes .icon {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
-    }
-    
-}
-
-
-@media screen and (max-width: 580px){
-    .swiper {
-        width: 400px;
-        transition:  .3s ease;
-    }
-    .container-total{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .descripcion h1{
-        font-size: 1.5em;
-    }
-    .descripcion p{
-        font-size: 0.9em;
-    }
-    .container-imagen img{
-        width: 100px;
-    }
-    .container-descrip{
-        margin-right: inherit;
-        margin: 40px;
-    }
-    .icons-redes{
-        flex-direction: row;
-        gap: 30px;
-        left: inherit;
-        top: 7%;
-    }
-}
-
-
-
 /* =========== pods-vapers ================ */
 
 .Titulo{
@@ -667,14 +529,12 @@ body{
     color: #fff;
     font-family: 'Bowlby One', cursive;
 }
-
 .productos-agregar{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .buton {
     display: inline-block;
     background-color: #007bff;
@@ -685,7 +545,6 @@ body{
     border-radius: 4px;
     cursor: pointer;
 }
-
 .service-modal-body .buton {
     display: inline-block;
     background-color: #007bff;
@@ -696,7 +555,6 @@ body{
     border-radius: 4px;
     cursor: pointer;
 }
-
 .service-modal-body input,textarea{
     font: inherit;
 	border: none;
@@ -714,14 +572,12 @@ input,textarea::placeholder {
     font-weight: lighter;
     font-style: italic;
 }
-
 .flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-
+/* MODAL */
 .service-modal{
     z-index: 999999;
     position: fixed;
@@ -735,24 +591,30 @@ input,textarea::placeholder {
     opacity: 0;
     transition: .3s ease;
 }
-
 .service-modal.active{
     visibility: visible;
     opacity: 1;
     height: 100%;
     width: 100%;
 }
-
 .service-modal-body{
     position: relative;
     background: #fff;
     max-width: 600px;
+    max-height: 90%;
+    overflow: auto;
     margin: 20px;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 }
-
+.service-modal-body::-webkit-scrollbar{
+    width: 10px; border-radius: 5px;
+}
+.service-modal-body::-webkit-scrollbar-thumb{
+    background-color: rgb(73, 72, 72);
+    border-radius: 10px;
+}
 .service-modal-body .modal-close-btn{
     position: absolute;
     top: 0;
@@ -760,40 +622,31 @@ input,textarea::placeholder {
     margin: 20px;
     cursor: pointer;
 }
-
 .service-modal-body h3{
     font-size: 2em;
 }
-
 .service-modal-body h4{
     font-size: 1.3em;
     font-weight: 600;
     margin: 15px 0 10px;
 }
-
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-  
+}  
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
-
 .box-input{
 	border-bottom: 2px solid #adadad;
 	position: relative;
 	margin: 8px;
 }
-
 .box-input input,textarea{
 	font-size: 16px;
 	color: #333;
@@ -833,27 +686,217 @@ input,textarea::placeholder {
 	background: linear-gradient(120deg, #3498db, #8e44ad);
 	transition: .5s;
 }
-
-
 .inputs-selects{
     display: flex;
     flex-direction: column;
     align-items:center ;
 }
-
 .FormDatos.active{
     display: none;
 }
-
 .FormSeleccionTienda.active{    
     display: none;
 }
-
 .FormSeleccionTienda.active{    
     display: none;
 }
-
 .box-input-total{
     display: flex;
     flex-direction: row;
+}
+/* modal ajustes */
+.h1s{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    padding: 5px 0px 0px 10px;
+    width: 100%;
+}
+#h3s{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 6%;
+}
+/* Estilos del contenedor general */
+.conta {
+    width: 100%;
+    margin: 10px auto;
+    padding: 20px 10px 5px 20px
+}
+/* Estilos de cada contenedor de elementos desplegables */
+.itemTer {
+    margin-bottom: 20px;
+    border: 1px solid #18e0b5;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+	font-family:verdana;
+    width: 100%;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.icone {
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.icone.active {
+    transform: rotate(45deg);
+}
+.conteTer {
+    display: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.blackbtn{
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+}
+.green-text {
+    color: #18e0b5; /* Color verde jade */
+}
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .conta {
+        padding: 20px;
+        width: 100%;
+    }
+    .itemTer {
+        border-width: 1px;
+        width: 100%;
+        margin-left: -7%;
+    }
+    .head {
+        padding: 10px;
+        font-size: 18px;
+    }
+    .icone {
+        font-size: 16px;
+    }
+    .conteTer {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .h1s {
+        font-size: 20px;
+        margin-left: 0;
+        text-align: center;
+    }
+    #h3s {
+        padding: 8% 5% 5% 5%;
+        font-size: 13px;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .swiper {
+        width: 400px;
+        transition:  .3s ease;
+    }
+    .container-total{
+        display: flex;
+        flex-direction: column;
+    }    
+    .descripcion h1{
+        font-size: 1.5em;
+    }
+    .descripcion p{
+        font-size: 0.9em;
+    }
+    .container-imagen img{
+        width: 100px;
+    }
+    .container-descrip{
+        margin-right: inherit;
+        margin: 40px;
+    }
+    .icons-redes{
+        flex-direction: row;
+        gap: 30px;
+        left: inherit;
+        top: 7%;
+    }
+}
+/* ======== RESPONSIVE =========*/
+@media screen and (max-width: 880px){
+    
+    .content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .2s ease;
+    }
+    .title{
+        color: #7fe3c0;
+        font-family: 'Bowlby One', cursive;
+        font-size: 1.5em;
+        text-align: center;
+        transition: 2s ease;
+    }
+    .img-vapers {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 50px;
+        width: 100%;
+        max-width: 30px;   
+    }
+    .main.active{
+        z-index: -1;
+    }
+    .img-pods {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        width: 100%;
+        max-width: 100px;
+    }
+    .btn{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        height: 200px;
+        width: 250px;
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s all;
+        cursor: pointer;
+    }    
+    .swiper {
+        width: 600px;
+        transition:  .3s ease;
+    }
+    .icons-redes{
+        top: 15%;
+        margin-left: 0;
+        transition:  .3s ease;
+    }
+    .icons-redes .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+    
 }

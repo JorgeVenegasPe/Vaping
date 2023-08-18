@@ -1,11 +1,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <link rel="stylesheet" href="../Issets/css/AjustesGeneral.css"/>
-
 <body>
-    <div class="containerTer">
+    <div class="service-modal-body">
     <i class="fas fa-times modal-close-btn blackbtn"></i>
-      <div class="Terminos">
+      <div class="">
         <h1 class="h1s">TERMINOS Y CONDICIONES</h1>
         <div class="conta">
           <div class="itemTer">

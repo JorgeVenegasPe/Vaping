@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
-    <link rel="stylesheet" href="../Issets/css/headers.css">
+    <link rel="stylesheet" href="../Issets/css/header.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -21,12 +21,15 @@
             <div class="container-icons">
                 <div class="icons">
                     <div class="nav-close-btn"></div>
-	        	    <form class="search a">
-	        	    	<input type="text" placeholder="Search" class="search__input"/>
-	        	    	<button type="button" class="search__button">
-                            <span class="material-symbols-sharp buscador">search</span>
-	        	    	</button>
-	        	    </form>
+					<form id="searchForm" class="search a">
+						<input type="text" id="searchInput" placeholder="Search" class="search__input"/>
+						<button type="button" class="search__button">
+							<span class="material-symbols-sharp buscador">search</span>
+						</button>
+					</form>
+					<div class="scrollBus">
+						<div id="searchResults" class="search-results"></div>
+					</div>					
 					<div class="menu">
                     	<a class="menu-trigger">Productos</a>
                     	<ul class="submenu">
@@ -94,5 +97,10 @@
     	require 'Ajustes.php';
    	 	?>
   	</div>
+
+
+	  <script src="../Issets/js/search.js"></script>
+
+	
 </body>
 </html>

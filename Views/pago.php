@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Issets/css/main.css"/>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-  <link rel="stylesheet" href="../Issets/css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -89,14 +88,12 @@
     <div class="service-modal-body">
         <i class="fas fa-times modal-close-btn"></i>
         <form class="FormSeleccionTienda">
-			<div class="box-input">
+			<div class="box-input" style="padding: 0px 60px 30px 60px;">
 				<h1 style="text-align: center;">Selecciona una direccion</h1>
                 <br>
                 <div class="Seleccion-tienda" style="text-align: center;">
                     <h4>Av. Arenales 963, Cercado de Lima, Perú</h4>
                     <p>LIMA, LIMA, LIMA, PERÚ</p>
-                    <br>
-                    <br>
                 </div>
 			</div>
             <div class="box-input">
@@ -132,13 +129,11 @@
 
         <form class="FormDatos active">
 		    <h1 style="text-align: center;">Datos de facturizacion</h1>
-		    <div class="box-input">
+		    <div class="box-input" style="padding: 0px 60px 30px 60px;">
 		    	<h4>Recoger en tienda:</h4>
                 <h5> Av. Arenales 963, Cercado de Lima, Perú</h5>
                 <h6>LIMA, LIMA, LIMA, PERÚ</h6>
 		    	<a href="">Cambiar</a>
-                <br>
-                <br>
 		    </div>
             <div class="container-butt" style="justify-content:inherit">
                 <a class="button-T active">
