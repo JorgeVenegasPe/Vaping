@@ -31,6 +31,7 @@ header {
     width: 100%; 
     position: fixed; /* Fijamos el header en la parte superior */
     top: 0;
+    left: 0;
     background-color: transparent;
     z-index: 1000;
 }
@@ -182,9 +183,18 @@ header {
     width: 460px;
     z-index: 9999999;
     box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.60);
-    border-radius: 10px;   
-    max-height: 700%;
+    border-radius: 10px; 
+}
+.row-product{
+    height: 350px;
     overflow: auto;
+}
+.row-product::-webkit-scrollbar{
+    width: 10px; border-radius: 5px;
+}
+.row-product::-webkit-scrollbar-thumb{
+    background-color: rgb(59, 59, 59);
+    border-radius: 5px;
 }
 .cart-product{
     display: flex;
@@ -457,5 +467,13 @@ ul , li{
     }
     .material-symbols-sharp {
         font-size: 1.3rem;
+    }
+    .main{
+        width: 100%;
+        display: flex;
+        padding: 200px 10px 40px 10px;
+    }
+    .container-cart-products{
+        width: 340px;
     }
 }
