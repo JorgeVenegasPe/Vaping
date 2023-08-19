@@ -6,12 +6,18 @@ class usernameControlerProducto{
         require_once("C:/xampp/htdocs/Vaping-main/Models/ModelProducto.php");
         $this->model=new UserModelProducto();
     }
-    public function InsertarProducto($nombre,$imagen,$descripcion,$precio) {
-        $id = $this->model->InsertarProducto($nombre,$imagen,$descripcion,$precio);
+    public function InsertarProducto($IdCategoria,$nombre,$imagen,$descripcion,$precio) {
+        $id = $this->model->InsertarProducto($IdCategoria,$nombre,$imagen,$descripcion,$precio);
         return ($id != false) ? header("Location: ../Views/Pods-Vapers.php") : header("Location: ../Views/Pods-Vapers.php");
     }
     public function VerProducto() {
         return ($this->model->VerProducto()) ?: false;
+    }
+    public function VerProductoPods() {
+        return ($this->model->VerProductoPods()) ?: false;
+    }
+    public function VerProductoVapers() {
+        return ($this->model->VerProductoVapers()) ?: false;
     }
     public function ShowProducto($id) {
         return ($this->model->ShowProducto($id)) ?: false;

@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #232323;
 }
 .wrapper{
@@ -275,4 +275,11 @@ body{
 .wrapper.active .bg-animate2{
     transform: rotate(-11deg) skewY(-41deg);
     transition-delay: 1.2s;
+}
+
+
+.form__switch2{
+	font-size: 1.5rem;
+	text-align: center;
+	color: red;
 }
