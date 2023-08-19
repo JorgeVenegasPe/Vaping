@@ -4,15 +4,24 @@
     box-sizing:border-box;
     font-family: sans-serif;
 }
-body{
-    min-height: 100vh;
-    background-color: #232323;
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/humo-imagen.png) no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Ajusta este valor para cambiar la opacidad */
+    z-index: -1;
 }
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #232323;
+    color: transparent;
     padding: 10px;
 }
 .nav-menu-btn{
@@ -22,7 +31,7 @@ header {
     width: 100%; 
     position: fixed; /* Fijamos el header en la parte superior */
     top: 0;
-    background-color: #232323;
+    background-color: transparent;
 }
 
 
@@ -36,7 +45,7 @@ header {
 
 .icons a{
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 18px;
     color: #fff;
     transition: .3s ease;
 }
@@ -49,7 +58,7 @@ header {
     margin-top: 15px;
     margin: 15px;
     cursor: pointer;
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: white;
     margin-left: calc(1rem - 4px);
 }
@@ -75,7 +84,7 @@ header {
     margin-top: 15px;
     margin: 15px;
     cursor: pointer;
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: white;
     margin-left: calc(1rem - 4px);
 }
@@ -89,7 +98,6 @@ header {
 .search {
 	display: inline-flex;
 	align-items: center;
-	background-image: linear-gradient(45deg, #85d7da, #18e0b5);
 	color: #fff;
 	padding: 10px;
 	border-radius: 4px;
@@ -103,6 +111,7 @@ header {
 .search__input {
 	width: 0;
 	transition: width 0.5s;
+    box-shadow:#fff;
 }
 .search__button {
 	display: grid;
@@ -127,9 +136,16 @@ header {
     display: none;
 }
 /* Media Query for even smaller screens */
-@media (max-width: 680px) {
+@media (max-width: 850px) {
     .search-container {
         max-width: 300px;
+        color: #000;
+    }
+    ::placeholder {
+        color: #000;
+    }
+    .search {
+        color: #000;
     }
     input {
         width: 200px;
@@ -198,7 +214,6 @@ header {
     }
     
     .nav-menu-btn{
-        margin-top: -15px;
         background: url(../img/menu-btn.png)no-repeat;
         transform: scaleX(-1);
         filter: var(--color-filter);
@@ -249,12 +264,13 @@ header {
 
 .container-cart-products{
     position: absolute;
-    top: 50px;
+    top: 60px;
     right: 0;
+    color: #000;
     background-color: #fff;
-    width: 400px;
+    width: 460px;
     z-index: 9999999;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.60);
     border-radius: 10px;
     
 }
@@ -262,11 +278,36 @@ header {
 .cart-product{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 30px;
-
+    color: #000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
 
+}
+.info-cart-product{
+    display: flex;
+    color: #000;
+    align-items: center;
+    flex: 1;
+}
+
+.titulo-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .metodos-pago{
@@ -307,27 +348,6 @@ header {
 
 .metodos-pago.active{
     display: none;
-}
-
-.info-cart-product{
-    display: flex;
-    justify-content: space-between;
-    flex: 0.8;
-}
-
-.titulo-producto-carrito{
-    font-size: 20px;
-}
-
-.precio-producto-carrito{
-    font-weight: 700;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.cantidad-producto-carrito{
-    font-weight: 400;
-    font-size: 20px;
 }
 
 .icon-close{
@@ -392,4 +412,43 @@ header {
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
+}
+
+.imagen-producto-carrito{
+    width: 10%;
+}
+
+
+
+/* =============== Submenu=============*/
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-trigger {
+    display: inline-block;
+    margin: 0 20px;
+    gap: 8px;
+    cursor: pointer;    
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -5%;
+    text-align: center;
+    width: 150px;
+    background-color: #2e2d2d;
+    padding: 10px;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.60);
+}
+
+ul , li{
+    list-style: none;
+}
+
+.menu:hover .submenu {
+    display: block;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2023 a las 16:58:57
+-- Tiempo de generación: 20-08-2023 a las 01:15:24
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -137,6 +137,36 @@ INSERT INTO `usuarios` (`IdUsuarios`, `IdRol`, `Nombre`, `Email`, `Contrasena`) 
 (1, 1, 'jorge', 'mariano@gmail.com', '123456'),
 (2, 2, 'mariano', 'mariano@gmail.com', '123456');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `tipo_entrega` enum('Recojo en tienda','Delivery') NOT NULL,
+  `productos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`productos`)),
+  `total` decimal(10,2) NOT NULL,
+  `nombre_cliente` varchar(100) NOT NULL,
+  `documento_tipo` enum('DNI','Pasaporte','Carnet de extranjeria') NOT NULL,
+  `documento_numero` varchar(20) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `celular` varchar(20) NOT NULL,
+  `distrito` varchar(50) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `referencia` text DEFAULT NULL,
+  `acepto_terminos` tinyint(1) NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `tipo_entrega`, `productos`, `total`, `nombre_cliente`, `documento_tipo`, `documento_numero`, `correo`, `celular`, `distrito`, `direccion`, `referencia`, `acepto_terminos`, `fecha_registro`) VALUES
+(1, 'Delivery', '[\"Classic Tabacco\"]', 35.00, 'Juan', 'DNI', '444444444444', 'juan@gmail.com', '933929292', 'Ancon', 'Mz.A Lt.27 MamzanaRoja', 'Puente Manzana roja', 1, '2023-08-19 23:11:25');
+
 --
 -- Índices para tablas volcadas
 --
@@ -161,6 +191,12 @@ ALTER TABLE `usuarios`
   ADD KEY `fk_rol_usuario` (`IdRol`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -181,6 +217,12 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `usuarios`
   MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
