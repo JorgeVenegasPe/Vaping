@@ -146,6 +146,9 @@ if (isset($_POST['productos'])) {
             </div>
     	</form>
 
+
+
+        
         <form class="FormDatos active" method="post">
 		    <h1 style="text-align: center;">Datos de facturizacion</h1>
 		    <div class="box-input">
@@ -233,133 +236,24 @@ if (isset($_POST['productos'])) {
                     <i class="ri-arrow-left-line"></i>
                     <p class="text">Seguir Comprando </p>
                 </a>
-                <a class="button-T">
-                    <p class="text finalcomp">Pagar</p>
-                    <i class="ri-arrow-right-line"></i>
-                </a>
-            </div>
-            </div>
-            <?php
-                $valorTotal = 0; // Inicializa el valor total a 0
-
-                if (isset($_POST['productos'])) {
-                $productos = json_decode($_POST['productos'], true);
-
-                foreach ($productos as $producto) {
-                $valorTotal += intval($producto['quantity']) * intval(substr($producto['price'], 3));
-                    }   
-                }
-            ?>
-            <input type="hidden" name="tipo_entrega" id="tipo_entrega_input" value="Recojo en Tienda">
-            <input type="hidden"  name="total_input" id="total_input" value="<?= $valorTotal  ?>">
-            <input type="hidden" name="productos_almacenados" id="productos_almacenados_input" value="<?= htmlspecialchars(json_encode($productos_almacenados)) ?>">
-
-
-		</form>
-    </div>
-</div>
-
-<!-- Recojo en tienda -->
-<div class="service-modal modalformdv flex-center">
-    <div class="service-modal-body">
-        <i class="fas fa-times modal-close-btn"></i>
-        <form class="FormDatosDelivery active" method="post">
-		    <h1 style="text-align: center;">Informacion de Contacto</h1>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Nombre y Apellido</label>
-		    	<input name="nombre_cliente" id="nombre_cliente" type="text" required>
-		    </div>
-            <div class="box-input-total">
-                <div class="box-input">
-			        <label for="">Documento:</label>
-                    <div class="inputs-selects">
-			        	<select style="text-align:center" name="documento" id="documento">
-		            		<option value="DNI" class="dni">DNI</option>
-		            		<option value="Pasaporte">Pasaporte</option>
-		            		<option value="Carnet de extranjeria">Carnet de extranjeria</option>
-			        	</select>
-			        </div>
-                </div>
-                <div class="box-input">
-		        	<label class="labelimp" for="telefono"> Numero de Decumento:</label>
-		        	<input name="n_document" id="n_document" type="text" required>
-		        </div>
-            </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Correo Electronico:</label>
-		    	<input name="correo" id="correo" type="text" required>
-		    </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Celular:</label>
-		    	<input name="celular" id="celular" type="text" required>
-		    </div>
-		    <h1 style="text-align: center;">Direccion de Envio</h1>
-            <div class="box-input">
-			    <label for="">Distrito</label>
-                <br>
-                <div class="inputs-selects">
-			    	<select style="text-align:center" name="distrito" id="distrito">
-		        		<option value="Ancon">Ancon</option>
-		        		<option value="Puente Piedra">Puente Piedra</option>
-		        		<option value="Comas">Comas</option>
-			    	</select>
-			    </div>
-                <br>
-            </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Direccion:</label>
-		    	<input name="direccion" id="direccion" type="text" required>
-		    </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono">Referencia</label>
-		    	<textarea name="referencia" id="referencia" required></textarea>
-		    </div>
-            <br>
-			<div class="metodos-pago">
-				<p style="text-align:center;">Metodos de Pago:</p>
-				<div class="metodos">
-					<a><img class="yape" src="../Issets/img/LogoTipo/LogoYape.png"></a>
-					<a><img class="visa" src="../Issets/img/LogoTipo/LogoVisa.png"></a>
-					<a><img class="plin" src="../Issets/img/LogoTipo/LogoPlin.png"></a>
-				</div>
-			</div>
-		    <div class="aaa">
-		        <input type="checkbox" value="Acepto los Términos y Condiciones y Políticas de privacidad">
-                <p>Acepto los Términos y Condiciones y Políticas de privacidad</p>
-		    </div>
-            <div class="container-butt">
-                <a href="Pods.php" class="button-T">
-                    <i class="ri-arrow-left-line"></i>
-                    <p class="text">Seguir Comprando </p>
-                </a>
-                <div class="container-butt">
-        <button type="submit" class="button-T" name="register" id="register">
+                <button type="submit" class="button-T" >
             <i class="ri-arrow-right-line"></i>
             <p class="text finalcomp">Finalizar Compra</p>
         </button>
-    </div>
+        <button type="input"name="register_rt" id="register_rt" >
+            enviar
+        </button>
             </div>
-            <?php
-                $valorTotal = 0; // Inicializa el valor total a 0
-
-                if (isset($_POST['productos'])) {
-                $productos = json_decode($_POST['productos'], true);
-
-                foreach ($productos as $producto) {
-                $valorTotal += intval($producto['quantity']) * intval(substr($producto['price'], 3));
-                    }   
-                }
-            ?>            
-            <input type="hidden" name="tipo_entrega" id="tipo_entrega_input" value="Delivery">
-            <input type="hidden"  name="total_input" id="total_input" value="<?= $valorTotal  ?>">
-            <input type="hidden" name="productos_titulos" id="productos_titulos_input" value="<?= htmlspecialchars(json_encode($productos_titulos)) ?>">
+            </div>
 		</form>
     </div>
 </div>
 
 <?php
-include ('Registrar.php');
+include ("Registro.php");
 ?>
+
+
 
 
 
