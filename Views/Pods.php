@@ -1,4 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])) {
 
+  require 'Header-log.php';
+
+} else {
+
+require 'Header.php';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +18,7 @@
   <title>Vaping - Pods</title>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="stylesheet" href="../Issets/css/main.css"/>
+    <link rel="stylesheet" href="../Issets/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -18,7 +29,6 @@
   require("../Controllers/ControllerProducto.php");
   $obj = new usernameControlerProducto();
   $rows = $obj->VerProductoPods();
-  require 'Header.php'
   ?>
 
   <!-- Carrusel  -->
@@ -39,8 +49,14 @@
                       <h2>S/.<?=$row[5]?></h2>
                     </div>
                     <div class="container-butt">
-                      <button type="button" class="button-cantidad Añadir" >Añadir</button>
-                      <button type="button" class="button-cantidad">Cantidad</button>
+                      <div class="buton-cantidad">
+                        <span class="contador">0</span>
+                        <div class="contenedor">
+                          <a class="cont incrementar"><i class="ri-arrow-up-s-fill"></i></a>
+                          <a class="cont decretar"><i class="ri-arrow-down-s-fill"></i></a>
+                        </div>
+                      </div>
+                      <button type="button" class="button-cantidad Añadir">Añadir</button>
                     </div>
                   </div>
                 </div>
@@ -70,13 +86,13 @@
 
   <!-- Redes Sociales -->
   <div class="icons-redes">
-    <a href="#" class="icon icon--instagram">
+    <a href="https://www.instagram.com/vaping.cloud.peru/" target="_blank" class="icon icon--instagram">
       <i class="ri-instagram-line"></i>
     </a>
-    <a href="#" class="icon icon--facebook">
+    <a href="https://www.facebook.com/vapingcloudperu" target="_blank" class="icon icon--facebook">
       <i class="ri-facebook-line"></i>
     </a>
-    <a href="#" class="icon icon--whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=51994079320&amp;text=Hola" target="_blank" class="icon icon--whatsapp">
       <i class="ri-whatsapp-line"></i>
     </a>
   </div>
@@ -85,7 +101,7 @@
   <div class="container">
     <input type="checkbox" id="btn-mas">
       <div class="class">
-        <a class="icon-link">
+        <a href="#" class="icon-link Terminos-Condiciones">
 					<i class="ri-secure-payment-line"></i>
           <span class="icon-text">Terminos y Condiciones </span>
         </a>
@@ -93,7 +109,7 @@
           <i class="ri-book-open-fill"></i>
           <span class="icon-text">Libro de Reclamación</span>
         </a>
-        <a class="icon-link">
+        <a href="#" class="icon-link politicas-privacidad">
           <i class="ri-shield-fill"></i>
           <span class="icon-text">Politicas de Privacidad</span>
         </a>
@@ -107,6 +123,20 @@
   <div class="service-modal modalformlb flex-center">
     <?php
     require 'LibroReclamacion.php';
+    ?>
+  </div> 
+
+  <!-- Libro de Terminos y Condiciones -->  
+  <div class="service-modal modalformTer flex-center">
+    <?php
+    require 'TerminosCondiciones.php';
+    ?>
+  </div>
+
+  <!-- Libro de Politicas y Privacidad -->
+  <div class="service-modal modalformPol flex-center">
+    <?php
+    require 'PoliticasPrivacidad.php';
     ?>
   </div>
 

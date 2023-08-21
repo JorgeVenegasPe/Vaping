@@ -1,4 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])) {
 
+  require 'Header-log.php';
+
+} else {
+
+require 'Header.php';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +28,6 @@
     require("../Controllers/ControllerProducto.php");
     $obj = new usernameControlerProducto();
     $rows = $obj->VerProductoVapers();
-    require 'Header.php'
     ?>
 
   <!-- Carrusel  -->
@@ -26,31 +35,36 @@
     <div class="swiper carousel">
       <div class="swiper-wrapper">
         <?php if ($rows):?>
-            <?php foreach ($rows as $row): ?>
-              <div class="swiper-slide">
-                <div class="container-total">
-                  <div class="container-imagen">
-                    <img class="img-vaperss" src="data:image/png;base64,<?= base64_encode($row[3]) ?>"/>
+          <?php foreach ($rows as $row): ?>
+            <div class="swiper-slide">
+              <div class="container-total">
+                <div class="container-imagen">
+                  <img class="img-vaperss" src="data:image/png;base64,<?= base64_encode($row[3]) ?>"/>
+                </div>
+                <div class="container-descrip">
+                  <div class="descripcion">
+                    <h1><?=$row[2]?></h1>
+                    <p><?=$row[4]?></p>
+                    <h2>S/.<?=$row[5]?></h2>
                   </div>
-                  <div class="container-descrip">
-                    <div class="descripcion">
-                      <h1><?=$row[2]?></h1>
-                      <p><?=$row[4]?></p>
-                      <h2>S/.<?=$row[5]?></h2>
+                  <div class="container-butt">
+                    <div class="buton-cantidad">
+                      <span class="contador">0</span>
+                      <div class="contenedor">
+                        <a class="cont incrementar"><i class="ri-arrow-up-s-fill"></i></a>
+                        <a class="cont decretar"><i class="ri-arrow-down-s-fill"></i></a>
+                      </div>
                     </div>
-                    <div class="container-butt">
-                      <button type="button" class="button-cantidad Añadir" >Añadir</button>
-                      <button type="button" class="button-cantidad">Cantidad</button>
-                    </div>
+                    <button type="button" class="button-cantidad Añadir">Añadir</button>
                   </div>
                 </div>
               </div>
-            <?php endforeach;?>
+            </div>
+          <?php endforeach;?>
         <?php endif;?>
-
       </div>
-        <button type="button" class="swiper-button-next"></button>
-        <button type="button" class="swiper-button-prev"></button>
+      <button type="button" class="swiper-button-next"></button>
+      <button type="button" class="swiper-button-prev"></button>
     </div>
   </main>
   

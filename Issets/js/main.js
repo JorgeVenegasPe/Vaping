@@ -84,8 +84,9 @@ productsList.addEventListener('click', e => {
     if (e.target.classList.contains('Añadir')) {
         const buttonContainer = e.target.closest('.container-descrip'); // Buscar el contenedor más cercano
         const productContainer = buttonContainer.parentElement;
+        const selectedQuantity = parseInt( productContainer.querySelector('span').textContent);
         const infoProduct = {
-            quantity: 1,
+            quantity: selectedQuantity,
             title: productContainer.querySelector('h1').textContent,
             price: productContainer.querySelector('h2').textContent,
             image: productContainer.querySelector('img').src,
@@ -98,7 +99,7 @@ productsList.addEventListener('click', e => {
         if (exists) {
             const updatedProducts = allProducts.map(product => {
                 if (product.title === infoProduct.title) {
-                    product.quantity++;
+                    product.quantity += selectedQuantity;
                     return product;
                 } else {
                     return product;
@@ -328,3 +329,130 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+ // Abrir Modal de Terminos y Condiciones
+ document.addEventListener("DOMContentLoaded", function() { 
+    const serviceModalTer = document.querySelectorAll(".modalformTer");
+    const serviceModaltc = document.querySelectorAll(".modalformtc");
+    const terminosCondicionesBtns = document.querySelectorAll(".Terminos-Condiciones");
+    const perfilTerBtns = document.querySelectorAll(".perfilTer");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modalTer = function(modalClicks){
+        serviceModalTer[modalClicks].classList.add("active");
+    }
+    var modaltc = function(modalClicks){
+        serviceModaltc[modalClicks].classList.add("active");
+    }
+
+    terminosCondicionesBtns.forEach((terminosCondicionesBtns, i) => {
+        terminosCondicionesBtns.addEventListener("click", () => {
+            modalTer(i);
+      });
+    });
+
+    perfilTerBtns.forEach((perfilTerBtns, i) => {
+        perfilTerBtns.addEventListener("click", () => {
+            modaltc(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalTer.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModaltc.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
+
+// Abrir modal de Politicas de Privacidad
+document.addEventListener("DOMContentLoaded", function() { 
+    const serviceModalTer = document.querySelectorAll(".modalformPol");
+    const serviceModaltc = document.querySelectorAll(".modalformtc");
+    const politicasprivacidadBtns = document.querySelectorAll(".politicas-privacidad");
+    const perfilTerBtns = document.querySelectorAll(".perfilTer");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    var modalTer = function(modalClicks){
+        serviceModalTer[modalClicks].classList.add("active");
+    }
+    var modaltc = function(modalClicks){
+        serviceModaltc[modalClicks].classList.add("active");
+    }
+
+    politicasprivacidadBtns.forEach((politicasprivacidadBtns, i) => {
+        politicasprivacidadBtns.addEventListener("click", () => {
+            modalTer(i);
+      });
+    });
+
+    perfilTerBtns.forEach((perfilTerBtns, i) => {
+        perfilTerBtns.addEventListener("click", () => {
+            modaltc(i);
+      });
+    });
+  
+    modalCloseBtns.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            serviceModalTer.forEach((modalView)=>{
+                 modalView.classList.remove("active");
+            });
+            serviceModaltc.forEach((modalView)=>{
+                modalView.classList.remove("active");
+            });
+        });
+    });
+});
+
+
+// Contenedores de Politicas de Privacidad & Terminos y Condiciones
+
+const items = document.querySelectorAll('.itemTer');
+
+items.forEach((item, index) => {
+    const header = item.querySelector('.head');
+    const content = item.querySelector('.conteTer');
+    const icon = item.querySelector('.icone');
+
+    header.addEventListener('click', () => {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            icon.classList.add('active');
+            header.classList.add('green-text'); // Agrega la clase para cambiar el color
+        } else {
+            content.style.display = 'none';
+            icon.classList.remove('active');
+            header.classList.remove('green-text'); // Remueve la clase para volver al color original
+        }
+    });
+});
+
+
+const containers = document.querySelectorAll('.container-descrip');
+
+containers.forEach(container => {
+    const contador = container.querySelector('.contador');
+    const sumar = container.querySelector('.incrementar');
+    const restar = container.querySelector('.decretar');
+    
+    let numero = 0;
+    
+    sumar.addEventListener("click", () => {
+        numero++;
+        contador.innerHTML = numero;
+    });
+    
+    restar.addEventListener("click", () => {
+        if (numero > 0) {
+            numero--;
+            contador.innerHTML = numero;
+        }
+    });
+});
+
+
+
+
