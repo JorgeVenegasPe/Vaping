@@ -134,7 +134,7 @@
 		    <h1 style="text-align: center;">Datos de facturizacion</h1>
 		    <div class="box-input">
 		    	<h4>Recoger en tienda:</h4>
-                <h5> Av. Arenales 963, Cercado de Lima, Perú</h5>
+                <h5>Av. Nicolás de Piérola 1727, Lima, Peru</h5>
                 <h6>LIMA, LIMA, LIMA, PERÚ</h6>
 		    	<a href="">Cambiar</a>
                 <br>
@@ -163,6 +163,7 @@
 		            		<option value="1" class="dni">DNI</option>
 		            		<option value="2">Pasaporte</option>
 		            		<option value="3">Carnet de extranjeria</option>
+		            		<option style="display:none" value="3">Ruc</option>
 			        	</select>
 			        </div>
                 </div>
@@ -201,13 +202,23 @@
 		    </div>
             <br>
 			<div class="metodos-pago">
-				<p style="text-align:center;">Metodos de Pago:</p>
-				<div class="metodos">
-					<a><img class="yape" src="../Issets/img/LogoTipo/LogoYape.png"></a>
-					<a><img class="visa" src="../Issets/img/LogoTipo/LogoVisa.png"></a>
-					<a><img class="plin" src="../Issets/img/LogoTipo/LogoPlin.png"></a>
-				</div>
-			</div>
+                <p style="text-align:center;">Metodos de Pago:</p>
+                <div class="metodos">
+                    <div class="colm text-right">
+                        <input type="radio" name="modalOption" value="modal-yape" id="modal-yape">
+                        <label for="modal-yape"><img class="yape Yape" src="../Issets/img/LogoTipo/LogoYape.png"></label>
+                    </div>
+                    <div class="colm text-right">    
+                        <input type="radio" name="modalOption" value="modal-visa" id="modal-visa">
+                        <label for="modal-visa"><img class="visa Visa" src="../Issets/img/LogoTipo/LogoVisa.png"></label><br>
+                    </div>
+                    <div class="colm text-right"> 
+                        <input type="radio" name="modalOption" value="modal-plin" id="modal-plin">
+                        <label for="modal-plin"><img class="plin Plin" src="../Issets/img/LogoTipo/LogoPlin.png"></label><br>
+                    </div>
+                </div>
+            </div>
+            <br>
 		    <div class="aaa">
 		        <input type="checkbox" value="Acepto los Términos y Condiciones y Políticas de privacidad">
                 <p>Acepto los Términos y Condiciones y Políticas de privacidad</p>
@@ -217,7 +228,7 @@
                     <i class="ri-arrow-left-line"></i>
                     <p class="text">Seguir Comprando </p>
                 </a>
-                <a class="button-T">
+                <a class="button-T" id="openSelectedModalBtn">
                     <p class="text finalcomp">Pagar</p>
                     <i class="ri-arrow-right-line"></i>
                 </a>
@@ -226,7 +237,7 @@
     </div>
 </div>
 
-<!-- Recojo en tienda -->
+<!-- delivery -->
 <div class="service-modal modalformdv flex-center">
     <div class="service-modal-body">
         <i class="fas fa-times modal-close-btn"></i>
@@ -282,14 +293,24 @@
 		    	<textarea name="reclamo" id="reclamo" required></textarea>
 		    </div>
             <br>
-			<div class="metodos-pago">
-				<p style="text-align:center;">Metodos de Pago:</p>
-				<div class="metodos">
-					<a><img class="yape" src="../Issets/img/LogoTipo/LogoYape.png"></a>
-					<a><img class="visa" src="../Issets/img/LogoTipo/LogoVisa.png"></a>
-					<a><img class="plin" src="../Issets/img/LogoTipo/LogoPlin.png"></a>
-				</div>
-			</div>
+            <div class="metodos-pago">
+                <p style="text-align:center;">Metodos de Pago:</p>
+                <div class="metodos">
+                    <div class="colm text-right">
+                        <input type="radio" name="modalOption" value="modal-yape" id="modal-yape">
+                        <label for="modal-yape"><img class="yape Yape" src="../Issets/img/LogoTipo/LogoYape.png"></label>
+                    </div>
+                    <div class="colm text-right">    
+                        <input type="radio" name="modalOption" value="modal-visa" id="modal-visa">
+                        <label for="modal-visa"><img class="visa Visa" src="../Issets/img/LogoTipo/LogoVisa.png"></label><br>
+                    </div>
+                    <div class="colm text-right"> 
+                        <input type="radio" name="modalOption" value="modal-plin" id="modal-plin">
+                        <label for="modal-plin"><img class="plin Plin" src="../Issets/img/LogoTipo/LogoPlin.png"></label><br>
+                    </div>
+                </div>
+            </div>
+            <br>
 		    <div class="aaa">
 		        <input type="checkbox" value="Acepto los Términos y Condiciones y Políticas de privacidad">
                 <p>Acepto los Términos y Condiciones y Políticas de privacidad</p>
@@ -299,17 +320,74 @@
                     <i class="ri-arrow-left-line"></i>
                     <p class="text">Seguir Comprando </p>
                 </a>
-                <a class="button-T">
-                    <p class="text finalcomp">Finalizar Compra</p>
-                    <i class="ri-arrow-right-line asdad"></i>
+                <a class="button-T" id="openSelectedModalBtndv">
+                    <p class="text finalcomp">Pagar</p>
+                    <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
 		</form>
     </div>
 </div>
 
+<div class="service-modal modal-yape flex-center" >
+    <div class="service-modal-body">
+        <i class="fas fa-times modal-close-btnmodal"></i>
+        <h1>Pago con yape</h1>
+        <div class="box-input">
+            <img src="../Issets/img/kr.webp">
+            <h2>Numero: +51 999 999 999</h2>
+            <h2>Monto a pagar: <?= $valorTotal ?></h2>
+        </div>
+        <div class="container-butt">
+            <a class="button-T">
+                <p class="text">Listo</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="service-modal modal-visa flex-center" >
+    <div class="service-modal-body">
+        <i class="fas fa-times modal-close-btnmodal"></i>
+        <h1>Pago con Tarjeta</h1>
+        <div class="box-input">
+            <img src="../Issets/img/kr.webp" >
+            <br>
+            <h2>Numero de Cuenta Bancario: <br>
+                1234 5678 9012 3456</h2>
+            <br>
+            <h2>Numero de Cuenta Inter Bancario: <br>
+                12345 67891 54321 98765</h2>
+            <br>
+            <h2>Monto a pagar: <?= $valorTotal ?></h2>
+        </div>
+        <div class="container-butt">
+            <a class="button-T">
+                <p class="text">Listo</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="service-modal modal-plin flex-center" >
+    <div class="service-modal-body">
+        <i class="fas fa-times modal-close-btnmodal"></i>
+        <h1>Pago con plin</h1>
+        <div class="box-input">
+            <img src="../Issets/img/kr.webp">
+            <h2>Numero: +51 999 999 999</h2>
+            <h2>Monto a pagar: <?= $valorTotal ?></h2>
+        </div>
+        <div class="container-butt">
+            <a class="button-T">
+                <p class="text">Listo</p>
+            </a>
+        </div>
+    </div>
+</div>
 
 <script>
+// Modals Formas de compra
 const finalcompra = document.querySelectorAll(".finalcomp");
 const FormSeleccionTienda = document.querySelector(".FormSeleccionTienda"); // Cambiado a querySelector
 const FormDatos = document.querySelector(".FormDatos"); // Cambiado a querySelector
@@ -326,6 +404,7 @@ const serviceModalsdv = document.querySelectorAll(".modalformdv");
 const RecojoTiendaBtns = document.querySelectorAll(".RecojoTienda");
 const DeliveryBtns = document.querySelectorAll(".Delivery");
 const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+const modalCloseBtnsModal = document.querySelectorAll(".modal-close-btnmodal");
 
     var modalrt = function(modalClick){
         serviceModalsrt[modalClick].classList.add("active");
@@ -347,6 +426,39 @@ const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
       });
     });
 
+    const modalYapeOption = document.getElementById("modal-yape");
+    const modalVisaOption = document.getElementById("modal-visa");
+    const modalPlinOption = document.getElementById("modal-plin");
+    const openSelectedModalBtn = document.getElementById("openSelectedModalBtn");
+    const openSelectedModalBtndv = document.getElementById("openSelectedModalBtndv");
+    const modalYape = document.querySelector(".modal-yape");
+    const modalVisa = document.querySelector(".modal-visa");
+    const modalPlin = document.querySelector(".modal-plin");
+
+    openSelectedModalBtn.addEventListener("click", function() {
+        if (modalYapeOption.checked) {
+            modalYape.classList.add("active");
+        }
+        else if (modalVisaOption.checked){
+            modalVisa.classList.add("active");
+        }
+        else if (modalPlinOption.checked){
+            modalPlin.classList.add("active");
+        }
+    });
+
+    openSelectedModalBtndv.addEventListener("click", function() {
+        if (modalYapeOption.checked) {
+            modalYape.classList.add("active");
+        }
+        else if (modalVisaOption.checked){
+            modalVisa.classList.add("active");
+        }
+        else if (modalPlinOption.checked){
+            modalPlin.classList.add("active");
+        }
+    });
+
     modalCloseBtns.forEach((modalCloseBtn) => {
         modalCloseBtn.addEventListener("click", () =>{
             serviceModalsrt.forEach((modalView)=>{
@@ -360,9 +472,17 @@ const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
         });
     });
 
+    modalCloseBtnsModal.forEach((modalCloseBtn) => {
+        modalCloseBtn.addEventListener("click", () =>{
+            modalYape.classList.remove("active");
+            modalVisa.classList.remove("active");
+            modalPlin.classList.remove("active");
+        });
+    });
 
 
 </script>
+
 <script src="../Issets/js/main.js"></script>
 </body>
 </html>

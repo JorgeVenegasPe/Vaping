@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,66 +8,87 @@
     <link rel="stylesheet" href="../Issets/css/login.css">
     <title>Login</title>
 </head>
+
 <body>
     <div class="regresar">
-        <a href="Pods.php">< Regresar</a>
+        <a href="Pods.php">
+            < Regresar</a>
     </div>
-<div class="wrapper">
-    <span class="bg-animate"></span>
-    <span class="bg-animate2"></span>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
 
-    <div class="form-box login">
-        <h2 class="animation" style="--i:0; --j:21;">Login</h2>
-        <form action="../Controllers/ControllerLogin.php" method="post">
-            <div class="input-box animation"style="--i:1; --j:22;">
-                <input type="text" name="usu" id="usu" required>
-                <label>Username</label>
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box animation" style="--i:2; --j:23;">
-                <input type="password" name="pass" id="pass" required>
-                <label>Password</label>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <button type="submit" class="btn animation" style="--i:3; --j:24;">Login</button>
-            <div class="logreg-link animation" style="--i:4; --j:25;">
-                <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
-            </div>
-        </form>
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+            <form action="../Controllers/ControllerLogin.php" method="post">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <input type="text" name="usu" id="usu" required>
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" name="pass" id="pass" required>
+                    <label>Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24;">Ingresar</button>
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                    <p>Aun no tienes una cuenta? <a href="#" class="register-link">Registrarme</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20;">
+                Welcome Back!</h2>
+            <p class="animation" style="--i:1; --j:21;">
+                Lorem ipsum, dolor sit amet
+                consectetur adipisicing.</p>
+        </div>
+        <div class="form-box register">
+            <h2 class="animation" style="--i:17; --j:0">Sign Up
+            </h2>
+            <form action="../Crud/agregarUsuario.php" method="post">
+                <input type="text" name="IdRol" value="2" style="display: none;">
+
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <input type="text" name="Nombre" required>
+                    <label>Nombre de Usuario</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <input type="email" name="Email" required>
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box animation" style="--i:20; --j:3">
+                    <input type="password" name="Contrasena" required>
+                    <label>Contraseña</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:21; --j:4">
+                    Registrarse</button>
+                <div class="logreg-link animation" style="--i:22; --j:5">
+                    <p>¿Ya tienes una cuenta? <a href="#" class="login-link">Iniciar sesión</a></p>
+                </div>               
+                <?php
+                    if (isset($_SESSION['error_message'])) {
+                        echo "<p class='form__switch02'>" . $_SESSION['error_message'] . "</p>";
+                    
+                    }
+                ?>
+            </form>
+
+        </div>
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">
+                Welcome Back!</h2>
+            <p class="animation" style="--i:18; --j:1;">
+                Lorem ipsum, dolor sit amet
+                consectetur adipisicing.</p>
+        </div>
     </div>
-    <div class="info-text login">
-        <h2 class="animation" style="--i:0; --j:20;">Welcome Back!</h2>
-        <p class="animation" style="--i:1; --j:21;">Lorem ipsum, dolor sit amet</p>
-    </div>
-    <div class="form-box register">
-        <h2 class="animation" style="--i:17; --j:0">Sign Up</h2>
-        <form action="#">
-            <div class="input-box animation" style="--i:18; --j:1">
-                <input type="text" required>
-                <label>Username</label>
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box animation" style="--i:19; --j:2">
-                <input type="text" required>
-                <label>Email</label>
-                <i class='bx bxs-envelope'></i>
-            </div>
-            <div class="input-box animation" style="--i:20; --j:3">
-                <input type="password" required>
-                <label>Password</label>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <button type="submit" class="btn animation" style="--i:21; --j:4">Sign Up</button>
-            <div class="logreg-link animation" style="--i:22; --j:5">
-                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-            </div>
-        </form>
-    </div>
-    <div class="info-text register">
-        <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
-        <p class="animation" style="--i:18; --j:1;">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-    </div>
-</div>
-<script src="../Issets/js/login.js"></script>
+    <script src="../Issets/js/login.js"></script>
+    <script></script>
 </body>
+
 </html>

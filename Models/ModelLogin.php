@@ -20,6 +20,7 @@
                 $Nombre = $statement->fetch(PDO::FETCH_ASSOC);
                 if($Nombre){
                     $_SESSION['Nombre'] = $Nombre["Nombre"];
+                    $_SESSION['Email'] = $Nombre["Email"];
                     if ($Nombre["IdRol"] == 1) {
                         header("location: ../Views/Pods-Vapers.php");
                     } elseif ($Nombre["IdRol"] == 2) {
