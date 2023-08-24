@@ -89,7 +89,10 @@ productsList.addEventListener('click', e => {
             title: productContainer.querySelector('h1').textContent,
             price: productContainer.querySelector('h2').textContent,
             image: productContainer.querySelector('img').src,
+            value1: productContainer.querySelector('p:nth-child(3)').textContent, // Agrega el tercer <p>
+            value0: productContainer.querySelector('p:nth-child(4)').textContent, // Agrega el cuarto <p>
         };
+        
 
         const exists = allProducts.some(
             product => product.title === infoProduct.title
@@ -157,24 +160,27 @@ const showHTML = () => {
         
 
         containerProduct.innerHTML = `
-            <div class="info-cart-product">
-                <img src="${product.image}" alt="${product.title}" class="imagen-producto-carrito">
-                <span class="cantidad-producto-carrito">${product.quantity}</span>
-                <p class="titulo-producto-carrito">${product.title}</p>
-                <span class="precio-producto-carrito">S/${totalPricePerProduct}.00</span>
-            </div>
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="icon-close">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"/>
-                </svg>`;
+        <div class="info-cart-product">
+            <img src="${product.image}" alt="${product.title}" class="imagen-producto-carrito">
+            <span class="cantidad-producto-carrito">${product.quantity}</span>
+            <p class="titulo-producto-carrito">${product.title}</p>
+            <p class="value1-producto-carrito" style="padding:25px; display:none;">${product.value1}</p> <!-- Muestra $row[1] -->
+            <p class="value0-producto-carrito" style="padding:25px; display:none;">${product.value0}</p> <!-- Muestra $row[0] -->
+            <span class="precio-producto-carrito">S/${totalPricePerProduct}.00</span>
+        </div>
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"/>
+            </svg>`;
+    
 
         rowProduct.append(containerProduct);
 
@@ -213,12 +219,15 @@ function vaciarca() {
 }
 
 DOMbotonVaciar.addEventListener('click', vaciarca);
+// Obtener el valor 'id' de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const categoria = urlParams.get('id');
 
-// Agregar esta función para redirigir a la página de pago con los productos seleccionados
+// Agregar esta función para redirigir a la página de pago con los productos seleccionados y la categoría
 function irAPago() {
     const form = document.createElement('form');
     form.method = 'post';
-    form.action = 'pago.php';
+    form.action = 'pago.php?id=' + categoria; // Incluimos la categoría en la URL
 
     const input = document.createElement('input');
     input.type = 'hidden';
@@ -240,7 +249,6 @@ function irAPago() {
 // Asociar la función a algún evento, por ejemplo, cuando se hace clic en un botón "Continuar al pago"
 const btnContinuarPago = document.getElementById('btn-continuar-pago');
 btnContinuarPago.addEventListener('click', irAPago);
-
 
 
 

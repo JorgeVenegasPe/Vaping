@@ -35,8 +35,9 @@
     </style>
   <!-- Header  -->
   <?php
-    require 'Header.php';
+    require 'Header.php'
   ?>
+  
 <main>
     <div class="container-butt">
         <a href="Pods.php" class="button-T">
@@ -48,44 +49,19 @@
     <?php
 // Inicializa un arreglo para almacenar los productos
 $productos_almacenados = array();
-// Inicializa un arreglo para almacenar los títulos de los productos (value0 y title)
+// Inicializa un arreglo para almacenar los títulos de los productos
 $productos_titulos = array();
 // Recibir y mostrar los productos enviados mediante POST
 if (isset($_POST['productos'])) {
     $productos = json_decode($_POST['productos'], true);
-    $productos_sin_etiquetas = array(); // Crear un arreglo para los valores de value0 y title
-
     foreach ($productos as $producto) {
-        // Agrega el producto actual al arreglo de productos almacenados
-        $productos_almacenados[] = array(
-            'title' => $producto['title'],
-            'quantity' => $producto['quantity'],
-            'price' => $producto['price'],
-            'image' => $producto['image'],
-            'value1' => $producto['value1'],
-            'value0' => $producto['value0'],
-        );
-
-        // Agrega el valor de 'value0' y el 'title' al arreglo de productos_titulos
-        $productos_titulos[] = array(
-            'value0' => $producto['value0'],
-            'title' => $producto['title']
-        );
-
-        // Agrega el valor de 'value0' y el 'title' al arreglo sin etiquetas
-        $productos_sin_etiquetas[] = array(
-            $producto['value0'],
-            $producto['title']
-        );
-
+        $productos_titulos[] = $producto['title'];
         ?>
         <div class="producto-en-pago">
             <div class="products">  
                 <img  src="<?=$producto['image'] ?>" alt="<?=$producto['title'] ?>">
                 <p><?=$producto['quantity'] ?></p>
                 <h3><?=$producto['title'] ?></h3>
-                <p style="display: none;"><?=$producto['value1'] ?></p>
-                <p style="display: none;"><?=$producto['value0'] ?></p>
             </div>
             <?php
             $Total = intval($producto['quantity']) * intval(substr($producto['price'], 3));;
@@ -93,16 +69,20 @@ if (isset($_POST['productos'])) {
             <p>S/<?= $Total ?>.00</p>
         </div>
         <?php
-    }
 
-    // Convertir $productos_sin_etiquetas en una cadena JSON
-    $productosJSON = json_encode($productos_sin_etiquetas);
+        // Agrega el producto actual al arreglo
+        $productos_almacenados[] = array(
+            'title' => $producto['title'],
+            'quantity' => $producto['quantity'],
+            'price' => $producto['price'],
+            'image' => $producto['image']
+        );
+    }
 
     // Obtener el valor de valorTotal
     $valorTotal = isset($_POST['valorTotal']) ? $_POST['valorTotal'] : '0';
 }
 ?>
-
 
         <div class="total" name="total" id="total">
             <h2>Total: </h2><span><?= $valorTotal ?></span>
@@ -124,7 +104,7 @@ if (isset($_POST['productos'])) {
 <div class="service-modal modalformrt flex-center">
     <div class="service-modal-body">
         <i class="fas fa-times modal-close-btn"></i>
-        <form class="FormSeleccionTienda" method="post">
+        <form class="FormSeleccionTienda" >
 			<div class="box-input">
 				<h1 style="text-align: center;">Selecciona una direccion</h1>
                 <br>
@@ -133,23 +113,22 @@ if (isset($_POST['productos'])) {
                     <p>LIMA, LIMA, LIMA, PERÚ</p>
                     <br>
                     <br>
-
                 </div>
 			</div>
             <div class="box-input">
                 <h1 style="text-align: center;">Horario de Recojos</h1>
 			    <div class="inputs-selects">
 			    	<h4 for="">Dias</h4>
-			    	<select name="dias" id="dias">
-			    		<option value="Lunes">Lunes</option>
-			    		<option value="Martes">Martes</option>
-			    		<option value="Miercoles">Miercoles</option>
-			    		<option value="Jueves">Jueves</option>
+			    	<select name="" id="">
+			    		<option value="1">Lunes</option>
+			    		<option value="2">Martes</option>
+			    		<option value="3">Miercoles</option>
+			    		<option value="4">Jueves</option>
 			    	</select>
 			    </div>
 			    <div class="inputs-selects">
 			    	<h4 for="">Horarios</h4>
-			    	<select name="Horario" id="Horarios">
+			    	<select name="" id="">
 			    		<option value="1">De 6 A.M a 9 P.M</option>
 			    	</select>
 			    </div>
@@ -166,8 +145,12 @@ if (isset($_POST['productos'])) {
                 </a>
             </div>
     	</form>
+        <div id="resultado_registro"></div>
 
-        <form class="FormDatos active" method="post">
+
+
+        
+        <form class="FormDatos active" method="post" action="Registro.php">
 		    <h1 style="text-align: center;">Datos de facturizacion</h1>
 		    <div class="box-input">
 		    	<h4>Recoger en tienda:</h4>
@@ -176,7 +159,6 @@ if (isset($_POST['productos'])) {
 		    	<a href="">Cambiar</a>
                 <br>
                 <br>
-                <input type="hidden" name="ubicacion" id="ubicacion" value=" Av. Arenales 963, Cercado de Lima, Perú">
 		    </div>
             <div class="container-butt" style="justify-content:inherit">
                 <a class="button-T active">
@@ -198,9 +180,9 @@ if (isset($_POST['productos'])) {
 			        <label for="">Documento:</label>
                     <div class="inputs-selects">
 			        	<select style="text-align:center" name="documento" id="documento">
-		            		<option value="DNI" class="dni">DNI</option>
-		            		<option value="Pasaporte">Pasaporte</option>
-		            		<option value="Carnet de extranjeria">Carnet de extranjeria</option>
+		            		<option value="1" class="dni">DNI</option>
+		            		<option value="2">Pasaporte</option>
+		            		<option value="3">Carnet de extranjeria</option>
 			        	</select>
 			        </div>
                 </div>
@@ -210,7 +192,7 @@ if (isset($_POST['productos'])) {
 		        </div>
 		        <div class="box-input" style="display: none;">
 		        	<label class="labelimp" for="telefono"> Razon Social:</label>
-		        	<input name="referencia" id="referencia" type="text" >
+		        	<input name="r_social" id="r_social" type="text" required>
 		        </div>
             </div>
 		    <div class="box-input">
@@ -255,171 +237,28 @@ if (isset($_POST['productos'])) {
                     <i class="ri-arrow-left-line"></i>
                     <p class="text">Seguir Comprando </p>
                 </a>
-                <button type="submit" class="button-T" name="register2" id="register2">
+                <button type="submit" class="button-T" >
             <i class="ri-arrow-right-line"></i>
             <p class="text finalcomp">Finalizar Compra</p>
         </button>
+        
             </div>
-            </div>
-            <?php
-                $valorTotal = 0; // Inicializa el valor total a 0
-
-                if (isset($_POST['productos'])) {
-                $productos = json_decode($_POST['productos'], true);
-
-                foreach ($productos as $producto) {
-                $valorTotal += intval($producto['quantity']) * intval(substr($producto['price'], 3));
-                    }   
-                }
-            ?>
-            <input type="hidden" name="tipo_entrega" id="tipo_entrega_input" value="Recojo en Tienda">
-            <input type="hidden"  name="total_input" id="total_input" value="<?= $valorTotal  ?>">
-            <input type="hidden" name="productos_titulos" id="productos_titulos_input" value="<?= htmlspecialchars(json_encode($productos_titulos)) ?>">
-            <input type="hidden" name="dia" id="dia" value="">
-            <?php
-                $categoria = isset($_GET['id']) ? $_GET['id'] : '';
-            ?>
-            <input type="hidden" name="categoria" id="categoria" value="<?= $categoria  ?>">
+            </div><button type="submit" name="register_rt" id="register_rt">Enviar</button>
 
 		</form>
     </div>
 </div>
 
+<?php
+include ("Registro.php");
+?>
 <script>
-    // Obtén el elemento select del primer formulario y el campo oculto del segundo formulario
-    const selectDiaForm1 = document.getElementById("dias");
-    const inputDiaForm2 = document.getElementById("dia");
+    document.querySelector('#register_rt').addEventListener('click', function() {
+    alert('Botón de envío presionado');
+});
 
-    // Agrega un evento change al select del primer formulario
-    selectDiaForm1.addEventListener("change", function() {
-        // Obtén el valor seleccionado del select del primer formulario
-        const dia = selectDiaForm1.value;
-
-        // Si el valor seleccionado es vacío, establece "Lunes" como valor por defecto
-        const valorPorDefecto = dia || "Lunes";
-
-        // Asigna el valor al campo oculto del segundo formulario
-        inputDiaForm2.value = valorPorDefecto;
-    });
-
-    // Establece "Lunes" como valor inicial en el campo oculto
-    inputDiaForm2.value = "Lunes";
 </script>
 
-
-
-<?php
-include ('Registrar2.php');
-?>
-
-
-
-
-<!-- Delivery-->
-<div class="service-modal modalformdv flex-center">
-    <div class="service-modal-body">
-        <i class="fas fa-times modal-close-btn"></i>
-        <form class="FormDatosDelivery active" method="post">
-		    <h1 style="text-align: center;">Informacion de Contacto</h1>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Nombre y Apellido</label>
-		    	<input name="nombre_cliente" id="nombre_cliente" type="text" required>
-		    </div>
-            <div class="box-input-total">
-                <div class="box-input">
-			        <label for="">Documento:</label>
-                    <div class="inputs-selects">
-			        	<select style="text-align:center" name="documento" id="documento">
-		            		<option value="DNI" class="dni">DNI</option>
-		            		<option value="Pasaporte">Pasaporte</option>
-		            		<option value="Carnet de extranjeria">Carnet de extranjeria</option>
-			        	</select>
-			        </div>
-                </div>
-                <div class="box-input">
-		        	<label class="labelimp" for="telefono"> Numero de Decumento:</label>
-		        	<input name="n_document" id="n_document" type="text" required>
-		        </div>
-            </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Correo Electronico:</label>
-		    	<input name="correo" id="correo" type="text" required>
-		    </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Celular:</label>
-		    	<input name="celular" id="celular" type="text" required>
-		    </div>
-		    <h1 style="text-align: center;">Direccion de Envio</h1>
-            <div class="box-input">
-			    <label for="">Distrito</label>
-                <br>
-                <div class="inputs-selects">
-			    	<select style="text-align:center" name="distrito" id="distrito">
-		        		<option value="Ancon">Ancon</option>
-		        		<option value="Puente Piedra">Puente Piedra</option>
-		        		<option value="Comas">Comas</option>
-			    	</select>
-			    </div>
-                <br>
-            </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono"> Direccion:</label>
-		    	<input name="direccion" id="direccion" type="text" required>
-		    </div>
-		    <div class="box-input">
-		    	<label class="labelimp" for="telefono">Referencia</label>
-		    	<textarea name="referencia" id="referencia" required></textarea>
-		    </div>
-            <br>
-			<div class="metodos-pago">
-				<p style="text-align:center;">Metodos de Pago:</p>
-				<div class="metodos">
-					<a><img class="yape" src="../Issets/img/LogoTipo/LogoYape.png"></a>
-					<a><img class="visa" src="../Issets/img/LogoTipo/LogoVisa.png"></a>
-					<a><img class="plin" src="../Issets/img/LogoTipo/LogoPlin.png"></a>
-				</div>
-			</div>
-		    <div class="aaa">
-		        <input type="checkbox" value="Acepto los Términos y Condiciones y Políticas de privacidad">
-                <p>Acepto los Términos y Condiciones y Políticas de privacidad</p>
-		    </div>
-            <div class="container-butt">
-                <a href="Pods.php" class="button-T">
-                    <i class="ri-arrow-left-line"></i>
-                    <p class="text">Seguir Comprando </p>
-                </a>
-                <div class="container-butt">
-                <button type="submit" class="button-T" name="register" id="register">
-            <i class="ri-arrow-right-line"></i>
-            <p class="text finalcomp">Finalizar Compra</p>
-        </button>
-    </div>
-            </div>
-            <?php
-                $valorTotal = 0; // Inicializa el valor total a 0
-
-                if (isset($_POST['productos'])) {
-                $productos = json_decode($_POST['productos'], true);
-
-                foreach ($productos as $producto) {
-                $valorTotal += intval($producto['quantity']) * intval(substr($producto['price'], 3));
-                    }   
-                }
-            ?>            
-            <input type="hidden" name="tipo_entrega" id="tipo_entrega_input" value="Delivery">
-            <input type="hidden"  name="total_input" id="total_input" value="<?= $valorTotal  ?>">
-            <input type="hidden" name="productos_titulos" id="productos_titulos_input" value="<?= htmlspecialchars(json_encode($productos_titulos)) ?>">
-            <?php
-                $categoria = isset($_GET['id']) ? $_GET['id'] : '';
-            ?>
-            <input type="hidden" name="categoria" id="categoria" value="<?= $categoria  ?>">
-		</form>
-    </div>
-</div>
-
-<?php
-include ('Registrar.php');
-?>
 
 
 
@@ -479,4 +318,4 @@ const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
 </script>
 <script src="../Issets/js/main.js"></script>
 </body>
-</html>
+</html>  

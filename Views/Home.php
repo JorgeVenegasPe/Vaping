@@ -8,22 +8,24 @@
   <link rel="stylesheet" href="../Issets/css/main.css"/>
 </head>
 <body>
-  <div class="container">
-    <h2 class="title">Nuestros Productos</h2>
-    <div class="content">
-      <div class="pods">
-        <a href="Pods.php" class="btn">
-          <h2 class="title">Pods</h2>
-          <img src="../Issets/img/pods/classic-tobacco.webp" class="img-pods">
-        </a>
-      </div>
-      <div class="vapers">
-        <a href="Vapers.php" class="btn">
-          <h2 class="title">Vapers</h2> 
-          <img src="../Issets/img/relxEssential/neon-purple.webp" class="img-vapers">
-        </a>
-      </div>
+    <div class="container">
+        <h2 class="title">Nuestros Productos</h2>
+        <div class="content">
+            <div class="pods">
+                <!-- Enlace que llama al controlador con un parámetro "id" -->
+                <a href="Controller.php?action=select&id=1" class="btn">
+                    <h2 class="title">Pods</h2>
+                    <img src="../Issets/img/pods/classic-tobacco.webp" class="img-pods">
+                </a>
+            </div>
+            <div class="vapers">
+                <!-- Enlace que llama al controlador con un parámetro "id" -->
+                <a href="Controller.php?action=select&id=2" class="btn">
+                    <h2 class="title">Vapers</h2> 
+                    <img src="../Issets/img/relxEssential/neon-purple.webp" class="img-vapers">
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 </html>

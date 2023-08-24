@@ -71,7 +71,6 @@
 							</svg>
 						</div>
 					</div>
-
 					<div class="cart-total">
 						<div style="display:flex; flex-direction:row">
 							<h3>Total :</h3>
@@ -79,16 +78,18 @@
 						</div>
           				<div class="container-butt">
           				    <button class="button-metod-pago" id="vaciar">Vaciar carrito</button>
-          				    <button class="button-metod-pago pagar" id="btn-continuar-pago">Pagar</a>
+          				    <button href="pago.php" class="button-metod-pago pagar" id="btn-continuar-pago">Pagar</a>
           				</div>
 						<div class="metodos-pago active">
           				</div>
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
+					
 			    </div>
             </div>
         </div>
     </header>
+
 	<div class="service-modal modalformcg flex-center">
     	<?php
     	require 'Ajustes.php';

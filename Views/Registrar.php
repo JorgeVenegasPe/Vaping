@@ -7,7 +7,7 @@ if (!$conex) {
 
 if (isset($_POST['register'])) {
 
-    if (strlen($_POST['nombre_cliente']) >= 1 && strlen($_POST['celular']) >= 1 && strlen($_POST['correo']) >= 1 && strlen($_POST['documento']) >= 1  && strlen($_POST['n_document']) >= 1  && strlen($_POST['distrito']) >= 1 && strlen($_POST['direccion']) >= 1   && strlen($_POST['referencia']) >= 1  && strlen($_POST['tipo_entrega']) >= 1  && strlen($_POST['total_input']) >= 1) {
+    if (strlen($_POST['nombre_cliente']) >= 1 && strlen($_POST['celular']) >= 1 && strlen($_POST['correo']) >= 1 && strlen($_POST['documento']) >= 1  && strlen($_POST['n_document']) >= 1  && strlen($_POST['distrito']) >= 1 && strlen($_POST['direccion']) >= 1   && strlen($_POST['referencia']) >= 1  && strlen($_POST['tipo_entrega']) >= 1  && strlen($_POST['total_input']) >= 1 && strlen($_POST['categoria']) >= 1 ) {
         $nombre_cliente = trim($_POST['nombre_cliente']);
         $celular = trim($_POST['celular']);
         $correo = trim($_POST['correo']);
@@ -17,6 +17,8 @@ if (isset($_POST['register'])) {
         $direccion =  trim($_POST['direccion']); // Ajusta según tus datos
         $referencia = trim($_POST['referencia']); // Ajusta según tus datos
         $tipo_entrega = trim($_POST['tipo_entrega']); // Esto es un ejemplo, ajusta según tu necesidad
+        $categoria = trim($_POST['categoria']); // Esto es un ejemplo, ajusta según tu necesidad
+
 
         // Obtén el valor total del campo oculto en el formulario
         $total = trim($_POST['total_input']);
@@ -29,12 +31,13 @@ if (isset($_POST['register'])) {
             $productosArray = []; // Si no hay productos, establece un array vacío
         }
         
-        $consulta = "INSERT INTO `ventas`(`tipo_entrega`, `productos`, `total`, `nombre_cliente`, `documento_tipo`, `documento_numero`, `correo`, `celular`, `distrito`, `direccion`, `referencia`, `acepto_terminos`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $consulta = "INSERT INTO `ventas`(`tipo_entrega`, `productos`, `total`, `nombre_cliente`, `documento_tipo`, `documento_numero`, `correo`, `celular`, `distrito`, `direccion`, `referencia`, `acepto_terminos`, `categoria`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         
         $stmt = mysqli_prepare($conex, $consulta);
         
-        // Ajustar los tipos de datos en el enlace de parámetros según la estructura de la tabla
-        mysqli_stmt_bind_param($stmt, "ssdssssssssd", $tipo_entrega, $productosJSON, $total, $nombre_cliente, $documento_tipo, $documento_numero, $correo, $celular, $distrito, $direccion, $referencia, $acepto_terminos);
+        mysqli_stmt_bind_param($stmt, "ssdssssssssds", $tipo_entrega, $productosJSON, $total, $nombre_cliente, $documento_tipo, $documento_numero, $correo, $celular, $distrito, $direccion, $referencia, $acepto_terminos, $categoria);
+
         
         // Establecer valores para los parámetros
         $acepto_terminos = 1; // Ajusta según tus datos

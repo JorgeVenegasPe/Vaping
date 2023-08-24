@@ -36,6 +36,8 @@
                     <div class="descripcion">
                       <h1><?=$row[2]?></h1>
                       <p><?=$row[4]?></p>
+                      <p style="display: none;" ><?=$row[1]?></p>
+                      <p style="display: none;"><?=$row[0]?></p>
                       <h2>S/.<?=$row[5]?></h2>
                     </div>
                     <div class="container-butt">
