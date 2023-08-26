@@ -147,5 +147,8 @@
   loginModal.style.display = 'block';
   });
 </script>
+
+
+<a href="fpdf/tutorial/tuto1.php">REPORTE VENTA</a>
 </body>
 </html>

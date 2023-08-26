@@ -56,12 +56,15 @@ if (isset($_POST['productos'])) {
     $productos_sin_etiquetas = array(); // Crear un arreglo para los valores de value0 y title
 
     foreach ($productos as $producto) {
+        // Asigna la imagen del producto a la variable $imagen
+        $imagen = $producto['image'];
+
         // Agrega el producto actual al arreglo de productos almacenados
         $productos_almacenados[] = array(
             'title' => $producto['title'],
             'quantity' => $producto['quantity'],
             'price' => $producto['price'],
-            'image' => $producto['image'],
+            'image' => $imagen, // Aquí asignamos la imagen
             'value1' => $producto['value1'],
             'value0' => $producto['value0'],
         );
@@ -69,23 +72,26 @@ if (isset($_POST['productos'])) {
         // Agrega el valor de 'value0' y el 'title' al arreglo de productos_titulos
         $productos_titulos[] = array(
             'value0' => $producto['value0'],
-            'title' => $producto['title']
+            'title' => $producto['title'],
+            'price' => intval(substr($producto['price'], 3))
         );
 
         // Agrega el valor de 'value0' y el 'title' al arreglo sin etiquetas
         $productos_sin_etiquetas[] = array(
             $producto['value0'],
-            $producto['title']
+            $producto['title'],
+            $producto['price']
         );
 
         ?>
         <div class="producto-en-pago">
             <div class="products">  
-                <img  src="<?=$producto['image'] ?>" alt="<?=$producto['title'] ?>">
+                <img src="<?=$imagen ?>" alt="<?=$producto['title'] ?>">
                 <p><?=$producto['quantity'] ?></p>
                 <h3><?=$producto['title'] ?></h3>
                 <p style="display: none;"><?=$producto['value1'] ?></p>
                 <p style="display: none;"><?=$producto['value0'] ?></p>
+                <p style="display: none;"><?=intval(substr($producto['price'], 3)) ?></p>
             </div>
             <?php
             $Total = intval($producto['quantity']) * intval(substr($producto['price'], 3));;
@@ -102,7 +108,6 @@ if (isset($_POST['productos'])) {
     $valorTotal = isset($_POST['valorTotal']) ? $_POST['valorTotal'] : '0';
 }
 ?>
-
 
         <div class="total" name="total" id="total">
             <h2>Total: </h2><span><?= $valorTotal ?></span>
@@ -255,10 +260,11 @@ if (isset($_POST['productos'])) {
                     <i class="ri-arrow-left-line"></i>
                     <p class="text">Seguir Comprando </p>
                 </a>
-                <button type="submit" class="button-T" name="register2" id="register2">
+                <button  type="submit" class="button-T" name="register2" id="register2">
             <i class="ri-arrow-right-line"></i>
             <p class="text finalcomp">Finalizar Compra</p>
         </button>
+    
             </div>
             </div>
             <?php

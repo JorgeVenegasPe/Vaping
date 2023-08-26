@@ -48,7 +48,7 @@ if (isset($_POST['register2'])) {
         foreach ($productosArray as $producto) {
             $nombre_producto = $producto->title;
             $cantidad = $producto->value0; // Asumiendo que 'value0' es la cantidad
-            $precio = $producto->price;  // Aquí debes obtener el precio adecuado del producto, ya que no se proporciona en el formulario
+            $precio = 0; // Aquí debes obtener el precio adecuado del producto, ya que no se proporciona en el formulario
             $imagen = isset($producto->image) ? $producto->image : 'ruta_predeterminada_de_la_imagen.jpg'; // Aquí asignamos la imagen o una ruta predeterminada
             $usuarioId = 0; // Aquí debes obtener el ID del usuario actual, si lo tienes
 
