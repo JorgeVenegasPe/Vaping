@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
     <link rel="stylesheet" href="../Issets/css/header.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -21,15 +20,15 @@
             <div class="container-icons">
                 <div class="icons">
                     <div class="nav-close-btn"></div>
-					<form id="searchForm" class="search a">
-						<input type="text" id="searchInput" placeholder="Search" class="search__input"/>
-						<button type="button" class="search__button">
-							<span class="material-symbols-sharp buscador">search</span>
-						</button>
-					</form>
+	        	    <form id="searchForm" class="search a">
+	        	    	<input type="text" id="searchInput" placeholder="Search" class="search__input"/>
+	        	    	<button type="button" class="search__button">
+                            <span class="material-symbols-sharp buscador">search</span>
+	        	    	</button>
+	        	    </form>
 					<div class="scrollBus">
 						<div id="searchResults" class="search-results"></div>
-					</div>					
+					</div>	
 					<div class="menu">
                     	<a class="menu-trigger">Productos</a>
                     	<ul class="submenu">
@@ -39,9 +38,7 @@
                 	</div>
                     <a href="Login.php" class="a">Iniciar Session</a>
                     <a class="perfil"><span class="material-symbols-sharp ii ajuste ">person</span></a>
-                    <a href="#"><span class="material-symbols-sharp ii ajuste ">logout</span></a>
                     <a class="iconossss" href="Ajustes.php">Ajuste</a>
-                    <a class="iconossss" href="#">Cerrar Session</a>
                 </div>
             </div>
             <div class="container-iconos a">
@@ -94,13 +91,17 @@
     </header>
 	<div class="service-modal modalformcg flex-center">
     	<?php
-    	require 'Ajustes.php';
+		if(isset($_SESSION['Nombre'])){
+			require 'Ajustes.php';
+		}else{
+			echo '<div class="service-modal-body">
+				<i class="fas fa-times modal-close-btn"></i>
+				<a href="Login.php" class="a">Iniciar Session</a>
+			</div>';
+		}
    	 	?>
   	</div>
-
-
-	  <script src="../Issets/js/search.js"></script>
-
 	
+	  <script src="../Issets/js/search.js"></script>
 </body>
 </html>

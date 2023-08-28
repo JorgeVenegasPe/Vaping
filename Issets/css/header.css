@@ -313,8 +313,10 @@ header {
     border-radius: 0.4rem;
     cursor: pointer;
 }
-.imagen-producto-carrito{
-    width: 10%;
+.imagen-producto-carrito {
+    object-fit: contain;
+    width: 14px;
+    height: 60px;
 }
 /* =============== Submenu=============*/
 .menu {

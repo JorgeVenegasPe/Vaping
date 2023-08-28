@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../Issets/css/main.css"/>
 </head>
 <body>
-  <div id="containe">
+  <div class="">
     <h2 class="title">Nuestros Productos</h2>
     <div class="content">
       <div class="pods">

@@ -84,8 +84,9 @@ productsList.addEventListener('click', e => {
     if (e.target.classList.contains('Añadir')) {
         const buttonContainer = e.target.closest('.container-descrip'); // Buscar el contenedor más cercano
         const productContainer = buttonContainer.parentElement;
+        const selectedQuantity = parseInt( productContainer.querySelector('span').textContent);
         const infoProduct = {
-            quantity: 1,
+            quantity: selectedQuantity,
             title: productContainer.querySelector('h1').textContent,
             price: productContainer.querySelector('h2').textContent,
             image: productContainer.querySelector('img').src,
@@ -98,7 +99,7 @@ productsList.addEventListener('click', e => {
         if (exists) {
             const updatedProducts = allProducts.map(product => {
                 if (product.title === infoProduct.title) {
-                    product.quantity++;
+                    product.quantity += selectedQuantity;
                     return product;
                 } else {
                     return product;
@@ -328,10 +329,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-
  // Abrir Modal de Terminos y Condiciones
-document.addEventListener("DOMContentLoaded", function() { 
+ document.addEventListener("DOMContentLoaded", function() { 
     const serviceModalTer = document.querySelectorAll(".modalformTer");
     const serviceModaltc = document.querySelectorAll(".modalformtc");
     const terminosCondicionesBtns = document.querySelectorAll(".Terminos-Condiciones");
@@ -430,3 +429,30 @@ items.forEach((item, index) => {
         }
     });
 });
+
+
+const containers = document.querySelectorAll('.container-descrip');
+
+containers.forEach(container => {
+    const contador = container.querySelector('.contador');
+    const sumar = container.querySelector('.incrementar');
+    const restar = container.querySelector('.decretar');
+    
+    let numero = 0;
+    
+    sumar.addEventListener("click", () => {
+        numero++;
+        contador.innerHTML = numero;
+    });
+    
+    restar.addEventListener("click", () => {
+        if (numero > 0) {
+            numero--;
+            contador.innerHTML = numero;
+        }
+    });
+});
+
+
+
+
