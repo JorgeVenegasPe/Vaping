@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['Nombre'])) {
+
+  require 'Header-log.php';
+
+} else {
+
+require 'Header.php';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,139 +18,139 @@
   <title>Vaping - Pods</title>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="stylesheet" href="../Issets/css/main.css"/>
-  <link rel="stylesheet" href="../Issets/css/contador.css"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="../Issets/css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
-<body>
+<body> 
   <!-- Header  -->
   <?php
-  require_once ('Header.php');
+  require("../Controllers/ControllerProducto.php");
+  $obj = new usernameControlerProducto();
+  $rows = $obj->VerProductoPods();
   ?>
 
   <!-- Carrusel  -->
   <main class="main">
     <div class="swiper carousel">
-      <div   class="swiper-wrapper">
-
-        <div class="swiper-slide" data-slide="1">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-            <div class="container-descrip">
-              <h1>Black Twist</h1>
-              <p>Nicotina 5%</p>
-              <h2>S/.59.00 </h2>
-              <div class="container-butt">
-
-              <span class="contador" id="contar1">0</span>
-              <div class="contenedor">
-                <button class="cont" id="incr1"><span class="material-icons-round">add</span></button>
-                <button class="cont" id="decr1"><span class="material-icons-round">remove</span></button>
-                <button class="cont" id="reset1"><span class="material-icons-round">cached</span></button>
+      <div class="swiper-wrapper">
+        <?php if ($rows):?>
+            <?php foreach ($rows as $row): ?>
+              <div class="swiper-slide" >
+                <div class="container-total">
+                  <div class="container-imagen">
+                    <img src="data:image/png;base64,<?= base64_encode($row[3]) ?>"/>
+                  </div>
+                  <div class="container-descrip">
+                    <div class="descripcion">
+                      <h1><?=$row[2]?></h1>
+                      <p><?=$row[4]?></p>
+                      <h2>S/.<?=$row[5]?></h2>
+                    </div>
+                    <div class="container-butt">
+                      <div class="buton-cantidad">
+                        <span class="contador">0</span>
+                        <div class="contenedor">
+                          <a class="cont incrementar"><i class="ri-arrow-up-s-fill"></i></a>
+                          <a class="cont decretar"><i class="ri-arrow-down-s-fill"></i></a>
+                        </div>
+                      </div>
+                      <button type="button" class="button-cantidad Añadir">Añadir</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-                <button type="button" class="button-cantidad Añadir" >Añadir</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="swiper-slide" data-slide="2">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-          <div class="container-descrip">
-            <h1>Black Twister</h1>
-            <p>Nicotina 50%</p>
-            <h2>S/.79.00 </h2>
-            <div class="container-butt">
-
-            <span class="contador" id="contar2">0</span>
-            <div class="contenedor">
-              <button class="cont" id="incr2"><span class="material-icons-round">add</span></button>
-              <button class="cont" id="decr2"><span class="material-icons-round">remove</span></button>
-              <button class="cont" id="reset2"><span class="material-icons-round">cached</span></button>
-            </div>
-            
-              <button type="button" class="button-cantidad Añadir" >Añadir</button>
-            </div>
-          </div>
-          </div>
-        </div>
-        
-        <div class="swiper-slide" data-slide="3">
-          <div class="imagenpods">
-            <img src="../Issets/img/Pods/black-twist.webp" alt="" />
-          <div class="container-descrip">
-            <h1>Black Twister 2</h1>
-            <p>Nicotina 53%</p>
-            <h2>S/.49.00 </h2>
-            <div class="container-butt">
-
-            <span class="contador" id="contar3">0</span>
-            <div class="contenedor">
-              <button class="cont" id="incr3"><span class="material-icons-round">add</span></button>
-              <button class="cont" id="decr3"><span class="material-icons-round">remove</span></button>
-              <button class="cont" id="reset3"><span class="material-icons-round">cached</span></button>
-            </div>
-              <button type="button" class="button-cantidad Añadir" >Añadir</button>
-            </div>
-          </div>
-          </div>
-        </div>
+            <?php endforeach;?>
+        <?php endif;?>
       </div>
         <button type="button" class="swiper-button-next"></button>
         <button type="button" class="swiper-button-prev"></button>
     </div>
   </main>
-  
-  <!-- Carrito  -->
-  <div>
-  </div>
 
   <!-- ================ Modals ================================  -->
-    <!-- Login  -->
-    <div id="loginModal" style="display: none;">
-      <?php
-        require 'Login.php';
-      ?>
+  
+  <!-- Modal Añadido al Carrito -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <div class="checkmark-container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+      </div>
+      <p class="added-text"></p>
     </div>
+  </div>
 
   <!-- Redes Sociales -->
   <div class="icons-redes">
-    <a href="#" class="icon icon--instagram">
+    <a href="https://www.instagram.com/vaping.cloud.peru/" target="_blank" class="icon icon--instagram">
       <i class="ri-instagram-line"></i>
     </a>
-    <a href="#" class="icon icon--facebook">
+    <a href="https://www.facebook.com/vapingcloudperu" target="_blank" class="icon icon--facebook">
       <i class="ri-facebook-line"></i>
     </a>
-    <a href="#" class="icon icon--whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=51994079320&amp;text=Hola" target="_blank" class="icon icon--whatsapp">
       <i class="ri-whatsapp-line"></i>
     </a>
   </div>
   
-<script>
-        const menuBtn = document.querySelector(".nav-menu-btn");
-        const closeBtn = document.querySelector(".nav-close-btn");
-        const navigation = document.querySelector(".container-icons");
-        const navItems = document.querySelectorAll(".icons a");
-        const mainItems = document.querySelector(".main");
+  <!-- Ajustes General -->
+  <div class="container">
+    <input type="checkbox" id="btn-mas">
+      <div class="class">
+        <a href="#" class="icon-link Terminos-Condiciones">
+					<i class="ri-secure-payment-line"></i>
+          <span class="icon-text">Terminos y Condiciones </span>
+        </a>
+        <a href="#" class="icon-link libro-reclamacion">
+          <i class="ri-book-open-fill"></i>
+          <span class="icon-text">Libro de Reclamación</span>
+        </a>
+        <a href="#" class="icon-link politicas-privacidad">
+          <i class="ri-shield-fill"></i>
+          <span class="icon-text">Politicas de Privacidad</span>
+        </a>
+      </div>
+      <div class="btn-mas">
+        <label for="btn-mas" class="ri-add-line"></label>
+      </div>
+  </div>
 
-        menuBtn.addEventListener("click", () => {
-            navigation.classList.add("active");
-            mainItems.classList.add("active");
-        });
+  <!-- Libro de reclamaciones -->
+  <div class="service-modal modalformlb flex-center">
+    <?php
+    require 'LibroReclamacion.php';
+    ?>
+  </div> 
 
-        closeBtn.addEventListener("click", () => {
-            navigation.classList.remove("active");
-            mainItems.classList.remove("active");
-        });
+  <!-- Libro de Terminos y Condiciones -->  
+  <div class="service-modal modalformTer flex-center">
+    <?php
+    require 'TerminosCondiciones.php';
+    ?>
+  </div>
 
-        navItems.forEach((navItem) => {
-            navItem.addEventListener("click", () => {
-                navigation.classList.remove("active");
-            });
-        });
-    </script>
+  <!-- Libro de Politicas y Privacidad -->
+  <div class="service-modal modalformPol flex-center">
+    <?php
+    require 'PoliticasPrivacidad.php';
+    ?>
+  </div>
+
+  <script type="text/javascript">
+    (function () { 
+      var ldk = document.createElement('script'); 
+      ldk.type = 'text/javascript'; 
+      ldk.async = true; 
+      ldk.src = 'https://s.cliengo.com/weboptimizer/64d053e1e3a858003279d24e/64d053e3e3a858003279d251.js?platform=view_installation_code'; 
+      var s = document.getElementsByTagName('script')[0]; 
+      s.parentNode.insertBefore(ldk, s); 
+    })();
+  </script>
+  
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../Issets/js/main.js"></script>
 <script>
@@ -153,16 +164,15 @@
     },
   });
 
-
   const loginButton = document.getElementById('loginButton');
-    const loginModal = document.getElementById('loginModal');
+  const loginModal = document.getElementById('loginModal');
 
   // Asigna un controlador de eventos al botón de inicio de sesión
-    loginButton.addEventListener('click', function() {
+  loginButton.addEventListener('click', function() {
+
   // Muestra el modal
-    loginModal.style.display = 'block';
-    });
+  loginModal.style.display = 'block';
+  });
 </script>
-<script src="../Issets/js/contador.js"></script>
 </body>
 </html>

@@ -7,8 +7,9 @@ class UserModelProducto{
         $con=new conexion();
         $this->PDO=$con->conexion();
     }
-    public function InsertarProducto($nombre,$imagen,$descripcion,$precio) {
-        $statement=$this->PDO->prepare("INSERT INTO producto (Nombre, imagen, Descripcion, Precio) VALUES (:nombre, :imagen, :descripcion, :precio)");
+    public function InsertarProducto($IdCategoria,$nombre,$imagen,$descripcion,$precio) {
+        $statement=$this->PDO->prepare("INSERT INTO producto (IdCategoria,Nombre, imagen, Descripcion, Precio) VALUES (:IdCategoria, :nombre, :imagen, :descripcion, :precio)");
+        $statement->bindParam(':IdCategoria', $IdCategoria);
         $statement->bindParam(':nombre', $nombre);
         $statement->bindParam(':imagen', $imagen);
         $statement->bindParam(':descripcion', $descripcion);
@@ -21,6 +22,17 @@ class UserModelProducto{
         $statement=$this->PDO->prepare("SELECT * FROM producto");
         return($statement->execute()) ? $statement->fetchAll():false;
     }
+
+    public function VerProductoPods(){
+        $statement=$this->PDO->prepare("SELECT * FROM producto WHERE IdCategoria = 1");
+        return($statement->execute()) ? $statement->fetchAll():false;
+    }
+
+    public function VerProductoVapers(){
+        $statement=$this->PDO->prepare("SELECT * FROM producto WHERE IdCategoria = 2");
+        return($statement->execute()) ? $statement->fetchAll():false;
+    }
+
 
     public function ShowProducto($id){
         $statement=$this->PDO->prepare("SELECT * FROM producto where IdProducto=:id limit 1");
@@ -43,6 +55,12 @@ class UserModelProducto{
         $statement=$this->PDO->prepare("DELETE FROM producto WHERE IdProducto=:id");
         $statement->bindParam(":id",$id);
         return($statement->execute())? true:false;
+    }
+    
+    public function MostrarDistrito(){
+        $statement = $this->PDO->prepare("SELECT * FROM distrito");  
+        return ($statement->execute()) ? $statement->fetchAll() : false;
+
     }
 }
 
